@@ -1,0 +1,45 @@
+package models;
+
+//import io.ebean.*;
+import javax.persistence.*;
+
+//import root.persistence.Entity;
+//import root.persistence.Id;
+//import com.avaje.ebean.Model;
+//import com.avaje.ebean.*;
+import java.util.*;
+import play.modules.mongodb.jackson.MongoDB;
+import net.vz.mongodb.jackson.JacksonDBCollection;
+import net.vz.mongodb.jackson.Id;
+import net.vz.mongodb.jackson.ObjectId;
+import net.vz.mongodb.jackson.DBQuery;
+import org.codehaus.jackson.annotate.JsonProperty;
+import java.awt.image.BufferedImage;
+
+public class Guider extends AUser 
+{
+	public Guider()
+	{}
+
+
+    public static List<Object> all() {
+		return Guider.coll.find().toArray();
+	}
+
+	public static void create(Guider u) {
+		Guider.coll.save(u);
+	}
+	
+	//	public String name = "";
+	public String type = "";
+	public String gender = "";
+	public String city_and_country = "";
+	public String employer = "";
+	public String title = "";
+
+	public BufferedImage passport_image = null;
+	public BufferedImage travel_image = null;
+
+	private static JacksonDBCollection<Guider, String> coll = MongoDB.getCollection("auser", Guider.class, String.class);	
+	//姓名，性别，年龄，所在城市，工作职位，公司 （或者学历，专业），附件护照首页（命名为passport），一张旅行照（命名为profile）
+}

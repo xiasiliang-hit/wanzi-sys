@@ -51,20 +51,24 @@ public class RegisterGuiderController extends Controller {
 			}
 		else
 			{
-				return ok(views.html.loginPage.t.login.render());
+				return ok(views.html.registerguider.render());
 			}
-
     }
 
 	public static Result onRegisterGuider(){
 
-		return ok (homepage);
+		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
+		if(filledForm.hasErrors()) {
+			return badRequest(views.html.registerguider.render());
+		}
+		else{
+			AUser g = filledForm.get();
+			g.type = "GUIDER";
+			g.create(g);
+
+			return redirect(homepage);
+		}
 	}
 
-
-	public Result test()
-    {
-	return ok(registerguider.render());
-    }
 }
 

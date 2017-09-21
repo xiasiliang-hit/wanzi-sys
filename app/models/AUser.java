@@ -14,7 +14,7 @@ import net.vz.mongodb.jackson.Id;
 import net.vz.mongodb.jackson.ObjectId;
 import net.vz.mongodb.jackson.DBQuery;
 import org.codehaus.jackson.annotate.JsonProperty;
-
+import java.awt.image.BufferedImage;
 //@Entity
 //@Table(name="alluser")
 public class AUser
@@ -37,6 +37,8 @@ public class AUser
 	public static void create(AUser u) {
 		AUser.coll.save(u);
 	}
+
+
 
 	public static AUser verifyUser(String email, String password)
 	{
@@ -76,5 +78,19 @@ public class AUser
     public String email;
 
     public String password;
-    
+	public BufferedImage profile_image;
+
+
+	
+	public String type = "";
+	public String gender = "";
+	public String city_and_country = "";
+	public String employer = "";
+	public String title = "";
+
+	public BufferedImage passport_image = null;
+	public BufferedImage travel_image = null;
+	
+	public static String GUIDER = "GUIDER";
+	public static String TRAVELLER = "TRAVELLER";
 }

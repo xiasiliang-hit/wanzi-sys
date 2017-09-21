@@ -20,4 +20,4 @@ GET     /login                  controllers.RegisterController.login()
 POST    /login                  controllers.RegisterController.onLogin()
 
 GET		/registerguider 		controllers.RegisterGuiderController.registerGuider()
-
+POST    /registerguider      	             controllers.RegisterGuiderController.onRegisterGuider()

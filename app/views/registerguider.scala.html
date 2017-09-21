@@ -1,11 +1,24 @@
 @import views.html.loginPage.t._
+@import helper._
 
 @headerfooter {
 
 <link rel="stylesheet" type="text/css" href="/app/statics/js/applys/datetimepicker/css/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" type="text/css" href="/app/statics/css/applys/style.css">
 <script src="/app/statics/js/applys/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/app/statics/js/country.js"></script>  
 <script type="text/javascript" src="/app/statics/js/applys/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+  var select = document.getElementById("country_list");
+
+  for(var i = 0; i < city_states.length; i++) {
+					 var opt = city_states[i];
+					 var el = document.createElement("option");
+					 el.textContent = opt;
+					 el.value = opt;
+					 select.appendChild(el);
+					 }​
+  </script>
 <div class="applys clearfix">
   <div class="l">
 	<ul class="fix_left">
@@ -18,11 +31,12 @@
 	</ul>
   </div>
   <div class="r">
-	<form action="" id="main-form">
+	<!--<form action="" id="main-form"> -->
+	@form(action=routes.RegisterGuiderController.onRegisterGuider(), '_id->"main-form") {
 	  <div class="top">
 		<div class="applys_com">
 		  <div class="applys_name">* 真实姓名<span class="mark"></span><p class="prompt">走走旅游是一个以真实身份为基础<br>的旅游社区<i></i></p></div>
-		  <input type="text" name="au_name" class="form-control" style="width:228px;" required="required" value=@session.get("username")>
+		  <input type="text" name="name" class="form-control" style="width:228px;" required="required" value=@session.get("username")>
 		</div>
 		<div class="applys_com">
 		  <div class="applys_name">* 出生年月<span class="mark"></span><p class="prompt" style="top:-15px;">必须年满18岁才能注册成为向导<i style="top:12px;"></i></p></div>
@@ -45,7 +59,10 @@
 		</div>
 		<div class="applys_com applys_add">
 		  <div class="applys_name" style="margin:0 0 10px;">* 目前居住国家和城市</div>
-		  <div id="area_list" class="row"></div>
+		  <div id="area_list" class="row">
+			<select id="country_list" />
+			  
+		  </div>
 		</div>
 		<div class="applys_com">
 		  <div class="applys_name" style="margin:0 0 10px;">找不到您的地区？来这里填写吧</div>
@@ -232,7 +249,10 @@
 	  <div class="bottom applys_radio">
 		<p class="submit_ser"><button class="ser_btn" type="submit">下一步</button></p>
 	  </div>
-	</form>
+	  }
+<!--	</form> -->
+
+	
   </div>
   <a href="javascript:;" class="decorate_btn"></a>
   <!-- 弹出层 -->
@@ -252,7 +272,7 @@
 <script src="/app/statics/js/applys/fixed.js"></script>
 <script src="/app/statics/js/applys/ajaxfileupload.js"></script>
 
-<!--
+
 <script>
   $(document).ready(function() {
 
@@ -793,5 +813,5 @@
 		}
 		});
 </script>
--->
+
 }
