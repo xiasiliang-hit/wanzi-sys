@@ -24,14 +24,14 @@ public class RegisterController extends Controller {
     }
 	*/
 
-	public static Result onRegister()
+	public static Result register()
 	{    
 
 	    Form<AUser> userForm = Form.form(AUser.class);
 		return ok(		views.html.loginPage.t.register.render(userForm) );
 	}
 	
-    public static Result onSubmit() {
+    public static Result onRegister() {
 		
 		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
 
@@ -60,6 +60,7 @@ public class RegisterController extends Controller {
 		String pass = filledForm.get().password;
 		play.Logger.info(em);
 		play.Logger.info(pass);
+		
 		AUser u = AUser.verifyUser(em, pass) ;
 				//		play.Logger.info(request().getQueryString("emmail"));
 		if (em!=null && pass !=null && u != null)

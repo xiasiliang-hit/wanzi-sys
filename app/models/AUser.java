@@ -42,8 +42,15 @@ public class AUser
 
 	public static AUser verifyUser(String email, String password)
 	{
-		AUser u = AUser.coll.findOne(DBQuery.is("email", email));
-		
+		AUser u = null;
+		try
+			{
+		 u = AUser.coll.findOne(DBQuery.is("email", email));
+			}
+		catch (Exception e)
+			{
+				return null;
+			}
 		if (u != null && u.password != null)
 		{
 			if (u.password.equals(password))
