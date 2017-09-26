@@ -1,817 +1,762 @@
-@import views.html.loginPage.t._
+
 @import helper._
 
 @headerfooter {
 
-<link rel="stylesheet" type="text/css" href="/app/statics/js/applys/datetimepicker/css/bootstrap-datetimepicker.min.css">
-<link rel="stylesheet" type="text/css" href="/app/statics/css/applys/style.css">
-<script src="/app/statics/js/applys/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script src="/app/statics/js/country.js"></script>  
-<script type="text/javascript" src="/app/statics/js/applys/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-<script type="text/javascript">
-  var select = document.getElementById("country_list");
+    <link rel="stylesheet" type="text/css" href="/app/statics/js/applys/datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/app/statics/css/applys/style.css">
+    <script src="/app/statics/js/applys/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/app/statics/js/country.js"></script>
+    <script type="text/javascript" src="/app/statics/js/applys/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+            var select = document.getElementById("country_list");
 
-  for(var i = 0; i < city_states.length; i++) {
-					 var opt = city_states[i];
-					 var el = document.createElement("option");
-					 el.textContent = opt;
-					 el.value = opt;
-					 select.appendChild(el);
-					 }​
-  </script>
-<div class="applys clearfix">
-  <div class="l">
-	<ul class="fix_left">
-	  <!-- <li><a href="/site/applysUser" class="font5 action">个人信息<span class="correct"></span></a></li>
+            for (var i = 0; i < city_states.length; i++) {
+                var opt = city_states[i];
+                var el = document.createElement("option");
+                el.textContent = opt;
+                el.value = opt;
+                select.appendChild(el);
+            }
+    </script>
+    <div class="applys clearfix">
+        <div class="l">
+            <ul class="fix_left">
+                    <!-- <li><a href="/site/applysUser" class="font5 action">个人信息<span class="correct"></span></a></li>
 		   <li><a href="/site/applysPic" class="font5">个人照片<span class="error"></span></a></li> -->
-	  <li><a href="/site/applysStep" class="font5 applys_back">返回</a></li>
-	  <li><a href="/site/applysUser" class="font5 action">个人信息<span></span></a></li>
-	  <li><a href="/site/applysPic" class="font5">个人照片<span></span></a></li>
-	  <li><a href="/site/applysService" class="font5">自我介绍<span></span></a></li>
-	</ul>
-  </div>
-  <div class="r">
-	<!--<form action="" id="main-form"> -->
-	@form(action=routes.RegisterGuiderController.onRegisterGuider(), '_id->"main-form") {
-	  <div class="top">
-		<div class="applys_com">
-		  <div class="applys_name">* 真实姓名<span class="mark"></span><p class="prompt">走走旅游是一个以真实身份为基础<br>的旅游社区<i></i></p></div>
-		  <input type="text" name="name" class="form-control" style="width:228px;" required="required" value=@session.get("username")>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 出生年月<span class="mark"></span><p class="prompt" style="top:-15px;">必须年满18岁才能注册成为向导<i style="top:12px;"></i></p></div>
-		  <input type="text" class="form-control" name="au_birthday" id="birth_day" style="width:228px;" value="" required="required" autocomplete="off" >
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 性别</div>
-		  <div class="applys_radio single">
-			<label class="action">
-			  <input type="radio" name="au_gendar" value="1" checked="checked"><i></i>男
-			</label>
-			<label>
-			  <input type="radio" name="au_gendar" value="2"><i></i>女
-			</label>
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 籍贯</div>
-		  <input type="text" class="form-control" name="au_home" style="width:228px;" required="required">
-		</div>
-		<div class="applys_com applys_add">
-		  <div class="applys_name" style="margin:0 0 10px;">* 目前居住国家和城市</div>
-		  <div id="area_list" class="row">
-			<select id="country_list" />
-			  
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name" style="margin:0 0 10px;">找不到您的地区？来这里填写吧</div>
-		  <input type="text" class="form-control" name="au_other_area" style="width:228px;">
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 在当地居住时间</div>
-		  <div class="applys_year" style="width:198px;">
-			<input class="form-control" type="text" name="au_stay" style="width:158px!important;" required="required" value="0">
-			<div class="add-btn"><i class="up"></i><i class="down"></i></div>
-			<em class="applys_point">(年)</em>
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 当地语言熟练程度</div>
-		  <div class="applys_radio single">
-			<label class="action">
-			  <input type="radio" name="au_local" value="1" checked="checked"><i></i>生疏
-			</label>
-			<label>
-			  <input type="radio" name="au_local" value="2"><i></i>一般
-			</label>
-			<label>
-			  <input type="radio" name="au_local" value="3"><i></i>精通
-			</label>
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">您还精通的其他语言（可填写多个语言）</div>
-		  <input type="text" class="form-control" style="width:228px;" name="au_other_lan">
-		</div>
-		<div class="applys_cont applys_com">
-		  <div class="applys_name" style="margin-bottom:28px;">
-			<span class="font4 applys_tit">联系方式</span>
-			<span class="mark" style="left:70px;"></span>
-			<p class="prompt" style="left:102px;top:-28px;">
-			  我们不会公开您的联系方式，<br>仅当旅行者预定成功后，<br>才可在订单中查看到您的联系方式。
-			  <i style="top:31px;"></i>
-			</p>
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">* 微信</div>
-			<input type="text" class="form-control" style="width:228px;" name="au_wechat" required="required">
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">QQ</div>
-			<input type="text" class="form-control" style="width:228px;" name="au_qq">
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">* 邮箱</div>
-			<input type="email" class="form-control" style="width:228px;" name="au_email" required="required">
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 目前身份</div>
-		  <div class="applys_radio ap_iden single">
-			<label class="action">
-			  <input type="radio" name="au_type" value="留学生" checked="checked"><i></i>留学生
-			</label>
-			<label>
-			  <input type="radio" name="au_type" value="华侨"><i></i>华侨
-			</label><br>
-			<label>
-			  <input type="radio" name="au_type" value="当地人"><i></i>当地人
-			</label>
-			<label>
-			  <input type="radio" name="au_type" value="专业导游"><i></i>专业导游
-			</label>
-		  </div>
-		</div>
-		<div>
-		  <div class="applys_com">
-			<div class="applys_name">* 工作状态</div>
-			<div class="applys_radio applys_selsct applys_check single">
-			  <label class="action">
-				<input type="radio" name="au_job_status" value="1" checked="checked"><i></i>在读学生
-			  </label>
-			  <label>
-				<input type="radio" name="au_job_status" value="2"><i></i>已工作
-			  </label>
-			</div>
-		  </div>
-		  <div class="applys_com" style="display:none;" id="job-toggle">
-			<div class="applys_name">* 目前职业</div>
-			<input type="text" class="form-control" name="au_job" style="width:228px;">
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">* <span id="school-str">在读学校</span>（请填写中文）</div>
-			<input type="text" class="form-control" name="au_school" style="width:228px;" required="required">
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">* 所修专业是（请填写中文）</div>
-			<input type="text" class="form-control" name="au_major" style="width:228px;" required="required">
-		  </div>
-		  <div class="applys_com">
-			<div class="applys_name">* 最高学历</div>
-			<div class="applys_radio single">
-			  <label class="action">
-				<input type="radio" name="au_edu" value="大专" checked="checked"><i></i>大专
-			  </label>
-			  <label>
-				<input type="radio" name="au_edu" value="本科"><i></i>本科
-			  </label>
-			  <label>
-				<input type="radio" name="au_edu" value="硕士"><i></i>硕士
-			  </label><br>
-			  <label>
-				<input type="radio" name="au_edu" value="博士"><i></i>博士
-			  </label>
-			  <label>
-				<input type="radio" name="au_edu" value="其他"><i></i>其他
-			  </label>
-			</div>
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 其他专长领域</div>
-		  <div class="applys_radio multi">
-			<label>
-			  <input type="checkbox" name="au_goodat" value="房产"><i></i>房产
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="医疗"><i></i>医疗
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="商务"><i></i>商务
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="历史"><i></i>历史
-			</label><br>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="艺术"><i></i>艺术
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="美食"><i></i>美食
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="购物"><i></i>购物
-			</label>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="摄影"><i></i>摄影
-			</label><br>
-			<label>
-			  <input type="checkbox" name="au_goodat" value="户外"><i></i>户外
-			</label>
-			<!-- <label>
+                <li><a href="/site/applysStep" class="font5 applys_back">返回</a></li>
+                <li><a href="/site/applysUser" class="font5 action">个人信息<span></span></a></li>
+                <li><a href="/site/applysPic" class="font5">个人照片<span></span></a></li>
+                <li><a href="/site/applysService" class="font5">自我介绍<span></span></a></li>
+            </ul>
+        </div>
+        <div class="r">
+                <!--<form action="" id="main-form"> -->
+            @form(action = routes.RegisterGuiderController.onRegisterGuider(), '_id -> "main-form") {
+                <div class="top">
+                    <div class="applys_com">
+                        <div class="applys_name">* 真实姓名<span class="mark"></span><p class="prompt">走走旅游是一个以真实身份为基础<br>
+                            的旅游社区<i></i></p></div>
+                        <input type="text" name="name" class="form-control" style="width: 228px;" required="required" value=@session.get("username")>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 出生年月<span class="mark"></span><p class="prompt" style="top: -15px;">
+                            必须年满18岁才能注册成为向导<i style="top: 12px;"></i></p></div>
+                        <input type="text" class="form-control" name="au_birthday" id="birth_day" style="width: 228px;" value="" required="required" autocomplete="off" >
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 性别</div>
+                        <div class="applys_radio single">
+                            <label class="action">
+                                <input type="radio" name="au_gendar" value="1" checked="checked"><i></i>男
+                            </label>
+                            <label>
+                                <input type="radio" name="au_gendar" value="2"><i></i>女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 籍贯</div>
+                        <input type="text" class="form-control" name="au_home" style="width: 228px;" required="required">
+                    </div>
+                    <div class="applys_com applys_add">
+                        <div class="applys_name" style="margin: 0 0 10px;">* 目前居住国家和城市</div>
+                        <select id="region_list" class="form-control" style="display: inline" onchange="set_country()"><option disabled selected>Please Choose Region</option></select>
+                        <select id="country_list" class="form-control" onchange="set_city_state()" style="display: inline"></select>
+                        <select id="city_list" class="form-control" style="display: inline"></select>
+                        <script>setRegions();</script>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name" style="margin: 0 0 10px;">找不到您的地区？来这里填写吧</div>
+                        <input type="text" class="form-control" name="au_other_area" style="width: 228px;">
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 在当地居住时间</div>
+                        <div class="applys_year" style="width: 198px;">
+                            <input class="form-control" type="text" name="au_stay" style="width: 158px !important;" required="required" value="0">
+                            <div class="add-btn"><i class="up"></i><i class="down"></i></div>
+                            <em class="applys_point">(年)</em>
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 当地语言熟练程度</div>
+                        <div class="applys_radio single">
+                            <label class="action">
+                                <input type="radio" name="au_local" value="1" checked="checked"><i></i>生疏
+                            </label>
+                            <label>
+                                <input type="radio" name="au_local" value="2"><i></i>一般
+                            </label>
+                            <label>
+                                <input type="radio" name="au_local" value="3"><i></i>精通
+                            </label>
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">您还精通的其他语言（可填写多个语言）</div>
+                        <input type="text" class="form-control" style="width: 228px;" name="au_other_lan">
+                    </div>
+                    <div class="applys_cont applys_com">
+                        <div class="applys_name" style="margin-bottom: 28px;">
+                            <span class="font4 applys_tit">联系方式</span>
+                            <span class="mark" style="left: 70px;"></span>
+                            <p class="prompt" style="left: 102px;
+                                top: -28px;">
+                                我们不会公开您的联系方式，<br>仅当旅行者预定成功后，<br>才可在订单中查看到您的联系方式。
+                                <i style="top: 31px;"></i>
+                            </p>
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">* 微信</div>
+                            <input type="text" class="form-control" style="width: 228px;" name="au_wechat" required="required">
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">QQ</div>
+                            <input type="text" class="form-control" style="width: 228px;" name="au_qq">
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">* 邮箱</div>
+                            <input type="email" class="form-control" style="width: 228px;" name="au_email" required="required">
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 目前身份</div>
+                        <div class="applys_radio ap_iden single">
+                            <label class="action">
+                                <input type="radio" name="au_type" value="留学生" checked="checked"><i></i>留学生
+                            </label>
+                            <label>
+                                <input type="radio" name="au_type" value="华侨"><i></i>华侨
+                            </label><br>
+                            <label>
+                                <input type="radio" name="au_type" value="当地人"><i></i>当地人
+                            </label>
+                            <label>
+                                <input type="radio" name="au_type" value="专业导游"><i></i>专业导游
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="applys_com">
+                            <div class="applys_name">* 工作状态</div>
+                            <div class="applys_radio applys_selsct applys_check single">
+                                <label class="action">
+                                    <input type="radio" name="au_job_status" value="1" checked="checked"><i></i>在读学生
+                                </label>
+                                <label>
+                                    <input type="radio" name="au_job_status" value="2"><i></i>已工作
+                                </label>
+                            </div>
+                        </div>
+                        <div class="applys_com" style="display: none;" id="job-toggle">
+                            <div class="applys_name">* 目前职业</div>
+                            <input type="text" class="form-control" name="au_job" style="width: 228px;">
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">* <span id="school-str">在读学校</span>（请填写中文）</div>
+                            <input type="text" class="form-control" name="au_school" style="width: 228px;" required="required">
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">* 所修专业是（请填写中文）</div>
+                            <input type="text" class="form-control" name="au_major" style="width: 228px;" required="required">
+                        </div>
+                        <div class="applys_com">
+                            <div class="applys_name">* 最高学历</div>
+                            <div class="applys_radio single">
+                                <label class="action">
+                                    <input type="radio" name="au_edu" value="大专" checked="checked"><i></i>大专
+                                </label>
+                                <label>
+                                    <input type="radio" name="au_edu" value="本科"><i></i>本科
+                                </label>
+                                <label>
+                                    <input type="radio" name="au_edu" value="硕士"><i></i>硕士
+                                </label><br>
+                                <label>
+                                    <input type="radio" name="au_edu" value="博士"><i></i>博士
+                                </label>
+                                <label>
+                                    <input type="radio" name="au_edu" value="其他"><i></i>其他
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 其他专长领域</div>
+                        <div class="applys_radio multi">
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="房产"><i></i>房产
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="医疗"><i></i>医疗
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="商务"><i></i>商务
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="历史"><i></i>历史
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="艺术"><i></i>艺术
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="美食"><i></i>美食
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="购物"><i></i>购物
+                            </label>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="摄影"><i></i>摄影
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="au_goodat" value="户外"><i></i>户外
+                            </label>
+                                <!-- <label>
 				 <input type="checkbox" name="au_goodat" value="ACG"><i></i>ACG
 			</label> -->
-		  </div>
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">更多专长</div>
-		  <input type="text" class="form-control" name="au_goodat_more" style="width:228px;">
-		</div>
-		<div class="applys_com">
-		  <div class="applys_name">* 是否会开车</div>
-		  <div class="applys_radio applys_selsct single">
-			<label>
-			  <input type="radio" name="au_dl" value="1"><i></i>是
-			</label>
-			<label>
-			  <input type="radio" name="au_dl" value="0"><i></i>否
-			</label>
-		  </div>
-		</div>
-		<div class="applys_com" style="margin:0;padding-bottom:20px;">
-		  <div class="applys_name">* 是否有车</div>
-		  <div class="applys_radio applys_selsct single has_car">
-			<label>
-			  <input type="radio" name="au_car" value="1"><i></i>是
-			</label>
-			<label>
-			  <input type="radio" name="au_car" value="0"><i></i>否
-			</label>
-		  </div>
-		</div>
-		<div class="section_car" style="display: none;">
-		  <div class="applys_tit font4" style="margin:60px 0 0;">
-			<span>车辆信息</span>
-			<div class="add_car"><span></span></div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="bottom applys_radio">
-		<p class="submit_ser"><button class="ser_btn" type="submit">下一步</button></p>
-	  </div>
-	  }
-<!--	</form> -->
-
-	
-  </div>
-  <a href="javascript:;" class="decorate_btn"></a>
-  <!-- 弹出层 -->
-  <div class="modal fade" id="applys-step">
-	<div class="modal-dialog">
-	  <div class="modal-content">
-		<div class="modal-body">
-		  <h3>成为向导，与世界分享您的城市！</h3>
-		  <p><img src="/app/statics/images/applys/applys_step.png" alt=""></p>
-		</div>
-	  </div>
-	  <span class="close_de"></span>
-	</div>
-  </div>
-</div>
-<script src="/app/statics/js/applys/area_select.js"></script>
-<script src="/app/statics/js/applys/fixed.js"></script>
-<script src="/app/statics/js/applys/ajaxfileupload.js"></script>
+                        </div>
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">更多专长</div>
+                        <input type="text" class="form-control" name="au_goodat_more" style="width: 228px;">
+                    </div>
+                    <div class="applys_com">
+                        <div class="applys_name">* 是否会开车</div>
+                        <div class="applys_radio applys_selsct single">
+                            <label>
+                                <input type="radio" name="au_dl" value="1"><i></i>是
+                            </label>
+                            <label>
+                                <input type="radio" name="au_dl" value="0"><i></i>否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="applys_com" style="margin: 0;
+                        padding-bottom: 20px;">
+                        <div class="applys_name">* 是否有车</div>
+                        <div class="applys_radio applys_selsct single has_car">
+                            <label>
+                                <input type="radio" name="au_car" value="1"><i></i>是
+                            </label>
+                            <label>
+                                <input type="radio" name="au_car" value="0"><i></i>否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="section_car" style="display: none;">
+                        <div class="applys_tit font4" style="margin: 60px 0 0;">
+                            <span>车辆信息</span>
+                            <div class="add_car"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p class="submit_ser"><button class="ser_btn" type="submit">下一步</button></p>
+                </div>
+            }
+                <!--	</form> -->
 
 
-<script>
-  $(document).ready(function() {
-
-  auto('.applys_year', 0.5);
-  auto('.car_year', 1);
-  //点击自加、自减函数
-  function auto(oParent, minNumber)
-  {
-  var num = 0;
-  //自加
-  $(oParent).find('.up').live('click', function() {
-  num++;
-  $(this).closest('.add-btn').siblings('input').val(num * minNumber);
-  $(this).closest('.add-btn').siblings('input')
-  })
-  //自减
-  $(oParent).find('.down').live('click', function() {
-  num--;
-  if (num < 0)
-			{
-			num = 0;
-			$(this).closest('.add-btn').siblings('input').val(num * minNumber);
-			}
-			else
-			{
-			$(this).closest('.add-btn').siblings('input').val(num * minNumber);
-			}
-			})
-			$(oParent).find('input').live('blur', function() {
-			if (isNaN($(this).val()) || Number($(this).val()) < 0)
-																{
-																alert('请输入数字');
-																}
-																})
-
-																}
-
-																//工作状态切换
-																$('.applys_check label').on('click', function() {
-																if ($(this).index() == 0)//学校
-																{
-																$('[name="au_job"]').removeAttr('required');
-																$('#job-toggle').hide();
-																$('#school-str').text('在读学校');
-																// $('.applys_work1').find('input').attr("required",true);
-																}
-																else
-																{
-																$('[name="au_job"]').attr('required', 'required');
-																$('#job-toggle').show();
-																$('#school-str').text('毕业院校');
-																}
-																})
-
-																//是否有车选择
-																$('.has_car label').on('click', function() {
-																if ($(this).index() == 1)
-																{
-																$('.section_car').hide();
-																}
-																else
-																{
-																if ($('.applys_car').size() == 0)
-																{
-																addCar(false);
-																}
-																$('.section_car').show();
-																}
-																return false;
-																})
-
-																//填写已有参数
-
-																var _file_num = 0;
-																
-@*																																var _settings = '{"user_id":"597c436dad68b","au_birthday":"1989-03-31","au_gendar":"1","au_area":"52c668b2b1327","au_other_area":"","au_stay":"1","au_local":"2","au_other_lan":"English","au_wechat":"81843824","au_qq":"","au_email":"xiasiliang_cn@163.com","au_home":"wenzhou","au_type":"\u7559\u5b66\u751f","au_job_status":"2","au_school":"\u63d0\u5c14\u5821\u5927\u5b66","au_job":"\u8f6f\u4ef6\u5de5\u7a0b\u5e08","au_edu":"\u7855\u58eb","au_major":"\u4fe1\u606f\u7ba1\u7406","au_goodat":"\u623f\u4ea7,\u5546\u52a1,\u827a\u672f,\u7f8e\u98df,\u6237\u5916","au_goodat_more":"\u535a\u58eb\u5728\u8bfb","au_dl":"1","au_car":"0","au_car_detail":"","au_face":"","au_avatar":"","au_identity":"","au_degree":"","au_verify":"","au_user_unpass":"","au_pic_unpass":"au_face,au_avatar,au_degree,au_identity","au_status":"1"}';
-*@																																	
-																var img_total = [];
-
-																if (_settings != 'null')
-																{
-																_settings = eval('(' + _settings + ')');
-																for (var i in _settings)
-																{
-																var _this = $('[name="' + i + '"]');
-																if (_this.is(':text'))
-																{
-																_this.val(_settings[i]);
-																}
-																else if (_this.attr('name') == 'au_email')
-																{
-																_this.val(_settings[i]);
-																}
-																else if (_this.is(':radio'))
-																{
-																_this.closest('label').removeClass('action');
-																$('[name="' + i + '"]').prop('checked', false);
-																$('[name="' + i + '"][value="' + _settings[i] + '"]').closest('label').addClass('action');
-																$('[name="' + i + '"][value="' + _settings[i] + '"]').prop('checked', true);
-																if (i == 'au_job_status')
-																{
-																if (_settings[i] == 0)
-																{
-																//$('[name="' + i + '"][value="' + _settings[i] + '"]').closest('label').click();
-																$('.applys_work1').css("display", "block");
-																$('.applys_work1').find('input').prop("required", true);
-																$('.applys_work .applys_com').hide();
-																$('.applys_work .applys_com').eq(1).show();
-																}
-																}
-																if (i == 'au_car')
-																{
-																if (_settings[i] == 0)
-																{
-																$('.section_car').css('display', 'none');
-																$('.applys_add .applys_car').remove();
-																}
-																}
-																}
-																else if (_this.is('select'))
-																{
-																_this.find('option[value="' + _settings[i] + '"]').prop('selected', true);
-																}
-																else if (_this.is(':checkbox'))
-																{
-																var _check_box = _settings[i].split(',');
-																for (var j in _check_box)
-																{
-																$('[name="' + i + '"][value="' + _check_box[j] + '"]').closest('label').addClass('action');
-																$('[name="' + i + '"][value="' + _check_box[j] + '"]').prop('checked', true);
-																}
-																}
-																}
-
-																//车辆信息
-																if (_settings.au_car_detail.length != 0)
-																{
-																$('.section_car').show()
-																for (var i in _settings.au_car_detail)
-																{
-																if (i == 0)
-																{
-																addCar(false);
-																}
-																else
-																{
-																addCar(true);
-																}
-																var _car_detail = $('.applys_car').eq(_file_num - 1);
-																for (var j in _settings.au_car_detail[i])
-																{
-																if (j == 'car_seat')
-																{
-																_car_detail.find('[name="car_seat"]').find('option[value="' + _settings.au_car_detail[i][j] + '"]').prop('selected', true);
-																}
-																else if (j == 'car_img')
-																{
-																var _car_detail_arr = _settings.au_car_detail[i][j];
-																var _car_detail_str = '';
-																for (var k in _car_detail_arr)
-																{
-@*																_car_detail_str += '<li><img src="https://img.wanzi.cc/images/'
-																								  _car_detail_str += _car_detail_arr[k];
-																								  _car_detail_str += '@98w_98h_1e_1c"><input class="car-img"  id="' + k + '" type="hidden" value="' + _car_detail_arr[k] + '"><span></span></li>';
-*@																}
-																_car_detail.find('.car_li').prepend(_car_detail_str);
-																if (k) {
-																img_total[i] = parseInt(k) + 1;
-																}
-																}
-																else
-																{
-																_car_detail.find('[name="' + j + '"]').val(_settings.au_car_detail[i][j]);
-																}
-
-																}
-																}
-																}
-																else
-																{
-																addCar(false);
-																}
+        </div>
+        <a href="javascript:;" class="decorate_btn"></a>
+            <!-- 弹出层 -->
+        <div class="modal fade" id="applys-step">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3>成为向导，与世界分享您的城市！</h3>
+                        <p><img href="/app/statics/images/applys/applys_step.png" alt=""></p>
+                    </div>
+                </div>
+                <span class="close_de"></span>
+            </div>
+        </div>
+    </div>
+    <script src="/app/statics/js/applys/area_select.js"></script>
+    <script src="/app/statics/js/applys/fixed.js"></script>
+    <script src="/app/statics/js/applys/ajaxfileupload.js"></script>
 
 
-																//审核未通过飘红样式
-																var unpass = _settings.au_user_unpass.split(',');
-																for (var z in unpass)
-																{
-																_em = new $('<em>');
-																_em.html("（该条目审核未通过）");
-																if (unpass[z].substring(0, 3) == 'car')
-																{
-																//$('[name="' + unpass[z] + '"]').closest('.applys_com').find('.applys_name').addClass('applys_error').append(_em).find('em').css('margin-left', 0).closest('.applys_com').addClass('has-error');
-																var str = unpass[z].split('-');
-																var _span = new $('<span>');
-																_span.html("（该条目审核未通过）");
-																if (str[0] == 'car_img') {
-																var _oDiv = new $('<div>');
-																var _oP = new $('<p>');
-																_oP.html('审核未通过<br />请上传新照片');
-																_oDiv.append(_oP);
-																$('.car_detail_' + str[1]).find('.car_li').find('input[id="' + str[2] + '"]').parent().addClass('photo_up img-error').append(_oDiv);
-																} else {
-																$('.car_detail_' + str[1]).find('[name="' + str[0] + '"]').parent().addClass('applys_error has-error').append(_span);
-																}
-																}
-																else if (unpass[z] == 'au_area')
-																{
-																$('#area_list').prev('.applys_name').addClass('applys_error').append(_em).end().closest('.applys_com').addClass('has-error');
-																}
-																else {
-																$('[name="' + unpass[z] + '"]').closest('.applys_com').find('.applys_name').addClass('applys_error').append(_em).closest('.applys_com').addClass('has-error');
-																}
-																}
-																}
-																//地区插件
-																var _init_area = _settings.au_area ? _settings.au_area : 0;
-																new AreaSelect($('#area_list'), _init_area);
+    <script>
+            $(document).ready(function () {
+
+                auto('.applys_year', 0.5);
+                auto('.car_year', 1);
+
+                //点击自加、自减函数
+                function auto(oParent, minNumber) {
+                    var num = 0;
+                    //自加
+                    $(oParent).find('.up').live('click', function () {
+                        num++;
+                        $(this).closest('.add-btn').siblings('input').val(num * minNumber);
+                        $(this).closest('.add-btn').siblings('input')
+                    })
+                    //自减
+                    $(oParent).find('.down').live('click', function () {
+                        num--;
+                        if (num < 0) {
+                            num = 0;
+                            $(this).closest('.add-btn').siblings('input').val(num * minNumber);
+                        }
+                        else {
+                            $(this).closest('.add-btn').siblings('input').val(num * minNumber);
+                        }
+                    })
+                    $(oParent).find('input').live('blur', function () {
+                        if (isNaN($(this).val()) || Number($(this).val()) < 0) {
+                            alert('请输入数字');
+                        }
+                    })
+
+                }
+
+                //工作状态切换
+                $('.applys_check label').on('click', function () {
+                    if ($(this).index() == 0)//学校
+                    {
+                        $('[name="au_job"]').removeAttr('required');
+                        $('#job-toggle').hide();
+                        $('#school-str').text('在读学校');
+                        // $('.applys_work1').find('input').attr("required",true);
+                    }
+                    else {
+                        $('[name="au_job"]').attr('required', 'required');
+                        $('#job-toggle').show();
+                        $('#school-str').text('毕业院校');
+                    }
+                })
+
+                //是否有车选择
+                $('.has_car label').on('click', function () {
+                    if ($(this).index() == 1) {
+                        $('.section_car').hide();
+                    }
+                    else {
+                        if ($('.applys_car').size() == 0) {
+                            addCar(false);
+                        }
+                        $('.section_car').show();
+                    }
+                    return false;
+                })
+
+                //填写已有参数
+
+                var _file_num = 0;
+
+                @*																																var _settings = '{"user_id":"597c436dad68b","au_birthday":"1989-03-31","au_gendar":"1","au_area":"52c668b2b1327","au_other_area":"","au_stay":"1","au_local":"2","au_other_lan":"English","au_wechat":"81843824","au_qq":"","au_email":"xiasiliang_cn@163.com","au_home":"wenzhou","au_type":"\u7559\u5b66\u751f","au_job_status":"2","au_school":"\u63d0\u5c14\u5821\u5927\u5b66","au_job":"\u8f6f\u4ef6\u5de5\u7a0b\u5e08","au_edu":"\u7855\u58eb","au_major":"\u4fe1\u606f\u7ba1\u7406","au_goodat":"\u623f\u4ea7,\u5546\u52a1,\u827a\u672f,\u7f8e\u98df,\u6237\u5916","au_goodat_more":"\u535a\u58eb\u5728\u8bfb","au_dl":"1","au_car":"0","au_car_detail":"","au_face":"","au_avatar":"","au_identity":"","au_degree":"","au_verify":"","au_user_unpass":"","au_pic_unpass":"au_face,au_avatar,au_degree,au_identity","au_status":"1"}';
+                *@
+                var img_total = [];
+
+                if (_settings != 'null') {
+                    _settings = eval('(' + _settings + ')');
+                    for (var i in _settings) {
+                        var _this = $('[name="' + i + '"]');
+                        if (_this.is(':text')) {
+                            _this.val(_settings[i]);
+                        }
+                        else if (_this.attr('name') == 'au_email') {
+                            _this.val(_settings[i]);
+                        }
+                        else if (_this.is(':radio')) {
+                            _this.closest('label').removeClass('action');
+                            $('[name="' + i + '"]').prop('checked', false);
+                            $('[name="' + i + '"][value="' + _settings[i] + '"]').closest('label').addClass('action');
+                            $('[name="' + i + '"][value="' + _settings[i] + '"]').prop('checked', true);
+                            if (i == 'au_job_status') {
+                                if (_settings[i] == 0) {
+                                    //$('[name="' + i + '"][value="' + _settings[i] + '"]').closest('label').click();
+                                    $('.applys_work1').css("display", "block");
+                                    $('.applys_work1').find('input').prop("required", true);
+                                    $('.applys_work .applys_com').hide();
+                                    $('.applys_work .applys_com').eq(1).show();
+                                }
+                            }
+                            if (i == 'au_car') {
+                                if (_settings[i] == 0) {
+                                    $('.section_car').css('display', 'none');
+                                    $('.applys_add .applys_car').remove();
+                                }
+                            }
+                        }
+                        else if (_this.is('select')) {
+                            _this.find('option[value="' + _settings[i] + '"]').prop('selected', true);
+                        }
+                        else if (_this.is(':checkbox')) {
+                            var _check_box = _settings[i].split(',');
+                            for (var j in _check_box) {
+                                $('[name="' + i + '"][value="' + _check_box[j] + '"]').closest('label').addClass('action');
+                                $('[name="' + i + '"][value="' + _check_box[j] + '"]').prop('checked', true);
+                            }
+                        }
+                    }
+
+                    //车辆信息
+                    if (_settings.au_car_detail.length != 0) {
+                        $('.section_car').show()
+                        for (var i in _settings.au_car_detail) {
+                            if (i == 0) {
+                                addCar(false);
+                            }
+                            else {
+                                addCar(true);
+                            }
+                            var _car_detail = $('.applys_car').eq(_file_num - 1);
+                            for (var j in _settings.au_car_detail[i]) {
+                                if (j == 'car_seat') {
+                                    _car_detail.find('[name="car_seat"]').find('option[value="' + _settings.au_car_detail[i][j] + '"]').prop('selected', true);
+                                }
+                                else if (j == 'car_img') {
+                                    var _car_detail_arr = _settings.au_car_detail[i][j];
+                                    var _car_detail_str = '';
+                                    for (var k in _car_detail_arr) {
+                                        @*																_car_detail_str += '<li><img src="https://img.wanzi.cc/images/'
+                                                                                                                                          _car_detail_str += _car_detail_arr[k];
+                                                                                                                                          _car_detail_str += '@98w_98h_1e_1c"><input class="car-img"  id="' + k + '" type="hidden" value="' + _car_detail_arr[k] + '"><span></span></li>';
+                                        *@
+                                    }
+                                    _car_detail.find('.car_li').prepend(_car_detail_str);
+                                    if (k) {
+                                        img_total[i] = parseInt(k) + 1;
+                                    }
+                                }
+                                else {
+                                    _car_detail.find('[name="' + j + '"]').val(_settings.au_car_detail[i][j]);
+                                }
+
+                            }
+                        }
+                    }
+                    else {
+                        addCar(false);
+                    }
 
 
-																//弹出层
-																$('.decorate_btn').on('click', function() {
-																$('#applys-step').modal('show');
-																});
-																$('.close_de').on('click', function() {
-																$('#applys-step').modal('hide');
-																})
+                    //审核未通过飘红样式
+                    var unpass = _settings.au_user_unpass.split(',');
+                    for (var z in unpass) {
+                        _em = new $('<em>');
+                        _em.html("（该条目审核未通过）");
+                        if (unpass[z].substring(0, 3) == 'car') {
+                            //$('[name="' + unpass[z] + '"]').closest('.applys_com').find('.applys_name').addClass('applys_error').append(_em).find('em').css('margin-left', 0).closest('.applys_com').addClass('has-error');
+                            var str = unpass[z].split('-');
+                            var _span = new $('<span>');
+                            _span.html("（该条目审核未通过）");
+                            if (str[0] == 'car_img') {
+                                var _oDiv = new $('<div>');
+                                var _oP = new $('<p>');
+                                _oP.html('审核未通过<br />请上传新照片');
+                                _oDiv.append(_oP);
+                                $('.car_detail_' + str[1]).find('.car_li').find('input[id="' + str[2] + '"]').parent().addClass('photo_up img-error').append(_oDiv);
+                            } else {
+                                $('.car_detail_' + str[1]).find('[name="' + str[0] + '"]').parent().addClass('applys_error has-error').append(_span);
+                            }
+                        }
+                        else if (unpass[z] == 'au_area') {
+                            $('#area_list').prev('.applys_name').addClass('applys_error').append(_em).end().closest('.applys_com').addClass('has-error');
+                        }
+                        else {
+                            $('[name="' + unpass[z] + '"]').closest('.applys_com').find('.applys_name').addClass('applys_error').append(_em).closest('.applys_com').addClass('has-error');
+                        }
+                    }
+                }
+                //地区插件
+                var _init_area = _settings.au_area ? _settings.au_area : 0;
+                new AreaSelect($('#area_list'), _init_area);
 
 
-
-																//提示信息
-																$('.mark').live('mouseover', function() {
-																$(this).next('.prompt').show();
-																$(this).one('mouseout', function() {
-																$(this).next('.prompt').hide();
-																})
-																})
-
-																//选中状态
-																$('.single label').on('click', function() {
-																$(this).siblings('label').find('input:radio').prop("checked", false);
-																$(this).find('input:radio').prop("checked", true);
-																$(this).addClass('action').siblings().removeClass();
-																});
-
-																//复选框
-																$('.multi label').click(function() {
-																if ($(this).hasClass('action'))
-																{
-																$(this).removeClass('action');
-																$(this).find('input:checkbox').prop("checked", false);
-																}
-																else
-																{
-																$(this).addClass('action');
-																$(this).find('input:checkbox').prop("checked", true);
-																}
-																return false;
-																})
-
-																//添加车辆信息方法
-																function addCar(_delete)
-																{
-																var _str = '';
-																var oDiv = new $('<div>');
-																oDiv.addClass('applys_add applys_car applys_com car_detail_' + _file_num);
-																$('.top').append(oDiv);
-																if (_delete == true)
-																{
-																_str += '<p class="text-right"><a href="javascript:;" class="delete_car text-right">删除</a></p>';
-																// $('.delete_car').live('click', function(){
-																// $(this).parent().detach();
-																// })
-																}
-																_str += '<div class="applys_name"></div>';
-																_str += '<input type="hidden" name="car_detail' + _file_num + '" />';
-																_str += '<div class="car_info"><span>* 汽车品牌</span><input type="text" class="form-control" name="car_brand"></div>';
-																_str += '<div class="car_info"><span>* 汽车型号</span><input type="text" class="form-control" name="car_model"></div>';
-																_str += '<div class="car_info "><span>* 座位数　</span><select  name="car_seat" id="" class="form-control"><option value="5座">5座</option><option value="7座">7座</option><option value="9座">9座</option></select></div>';
-																_str += '<div class="car_info "><span>* 行李空间</span><input type="text" class="form-control" name="car_space"><span>（件，以24寸行李箱为计数基准）</span></div>';
-
-																_str += '<div class="car_info car_year" style="width:340px;"><em class="applys_point">（年）</em><span>* 您的驾龄</span><input type="text" class="form-control" name="car_year" value="0"><div class="add-btn" style="right:38px;"><i class="up"></i><i class="down"></i></div></div>';
-																_str += '<div style="position: relative;margin: 30px 0;">上传您的车辆照片<span class="mark" style="left:117px;"></span><p class="prompt" style="top: -27px; left: 150px;">我们会对您的车牌等涉及个人信息<br>的内容进行处理后再发布，请放心<br>您的隐私安全<i style="top:29px;"></i></p></div>';
-																_str += '<p>（请尽量多展示一些车的细节，包括车前照、车侧照、尾部、后备箱和车内部作为等）</p><p style="text-indent: 1em;margin:0;">支持JPG,PNG,GIF格式图片，每张不能超过1.5M。</p>';
-																_str += '<ul class="car_li"><li><i></i><input type="file" class="file"  name="file_name" value="" rel="' + _file_num + '" id="file' + _file_num + '"></li></ul><span class="line"></span>';
-																img_total[_file_num] = 0;
-																_file_num++;
-																oDiv.html(_str);
-																$('.section_car').append(oDiv);
-																}
-
-																//删除车辆信息
-																$('.delete_car').live('click', function() {
-																$(this).closest('.applys_car').remove();
-																})
-
-																//添加更多车
-																$('.add_car').on('click', function() {
-																addCar(true);
-																});
-
-																//删除车的照片
-																$('.car_li span').live('click', function() {
-																$(this).closest('li').remove();
-																})
+                //弹出层
+                $('.decorate_btn').on('click', function () {
+                    $('#applys-step').modal('show');
+                });
+                $('.close_de').on('click', function () {
+                    $('#applys-step').modal('hide');
+                })
 
 
-																//表单
-																$('#main-form').submit(function() {
-																var au_area = '';
-																//车辆信息判断
-																if ($('[name="au_car"]:checked').val() != 0)
-																{
-																var _car_submit = true;
-																_car_submit = carReject('car_brand');
-																_car_submit = carReject('car_model');
-																_car_submit = carReject('car_space');
-																if (_car_submit == false)
-																{
-																alert('您的车辆信息尚未完善，请完善后再提交~');
-																return false;
-																}
-																}
-																//地区赋值
-																$('.select_area').each(function() {
-																if ($(this).val()) {
-																au_area = $(this).val();
-																}
-																});
-																//地区必填
-																if (au_area == '')
-																{
-																alert('请选择您在的地区');
-																$('[name="au_gendar"]').focus();
-																return false;
-																}
-																//判断各参数属性
-																var n1 = $('[name="au_stay"]').val() - 0;
-																//居住时间数字
-																if (isNaN(n1) == true || n1 < 0)
-																							  {
-																							  alert('在当地居住时间输入有误');
-																							  return false;
-																							  }
-																							  //驾龄数字判断
-																							  if ($('[name="car_year"]').size() >= 1)
-																{
-																$('[name="car_year"]').each(function() {
-																if (isNaN($(this).val()) == true || $(this).val() < 0)
-																													{
-																													alert('您的驾龄输入有误')
-																													return false;
-																													}
-																													})
-																													}
-																													//微信号无中文判断
-																													if (isChinese($('[name="au_wechat"]').val()))
-																													{
-																													alert('请填写正确的微信号');
-																													return false;
-																													}
-																													//QQ数字判断
-																													if (isNaN($('[name="au_qq"]').val()))
-																													{
-																													alert('请填写正确的QQ号');
-																													return false;
-																													}
-																													var _data = new Object();
-																													_data.au_name = $('[name="au_name"]').val();
-																													_data.au_birthday = $('[name="au_birthday"]').val();
-																													_data.au_gendar = $('[name="au_gendar"]:checked').val();
-																													_data.au_area = au_area;
-																													_data.au_other_area = $('[name="au_other_area"]').val();
-																													_data.au_stay = $('[name="au_stay"]').val();
+                //提示信息
+                $('.mark').live('mouseover', function () {
+                    $(this).next('.prompt').show();
+                    $(this).one('mouseout', function () {
+                        $(this).next('.prompt').hide();
+                    })
+                })
 
-																													_data.au_local = $('[name="au_local"]:checked').val();
-																													_data.au_other_lan = $('[name="au_other_lan"]').val();
-																													_data.au_wechat = $('[name="au_wechat"]').val();
-																													_data.au_qq = $('[name="au_qq"]').val();
-																													_data.au_email = $('[name="au_email"]').val();
+                //选中状态
+                $('.single label').on('click', function () {
+                    $(this).siblings('label').find('input:radio').prop("checked", false);
+                    $(this).find('input:radio').prop("checked", true);
+                    $(this).addClass('action').siblings().removeClass();
+                });
 
-																													_data.au_home = $('[name="au_home"]').val();
-																													_data.au_type = $('[name="au_type"]:checked').val();
-																													_data.au_job_status = $('[name="au_job_status"]:checked').val();
-																													_data.au_school = $('[name="au_school"]:visible').val();
-																													_data.au_job = $('[name="au_job"]').val();
+                //复选框
+                $('.multi label').click(function () {
+                    if ($(this).hasClass('action')) {
+                        $(this).removeClass('action');
+                        $(this).find('input:checkbox').prop("checked", false);
+                    }
+                    else {
+                        $(this).addClass('action');
+                        $(this).find('input:checkbox').prop("checked", true);
+                    }
+                    return false;
+                })
 
-																													_data.au_edu = $('[name="au_edu"]:checked').val();
-																													_data.au_major = $('[name="au_major"]').val();
-																													_data.au_goodat_more = $('[name="au_goodat_more"]').val();
-																													_data.au_dl = $('[name="au_dl"]:checked').val();
-																													_data.au_car = $('[name="au_car"]:checked').val();
+                //添加车辆信息方法
+                function addCar(_delete) {
+                    var _str = '';
+                    var oDiv = new $('<div>');
+                    oDiv.addClass('applys_add applys_car applys_com car_detail_' + _file_num);
+                    $('.top').append(oDiv);
+                    if (_delete == true) {
+                        _str += '<p class="text-right"><a href="javascript:;" class="delete_car text-right">删除</a></p>';
+                        // $('.delete_car').live('click', function(){
+                        // $(this).parent().detach();
+                        // })
+                    }
+                    _str += '<div class="applys_name"></div>';
+                    _str += '<input type="hidden" name="car_detail' + _file_num + '" />';
+                    _str += '<div class="car_info"><span>* 汽车品牌</span><input type="text" class="form-control" name="car_brand"></div>';
+                    _str += '<div class="car_info"><span>* 汽车型号</span><input type="text" class="form-control" name="car_model"></div>';
+                    _str += '<div class="car_info "><span>* 座位数　</span><select  name="car_seat" id="" class="form-control"><option value="5座">5座</option><option value="7座">7座</option><option value="9座">9座</option></select></div>';
+                    _str += '<div class="car_info "><span>* 行李空间</span><input type="text" class="form-control" name="car_space"><span>（件，以24寸行李箱为计数基准）</span></div>';
 
-																													//车辆信息
-																													if (_data.au_car != 0)
-																													{
-																													if ($('.applys_car').size() > 0)
-																{
-																var car = [];
-																$('.applys_car').each(function() {
+                    _str += '<div class="car_info car_year" style="width:340px;"><em class="applys_point">（年）</em><span>* 您的驾龄</span><input type="text" class="form-control" name="car_year" value="0"><div class="add-btn" style="right:38px;"><i class="up"></i><i class="down"></i></div></div>';
+                    _str += '<div style="position: relative;margin: 30px 0;">上传您的车辆照片<span class="mark" style="left:117px;"></span><p class="prompt" style="top: -27px; left: 150px;">我们会对您的车牌等涉及个人信息<br>的内容进行处理后再发布，请放心<br>您的隐私安全<i style="top:29px;"></i></p></div>';
+                    _str += '<p>（请尽量多展示一些车的细节，包括车前照、车侧照、尾部、后备箱和车内部作为等）</p><p style="text-indent: 1em;margin:0;">支持JPG,PNG,GIF格式图片，每张不能超过1.5M。</p>';
+                    _str += '<ul class="car_li"><li><i></i><input type="file" class="file"  name="file_name" value="" rel="' + _file_num + '" id="file' + _file_num + '"></li></ul><span class="line"></span>';
+                    img_total[_file_num] = 0;
+                    _file_num++;
+                    oDiv.html(_str);
+                    $('.section_car').append(oDiv);
+                }
 
-																var _car_img = [];
-																var car_obj = new Object();
-																car_obj.car_brand = $(this).find('[name="car_brand"]').val();
-																car_obj.car_model = $(this).find('[name="car_model"]').val();
-																car_obj.car_seat = $(this).find('[name="car_seat"]').val();
-																car_obj.car_space = $(this).find('[name="car_space"]').val();
-																car_obj.car_passenger = $(this).find('[name="car_passenger"]').val();
-																car_obj.car_year = $(this).find('[name="car_year"]').val();
-																var _car_count = 0;
-																$(this).find('.car_li').find('.car-img').each(function() {
-																_car_img[$(this).attr('id')] = $(this).val();
-																_car_count++;
-																if (_car_count >= 9)
-			{
-			alert('车辆照片最多上传8张');
-			return false;
-			}
-			})
-			car_obj.car_img = _car_img;
-			car.push(car_obj);
-			})
-			_data.au_car_detail = JSON.stringify(car);
-			}
-			}
-			else
-			{
+                //删除车辆信息
+                $('.delete_car').live('click', function () {
+                    $(this).closest('.applys_car').remove();
+                })
 
-			_data.au_car_detail = ' '
-			}
-			var _good_at = '';
-			//复选框取值
-			$('.multi input[name="au_goodat"]:checked').each(function() {
-			_good_at += $(this).val() + ',';
-			});
-			_data.au_goodat = _good_at.substring(0, _good_at.length - 1);
-			if (_data.au_goodat == '')
-			{
-			alert('请选择至少一个专长领域');
-			return false;
-			}
-			$.ajax({
-			type: 'POST',
-			url: '/applys/setApplysUser',
-			data: _data,
-			dataType: 'json',
-			success: function(data)
-			{
-			if (data.code == 1000)
-			{
-			alert('您的个人信息已保存，请继续下一步');
-			location.href = '/site/applysPic';
-			}
-			}
-			})
-			return false;
-			})
+                //添加更多车
+                $('.add_car').on('click', function () {
+                    addCar(true);
+                });
 
-			//日期插件
-			$('#birth_day').datetimepicker({
-			bootcssVer: 3,
-			format: 'yyyy-mm-dd',
-			language: 'zh-CN',
-			weekStart: 1,
-			todayBtn: 1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 1,
-			linkFormat: "yyyy-mm-dd"
-			});
+                //删除车的照片
+                $('.car_li span').live('click', function () {
+                    $(this).closest('li').remove();
+                })
 
-			//上传车辆照片
-			$('[name="file_name"]').live('change', function() {
-			var _this_id = $(this).attr('id'), _img_id = $(this).attr('rel');
-			if ($(this).parent().parent().find('li').length >= 9) {
-	alert('车辆照片最多上传8张');
-	$(this).parent().html('<i></i><input type="file" class="file"  name="file_name" value="" rel="' + _img_id + '" id="file' + _this_id + '">');
-	return false;
-	}
-	// console.log(_this_id);
-	$.ajaxFileUpload({
-	url: '/file/uploadImage',
-	fileElementId: _this_id,
-	dataType: 'json',
-	success: function(data, status) {
-	var path = data.name;
-	if (path != '')
-	{
-	var _li = new $('<li>');
-	  var _img = new $('<img>');
-	  var _input = new $('<input type="hidden" id="' + img_total[_img_id] + '" class="car-img" value="' + path + '">')
-	  var _span = new $('<span>');
-		_li.append(_img);
-		_li.append(_input);
-		_li.append(_span);
-@*		_img.attr("src", "https://img.wanzi.cc/images/" + path + '@98w_98h_1e_1c') *@
-		$('#' + _this_id).closest('li').before(_li);
-		img_total[_img_id]++;
-		}
-		else
-		{
-		if (data.error != '')
-		{
-		alert(data.error);
-		}
-		}
-		}
-		});
 
-		})
+                //表单
+                $('#main-form').submit(function () {
+                    var au_area = '';
+                    //车辆信息判断
+                    if ($('[name="au_car"]:checked').val() != 0) {
+                        var _car_submit = true;
+                        _car_submit = carReject('car_brand');
+                        _car_submit = carReject('car_model');
+                        _car_submit = carReject('car_space');
+                        if (_car_submit == false) {
+                            alert('您的车辆信息尚未完善，请完善后再提交~');
+                            return false;
+                        }
+                    }
+                    //地区赋值
+                    $('.select_area').each(function () {
+                        if ($(this).val()) {
+                            au_area = $(this).val();
+                        }
+                    });
+                    //地区必填
+                    if (au_area == '') {
+                        alert('请选择您在的地区');
+                        $('[name="au_gendar"]').focus();
+                        return false;
+                    }
+                    //判断各参数属性
+                    var n1 = $('[name="au_stay"]').val() - 0;
+                    //居住时间数字
+                    if (isNaN(n1) == true || n1 < 0) {
+                        alert('在当地居住时间输入有误');
+                        return false;
+                    }
+                    //驾龄数字判断
+                    if ($('[name="car_year"]').size() >= 1) {
+                        $('[name="car_year"]').each(function () {
+                            if (isNaN($(this).val()) == true || $(this).val() < 0) {
+                                alert('您的驾龄输入有误')
+                                return false;
+                            }
+                        })
+                    }
+                    //微信号无中文判断
+                    if (isChinese($('[name="au_wechat"]').val())) {
+                        alert('请填写正确的微信号');
+                        return false;
+                    }
+                    //QQ数字判断
+                    if (isNaN($('[name="au_qq"]').val())) {
+                        alert('请填写正确的QQ号');
+                        return false;
+                    }
+                    var _data = new Object();
+                    _data.au_name = $('[name="au_name"]').val();
+                    _data.au_birthday = $('[name="au_birthday"]').val();
+                    _data.au_gendar = $('[name="au_gendar"]:checked').val();
+                    _data.au_area = au_area;
+                    _data.au_other_area = $('[name="au_other_area"]').val();
+                    _data.au_stay = $('[name="au_stay"]').val();
 
-		//判断中文
-		function isChinese(_val)
-		{
-		if ((/[\u4e00-\u9fa5]+/).test(_val))
-		{
-		return true;
-		}
-		else
-		{
-		return false;
-		}
-		}
+                    _data.au_local = $('[name="au_local"]:checked').val();
+                    _data.au_other_lan = $('[name="au_other_lan"]').val();
+                    _data.au_wechat = $('[name="au_wechat"]').val();
+                    _data.au_qq = $('[name="au_qq"]').val();
+                    _data.au_email = $('[name="au_email"]').val();
 
-		//拒绝车辆信息
-		function carReject(_SELECT)
-		{
-		var _result = true;
-		$('[name="' + _SELECT + '"]').each(function() {
-		if ($(this).val() == '')
-		{
-		_result = false;
-		}
-		})
-		return _result;
-		}
-		});
-</script>
+                    _data.au_home = $('[name="au_home"]').val();
+                    _data.au_type = $('[name="au_type"]:checked').val();
+                    _data.au_job_status = $('[name="au_job_status"]:checked').val();
+                    _data.au_school = $('[name="au_school"]:visible').val();
+                    _data.au_job = $('[name="au_job"]').val();
+
+                    _data.au_edu = $('[name="au_edu"]:checked').val();
+                    _data.au_major = $('[name="au_major"]').val();
+                    _data.au_goodat_more = $('[name="au_goodat_more"]').val();
+                    _data.au_dl = $('[name="au_dl"]:checked').val();
+                    _data.au_car = $('[name="au_car"]:checked').val();
+
+                    //车辆信息
+                    if (_data.au_car != 0) {
+                        if ($('.applys_car').size() > 0) {
+                            var car = [];
+                            $('.applys_car').each(function () {
+
+                                var _car_img = [];
+                                var car_obj = new Object();
+                                car_obj.car_brand = $(this).find('[name="car_brand"]').val();
+                                car_obj.car_model = $(this).find('[name="car_model"]').val();
+                                car_obj.car_seat = $(this).find('[name="car_seat"]').val();
+                                car_obj.car_space = $(this).find('[name="car_space"]').val();
+                                car_obj.car_passenger = $(this).find('[name="car_passenger"]').val();
+                                car_obj.car_year = $(this).find('[name="car_year"]').val();
+                                var _car_count = 0;
+                                $(this).find('.car_li').find('.car-img').each(function () {
+                                    _car_img[$(this).attr('id')] = $(this).val();
+                                    _car_count++;
+                                    if (_car_count >= 9) {
+                                        alert('车辆照片最多上传8张');
+                                        return false;
+                                    }
+                                })
+                                car_obj.car_img = _car_img;
+                                car.push(car_obj);
+                            })
+                            _data.au_car_detail = JSON.stringify(car);
+                        }
+                    }
+                    else {
+
+                        _data.au_car_detail = ' '
+                    }
+                    var _good_at = '';
+                    //复选框取值
+                    $('.multi input[name="au_goodat"]:checked').each(function () {
+                        _good_at += $(this).val() + ',';
+                    });
+                    _data.au_goodat = _good_at.substring(0, _good_at.length - 1);
+                    if (_data.au_goodat == '') {
+                        alert('请选择至少一个专长领域');
+                        return false;
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: '/applys/setApplysUser',
+                        data: _data,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.code == 1000) {
+                                alert('您的个人信息已保存，请继续下一步');
+                                location.href = '/site/applysPic';
+                            }
+                        }
+                    })
+                    return false;
+                })
+
+                //日期插件
+                $('#birth_day').datetimepicker({
+                    bootcssVer: 3,
+                    format: 'yyyy-mm-dd',
+                    language: 'zh-CN',
+                    weekStart: 1,
+                    todayBtn: 1,
+                    autoclose: 1,
+                    todayHighlight: 1,
+                    startView: 2,
+                    minView: 2,
+                    forceParse: 1,
+                    linkFormat: "yyyy-mm-dd"
+                });
+
+                //上传车辆照片
+                $('[name="file_name"]').live('change', function () {
+                    var _this_id = $(this).attr('id'), _img_id = $(this).attr('rel');
+                    if ($(this).parent().parent().find('li').length >= 9) {
+                        alert('车辆照片最多上传8张');
+                        $(this).parent().html('<i></i><input type="file" class="file"  name="file_name" value="" rel="' + _img_id + '" id="file' + _this_id + '">');
+                        return false;
+                    }
+                    // console.log(_this_id);
+                    $.ajaxFileUpload({
+                        url: '/file/uploadImage',
+                        fileElementId: _this_id,
+                        dataType: 'json',
+                        success: function (data, status) {
+                            var path = data.name;
+                            if (path != '') {
+                                var _li = new $('<li>');
+                                var _img = new $('<img>');
+                                var _input = new $('<input type="hidden" id="' + img_total[_img_id] + '" class="car-img" value="' + path + '">')
+                                var _span = new $('<span>');
+                                _li.append(_img);
+                                _li.append(_input);
+                                _li.append(_span);
+                                @*		_img.attr("src", "https://img.wanzi.cc/images/" + path + '@98w_98h_1e_1c') *@
+                                $('#' + _this_id).closest('li').before(_li);
+                                img_total[_img_id]++;
+                            }
+                            else {
+                                if (data.error != '') {
+                                    alert(data.error);
+                                }
+                            }
+                        }
+                    });
+
+                })
+
+                //判断中文
+                function isChinese(_val) {
+                    if ((/[\u4e00-\u9fa5]+/).test(_val)) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+
+                //拒绝车辆信息
+                function carReject(_SELECT) {
+                    var _result = true;
+                    $('[name="' + _SELECT + '"]').each(function () {
+                        if ($(this).val() == '') {
+                            _result = false;
+                        }
+                    })
+                    return _result;
+                }
+            });
+    </script>
 
 }

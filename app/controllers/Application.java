@@ -8,7 +8,7 @@ import models.*;
 
 public class Application extends Controller {
 	//	static String staticpage = "http://static.zouzouyouyou.info/";
-	static String homepage = "http://www.zouzouyouyou.info/";
+	static String homepage = "";
 	/*
 	public static Result externalstatic(String path)
 	{

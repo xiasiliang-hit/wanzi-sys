@@ -8,7 +8,7 @@ GET     /                           controllers.Application.index()
 
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 POST     /assets/*file               controllers.Assets.at(path="/public", file)
-#GET		/app/statics/*file			controllers.Assets.at(path="/publics/statics/", file)
+GET		/app/statics/*file			controllers.Assets.at(path="/public/statics/", file)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /tasks                  controllers.Application.tasks()
@@ -23,7 +23,7 @@ GET     /login                  controllers.RegisterController.login()
 POST    /login                  controllers.RegisterController.onLogin()
 
 GET		/registerguider 		controllers.RegisterGuiderController.registerGuider()
-POST    /registerguider      	             controllers.RegisterGuiderController.onRegisterGuider()
+POST    /registerguider      	controllers.RegisterGuiderController.onRegisterGuider()
 
 #GET 	/public/getSearch       controllers.SearchController.getSearch()
 #POST	/public/getSearch		controllers.SearchController.getSearch()
