@@ -38,7 +38,10 @@ public class AUser
 		AUser.coll.save(u);
 	}
 
-
+	public static AUser getUserById(String userId)
+	{
+		return AUser.coll.findOne(DBQuery.is("userid", userId));
+	}
 
 	public static AUser verifyUser(String email, String password)
 	{
