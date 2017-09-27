@@ -1,12 +1,7 @@
 package models;
 
-//import io.ebean.*;
 import javax.persistence.*;
 
-//import root.persistence.Entity;
-//import root.persistence.Id;
-//import com.avaje.ebean.Model;
-//import com.avaje.ebean.*;
 import java.util.*;
 import play.modules.mongodb.jackson.MongoDB;
 import net.vz.mongodb.jackson.JacksonDBCollection;

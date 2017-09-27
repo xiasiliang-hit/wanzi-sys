@@ -306,3 +306,9 @@ function set_city_state() {
         $("#city_list").empty().append(htmls);
     }
 }
+
+    function setCityAndCountry() {
+        var cityAndCountry = $("#country_list").val() + "_" + $("#city_list").val();
+        $("#city_and_country").val(cityAndCountry);
+    }
+

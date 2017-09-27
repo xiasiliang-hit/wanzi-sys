@@ -48,10 +48,10 @@
                         <div class="applys_name">* 性别</div>
                         <div class="applys_radio single">
                             <label class="action">
-                                <input type="radio" name="au_gendar" value="1" checked="checked"><i></i>男
+                                <input type="radio" name="gender" value="男" checked="checked"><i></i>男
                             </label>
                             <label>
-                                <input type="radio" name="au_gendar" value="2"><i></i>女
+                                <input type="radio" name="gender" value="女"><i></i>女
                             </label>
                         </div>
                     </div>
@@ -63,8 +63,9 @@
                         <div class="applys_name" style="margin: 0 0 10px;">* 目前居住国家和城市</div>
                         <select id="region_list" class="form-control" style="display: inline" onchange="set_country()"><option disabled selected>Please Choose Region</option></select>
                         <select id="country_list" class="form-control" onchange="set_city_state()" style="display: inline"></select>
-                        <select id="city_list" class="form-control" style="display: inline"></select>
+                        <select id="city_list" class="form-control" onchange="setCityAndCountry()" style="display: inline"></select>
                         <script>setRegions();</script>
+                        <input style="display:none;" id="city_and_country" name="city_and_country">
                     </div>
                     <div class="applys_com">
                         <div class="applys_name" style="margin: 0 0 10px;">找不到您的地区？来这里填写吧</div>
@@ -116,7 +117,7 @@
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">* 邮箱</div>
-                            <input type="email" class="form-control" style="width: 228px;" name="au_email" required="required">
+                            <input type="email" class="form-control" style="width: 228px;" name="email" required="required">
                         </div>
                     </div>
                     <div class="applys_com">
@@ -272,8 +273,8 @@
             </div>
         </div>
     </div>
-    <script src="/app/statics/js/applys/area_select.js"></script>
-    <script src="/app/statics/js/applys/fixed.js"></script>
+@*    <script src="/app/statics/js/applys/area_select.js"></script>
+    <script src="/app/statics/js/applys/fixed.js"></script>*@
     <script src="/app/statics/js/applys/ajaxfileupload.js"></script>
 
 
