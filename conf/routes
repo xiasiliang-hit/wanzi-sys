@@ -38,3 +38,5 @@ POST 	/service/getServiceList controllers.Assets.at(path="/public/", file="getSe
 
 #GET 		/site/loginPage/t/1.html controllers.RegisterController.register()
 #GET			/site/loginPage/t/2.html controllers.RegisterController.login()
+
+GET 	/site1/detail/id/*uid				 controllers.SearchController.getGuiderDetail(uid:String)

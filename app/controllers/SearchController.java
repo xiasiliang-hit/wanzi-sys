@@ -50,6 +50,17 @@ public class SearchController extends Controller {
 
 		}
 	  }
+
+
+	public static Result getGuiderDetail(String userId)
+	{
+		AUser guider = AUser.coll.findOne(DBQuery.is("userid", userId));
+		return ok(views.html.detail.render(guider));
+	}
+
+	//	public static Result
+	
+	
 	/*
 	public static Result getCountry(String: cid)
 	{
