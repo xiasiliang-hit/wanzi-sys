@@ -237,10 +237,10 @@
                         <div class="applys_name">* 是否有车</div>
                         <div class="applys_radio applys_selsct single has_car">
                             <label>
-                                <input type="radio" name="au_car" value="1"><i></i>是
+                                <input id="hasCar" type="radio" name="au_car" value="1"><i></i>是
                             </label>
                             <label>
-                                <input type="radio" name="au_car" value="0"><i></i>否
+                                <input id="hasNoCar" type="radio" name="au_car" value="0"><i></i>否
                             </label>
                         </div>
                     </div>
@@ -332,12 +332,14 @@
                 $('.has_car label').on('click', function () {
                     if ($(this).index() == 1) {
                         $('.section_car').hide();
+                        $("#hasNoCar").checked();
                     }
                     else {
                         if ($('.applys_car').size() == 0) {
                             addCar(false);
                         }
                         $('.section_car').show();
+                        $("#hasCar").checked();
                     }
                     return false;
                 })
