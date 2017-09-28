@@ -50,7 +50,7 @@ public class RegisterController extends Controller {
 	public static Result login()
 	{
 
-		return ok(      views.html.loginPage.t.login.render() );
+		return ok(views.html.loginPage.t.login.render() );
 	}
 
 	public static Result onLogin()

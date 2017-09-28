@@ -6,11 +6,6 @@ import views.html.*;
 import models.*;
 
 import java.util.*;
-//import javax.persistence.*;
-//import play.data.*;
-//import play.db.ebean.Ebean.*;
-//import io.ebean.*;
-//import io.ebean.*;
 
 import play.*;
 import play.api.*;
@@ -29,6 +24,7 @@ public class RegisterGuiderController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     static String homepage = Global.homepage;
+
     /*
     @Inject
     final EbeanServer ebeanServer;
@@ -44,31 +40,26 @@ public class RegisterGuiderController extends Controller {
     */
     public static Result registerGuider() {
 
-		String username = session("username");
-		if (username != null)
-			{
-		return ok( views.html.registerguider.render());
-			}
-		else
-			{
-				return ok(views.html.registerguider.render());
-			}
+        String username = session("username");
+        if (username != null) {
+            return ok(views.html.registerguider.render());
+        } else {
+            return ok(views.html.registerguider.render());
+        }
     }
 
-	public static Result onRegisterGuider(){
+    public static Result onRegisterGuider() {
 
-		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
-		if(filledForm.hasErrors()) {
-			return badRequest(views.html.registerguider.render());
-		}
-		else{
-			AUser g = filledForm.get();
-			g.type = "GUIDER";
-			g.create(g);
-
-			return redirect(homepage);
-		}
-	}
+        Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
+        if (filledForm.hasErrors()) {
+            return badRequest(views.html.registerguider.render());
+        } else {
+            AUser g = filledForm.get();
+            g.type = "GUIDER";
+            g.create(g);
+            return redirect(homepage);
+        }
+    }
 
 }
 

@@ -1,12 +1,7 @@
 package models;
 
-//import io.ebean.*;
 import javax.persistence.*;
 
-//import root.persistence.Entity;
-//import root.persistence.Id;
-//import com.avaje.ebean.Model;
-//import com.avaje.ebean.*;
 import java.util.*;
 import play.modules.mongodb.jackson.MongoDB;
 import net.vz.mongodb.jackson.JacksonDBCollection;
@@ -38,9 +33,9 @@ public class AUser
 		AUser.coll.save(u);
 	}
 
-	public static AUser getUserById(String userId)
+	public static AUser getUserById(String id)
 	{
-		return AUser.coll.findOne(DBQuery.is("userid", userId));
+		return AUser.coll.findOneById(id);
 	}
 
 	public static AUser verifyUser(String email, String password)
@@ -82,25 +77,30 @@ public class AUser
     @Id
 	@ObjectId
     public String id;
-
     public String name;
-    
-    public String email;
-
-    public String password;
-	public BufferedImage profile_image;
-
 
 	
-	public String type = "";
-	public String gender = "";
-	public String city_and_country = "";
-	public String employer = "";
-	public String title = "";
+    public String email;
+    public String password;
 
-	public BufferedImage passport_image = null;
-	public BufferedImage travel_image = null;
+	
+	public String type = ""; //GUIDER or TRAVELLER
+	public String type_work = ""; //STUDNET or EMPLOYEE
+	public String gender = ""; 
+	
+	public String city_and_country = ""; // city country in one field
+	public String employer = "";
+	public String jobtitle = "";
+
+	public String img_passport = null;  
+	public String img_theme = null; //top big image
+	public String img_profile = null;  //image left //[id].profile.[GUID].jpg
+	public ArrayList<String> imgs_travel = new ArrayList<String>();
+
 	
 	public static String GUIDER = "GUIDER";
 	public static String TRAVELLER = "TRAVELLER";
+
+	public static String STUDENT = "STUDENT";
+	public static String EMPLOYEE = "EMPLOYEE";
 }

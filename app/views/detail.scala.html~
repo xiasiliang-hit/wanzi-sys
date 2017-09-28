@@ -186,7 +186,7 @@
                 </div> 
                 <!-- 向导视频 -->
                 <div class="row">                                                                                                                   
-                    <div class="col-sm-9 col-xs-12"><h4 class="text-overflow font-size3">南京的四季总是最美的，因为你也在这里</h4></div>
+                    <div class="col-sm-9 col-xs-12"><h4 class="text-overflow font-size3">@user.traveltitle</h4></div>
                     <div class="col-sm-3 hidden-xs">
                         <p class="text-right">
                             <span class="tag-span collect-span" id="collect">
@@ -222,7 +222,7 @@
                                 <i class="start3"></i>
                                 <span>31</span>
                 </p>
-                <p class="text-center guide-start"><span><i class="lit"></i>@(auser.country)-@(auser.city)</span></p>
+                <p class="text-center guide-start"><span><i class="lit"></i>@(auser.city_and_country)</span></p>
                 <p class="text-center guide-tag font-size1 text-color1">
                                 <span><i></i>英文向导</span>
                                 <span><i></i>80后</span>
@@ -249,8 +249,8 @@
                         <div class="right">
 			                            <ul>
 
-										  @for(img_url <- @(auser.imgs)) {
-														  <li><img src="img_ufl" alt="" class="brief-img"></li>
+										  @for(imgtravel <- @(auser.imgs_travel)) {
+														  <li><img src="imgtravel" alt="" class="brief-img"></li>
 										}
 
 										</ul>

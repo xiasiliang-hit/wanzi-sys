@@ -3,7 +3,12 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
+<<<<<<< HEAD
     
+=======
+
+<!-- Mirrored from www.wanzi.cc/site/loginPage/t/2 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:46:01 GMT -->
+>>>>>>> c47ce063d6eb3831f0db8a7e35dd73489c491f17
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         <meta charset="utf-8">
@@ -332,63 +337,23 @@ label input,label input:focus{
                     <div class="col-md-2"></div>
                     <input type="hidden" value="1d30055000ae975a08cb080e6b1070bd" name="csrf_token" />                </div>
 				}
-				<!--            </form>-->				
+				<!--            </form>-->
         </div>
         <div class="col-md-2"></div>
-    </div>
-</div>
-<script>
-$(document).ready(function(){
-/*    $('#user_login').on('click', function(){
-        var user_phone = $('#user_phone').val();
-        if (!/^\d+$/.test(user_phone)) {
-            alert('请填写正确的手机号码');
-            $('#user_phone').focus();
-            return;
-}
-*/
-        var user_password = $('#user_password').val();
-        if (user_password == '') {
-            alert('请填写密码');
-            $('#user_password').focus();
-            return;
-        }
-        $.post(
-            '/user/login',
-            {
-                prefix: $('#phone_prefix').val(),
-                phone: user_phone,
-                password: user_password,
-                remember: 1,
-                csrf_token: $('input[name="csrf_token"]').val()
-            },
-            function(data){
-                if (data.code == 1000) {
-                    history.back();
-                } else {
-                    alert(data.error);
-                    location.reload();
-                }
-            },
-            'json'
-        );
-    });
-});
-</script>        <!-- 主题 -->
-        <!-- 右侧客服以及回到顶部 -->
+            <!-- 右侧客服以及回到顶部 -->
         <div class="suspend-section">
-        <!-- <div class='text-center'>
+                <!-- <div class='text-center'>
                 <span class="custom-btn right-suspend"></span>
                 <p class="text-color5 text-center">联系客服</p>
             </div>-->
-            <!-- <div class='text-center go-back'>
+                <!-- <div class='text-center go-back'>
                 <span class="back-btn right-suspend"></span>
                 <p class="text-color5 text-center">返回顶部</p>
             </div> -->
             <img src="http://static.zouzouyouyou.info/app/statics/images/back.png" alt="">
         </div>
-        <!-- 右侧客服以及回到顶部 -->
-        <!-- 底部 -->
+            <!-- 右侧客服以及回到顶部 -->
+            <!-- 底部 -->
         <div class="main-white">
             <div class="container footer-section">
                 <div class="row">
@@ -437,12 +402,53 @@ $(document).ready(function(){
                         <p class="text-color2 font-size1">杭州观海听涛信息科技有限公司</p>
                     </div>
                     <div class="col-sm-6 hidden-xs">
-                        <!--<a href="http://weibo.com/sea314" class="sina-btn"></a>--><!--<a href="javascript:;" class="wei-btn">--><!--<span class="video-section">--><!--<img src="../app/statics/images/weixin.png" alt="">--><!--<span class="text-center">微信扫码 关注我们</span>--><!--<i></i>--><!--</span>--> <!--</a>--><!--<span class="text-color2 font-size1">关注我们</span>-->
+                            <!--<a href="http://weibo.com/sea314" class="sina-btn"></a>--><!--<a href="javascript:;" class="wei-btn">--><!--<span class="video-section">--><!--<img src="../app/statics/images/weixin.png" alt="">--><!--<span class="text-center">微信扫码 关注我们</span>--><!--<i></i>--><!--</span>--> <!--</a>--><!--<span class="text-color2 font-size1">关注我们</span>-->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 底部 -->
+            <!-- 底部 -->
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+/*    $('#user_login').on('click', function(){
+        var user_phone = $('#user_phone').val();
+        if (!/^\d+$/.test(user_phone)) {
+            alert('请填写正确的手机号码');
+            $('#user_phone').focus();
+            return;
+}
+*/
+        var user_password = $('#user_password').val();
+        if (user_password == '') {
+            alert('请填写密码');
+            $('#user_password').focus();
+            return;
+        }
+        $.post(
+            '/user/login',
+            {
+                prefix: $('#phone_prefix').val(),
+                phone: user_phone,
+                password: user_password,
+                remember: 1,
+                csrf_token: $('input[name="csrf_token"]').val()
+            },
+            function(data){
+                if (data.code == 1000) {
+                    history.back();
+                } else {
+                    alert(data.error);
+                    location.reload();
+                }
+            },
+            'json'
+        );
+    });
+});
+</script>        <!-- 主题 -->
+
 	<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
     <script>
 		var timer4 = null;timer1=null, avatar = '',name = '';
@@ -450,7 +456,7 @@ $(document).ready(function(){
 			//区域搜索
 			var search = JSON.parse(localStorage.getItem('search')),open_login='',isUp=false;
 			search = search ? search : {};
-			
+
 			setSearch();
 			setLogin();
 			if(open_login){
@@ -721,7 +727,7 @@ $(document).ready(function(){
 				},'json');
 				return false;
 				});
-			
+
 
 			*/
 	-->
