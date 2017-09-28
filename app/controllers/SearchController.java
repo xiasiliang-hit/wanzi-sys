@@ -7,6 +7,7 @@ import play.api.libs.*;
 //import play.Environment;
 import play.libs.*;
 
+import models.*;
 import views.html.*;
 import java.util.*;
 import com.fasterxml.jackson.databind.*;
@@ -21,6 +22,7 @@ import java.io.IOException;
 
 
 public class SearchController extends Controller {
+
 	public static Result onSearch(String key)
 	{ 		
 		return ok(      views.html.search.render(key) );
@@ -54,8 +56,9 @@ public class SearchController extends Controller {
 
 	public static Result getGuiderDetail(String userId)
 	{
-		AUser guider = AUser.coll.findOne(DBQuery.is("userid", userId));
-		return ok(views.html.detail.render(guider));
+		AUser guider = AUser.getUserById(userId);
+		return redirect("/index");
+		//return ok(views.html.detail.render(guider));
 	}
 
 	//	public static Result
