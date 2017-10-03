@@ -42,7 +42,7 @@
                     <div class="applys_com">
                         <div class="applys_name">* 出生年月<span class="mark"></span><p class="prompt" style="top: -15px;">
                             必须年满18岁才能注册成为向导<i style="top: 12px;"></i></p></div>
-                        <input type="text" class="form-control" name="au_birthday" id="birth_day" style="width: 228px;" value="" required="required" autocomplete="off" >
+                        <input type="text" class="form-control" name="birth_day" id="birth_day" style="width: 228px;" value="" required="required" autocomplete="off" >
                     </div>
                     <div class="applys_com">
                         <div class="applys_name">* 性别</div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">* 微信</div>
-                            <input type="text" class="form-control" style="width: 228px;" name="au_wechat" required="required">
+                            <input type="text" class="form-control" style="width: 228px;" name="wechat" required="required">
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">QQ</div>
@@ -142,16 +142,16 @@
                             <div class="applys_name">* 工作状态</div>
                             <div class="applys_radio applys_selsct applys_check single">
                                 <label class="action">
-                                    <input type="radio" name="au_job_status" value="1" checked="checked"><i></i>在读学生
+                                    <input type="radio" name="type_work" value=@(AUser.STUDENT) checked="checked"><i></i>在读学生
                                 </label>
                                 <label>
-                                    <input type="radio" name="au_job_status" value="2"><i></i>已工作
+                                    <input type="radio" name="type_work" value=@(AUser.EMPLOYEE)><i></i>已工作
                                 </label>
                             </div>
                         </div>
                         <div class="applys_com" style="display: none;" id="job-toggle">
                             <div class="applys_name">* 目前职业</div>
-                            <input type="text" class="form-control" name="au_job" style="width: 228px;">
+                            <input type="text" class="form-control" name="job" style="width: 228px;">
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">* <span id="school-str">在读学校</span>（请填写中文）</div>
@@ -159,7 +159,7 @@
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">* 所修专业是（请填写中文）</div>
-                            <input type="text" class="form-control" name="au_major" style="width: 228px;" required="required">
+                            <input type="text" class="form-control" name="major" style="width: 228px;" required="required">
                         </div>
                         <div class="applys_com">
                             <div class="applys_name">* 最高学历</div>
