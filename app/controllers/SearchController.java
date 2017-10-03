@@ -56,9 +56,11 @@ public class SearchController extends Controller {
 
 	public static Result getGuiderDetail(String userId)
 	{
-		AUser guider = AUser.getUserById(userId);
-		return redirect("/index");
-		//return ok(views.html.detail.render(guider));
+		//AUser guider = AUser.getUserById(userId);
+		AUser guider = new AUser();
+		guider.name = "导游姓名";
+		guider.city_and_country = "国家-城市";
+		return ok(views.html.detail.render(guider));
 	}
 
 	//	public static Result

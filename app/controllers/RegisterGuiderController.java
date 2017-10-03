@@ -51,11 +51,19 @@ public class RegisterGuiderController extends Controller {
     public static Result onRegisterGuider() {
 
         Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
+        Map<String,String[]> formData = request().body().asFormUrlEncoded();
         if (filledForm.hasErrors()) {
             return badRequest(views.html.registerguider.render());
         } else {
             AUser g = filledForm.get();
             g.type = "GUIDER";
+
+            if (g.type_work.equals(AUser.EMPLOYEE)){
+                g.jobtitle = formData.get("job")[0];
+            } else if (g.type_work.equals(AUser.STUDENT)){
+                g.jobtitle = formData.get("major")[0];
+            }
+
             g.create(g);
             return redirect(homepage);
         }
