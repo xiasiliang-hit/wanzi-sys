@@ -50,7 +50,7 @@ public class RegisterController extends Controller {
 	public static Result login()
 	{
 
-		return ok(views.html.loginPage.t.login.render() );
+		return ok(views.html.loginPage.t.login.render());
 	}
 
 	public static Result onLogin()
@@ -58,18 +58,27 @@ public class RegisterController extends Controller {
 		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
 		String em = filledForm.get().email;
 		String pass = filledForm.get().password;
-		play.Logger.info(em);
-		play.Logger.info(pass);
+		//play.Logger.info(em);
+		//play.Logger.info(pass);
 		
 		AUser u = AUser.verifyUser(em, pass) ;
 				//		play.Logger.info(request().getQueryString("emmail"));
 		if (em!=null && pass !=null && u != null)
 			{
 				session("username", u.name);
-				return redirect( homepage );
+				session("userId",u.id);
+				session("userType",u.type);
+				return ok(views.html.index.render());
 			}
 		else
 			return ok (views.html.loginPage.t.login.render());
+	}
+
+	public static Result onLogout(){
+		session().remove("username");
+		session().remove("userId");
+		session().remove("userType");
+		return ok(views.html.loginPage.t.login.render());
 	}
 	/*
 	public static Result onStep1 (){

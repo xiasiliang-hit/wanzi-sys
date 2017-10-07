@@ -160,8 +160,8 @@
 /* 右侧 */
 .guide-r{
 	width: 728px;
-	padding-left: 30px;
-	padding-right: 0;
+	margin-left: 494px;
+	margin-right: 0;
 }
 .guide-photo{
 	background-color: #fff;

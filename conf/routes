@@ -3,34 +3,35 @@
 # ~~~~
 
 # Home page
-GET    /index.html			            controllers.Application.index()
-GET     /                           controllers.Application.index()
+GET         /index.html                    controllers.Application.index()
+GET         /                              controllers.Application.index()
 
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-POST     /assets/*file               controllers.Assets.at(path="/public", file)
-GET		/app/statics/*file			controllers.Assets.at(path="/public/statics/", file)
+GET         /assets/*file                  controllers.Assets.at(path="/public", file)
+POST        /assets/*file                  controllers.Assets.at(path="/public", file)
+GET         /app/statics/*file             controllers.Assets.at(path="/public/statics/", file)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /tasks                  controllers.Application.tasks()
+GET         /tasks                         controllers.Application.tasks()
 #POST    /tasks                  controllers.Application.newTask()
-POST    /tasks/:id/delete       controllers.Application.deleteTask(id: String)
+POST        /tasks/:id/delete              controllers.Application.deleteTask(id: String)
 
 #GET		/app/statics/*file  	controllers.Application.externalstatic(file: String)
 
-GET     /register               controllers.RegisterController.register()
-POST    /register                   controllers.RegisterController.onRegister()
-GET     /login                  controllers.RegisterController.login()
-POST    /login                  controllers.RegisterController.onLogin()
+GET         /register                      controllers.RegisterController.register()
+POST        /register                      controllers.RegisterController.onRegister()
+GET         /login                         controllers.RegisterController.login()
+POST        /login                         controllers.RegisterController.onLogin()
+GET         /logout                        controllers.RegisterController.onLogout()
 
-GET		/registerguider 		controllers.RegisterGuiderController.registerGuider()
-POST    /registerguider      	controllers.RegisterGuiderController.onRegisterGuider()
+GET         /registerguider                controllers.RegisterGuiderController.registerGuider()
+POST        /registerguider                controllers.RegisterGuiderController.onRegisterGuider()
 
 #GET 	/public/getSearch       controllers.SearchController.getSearch()
 #POST	/public/getSearch		controllers.SearchController.getSearch()
 
 #GET
-POST	/public/getSearch		controllers.Assets.at(path="/public/", file="getSearch.json")
-POST 	/service/getServiceList controllers.Assets.at(path="/public/", file="getServiceList.json")
+POST        /public/getSearch              controllers.Assets.at(path="/public/", file="getSearch.json")
+POST        /service/getServiceList        controllers.Assets.at(path="/public/", file="getServiceList.json")
 
 #GET		/site/list/id/*cid		controllers.Assets.at(path="/public", cid)
 #GET 		/site/list/id/*cid		ontrollers.SearchController.getCountry(cid:String)
@@ -39,4 +40,4 @@ POST 	/service/getServiceList controllers.Assets.at(path="/public/", file="getSe
 #GET 		/site/loginPage/t/1.html controllers.RegisterController.register()
 #GET			/site/loginPage/t/2.html controllers.RegisterController.login()
 
-GET 	/site1/detail/id/*uid				 controllers.SearchController.getGuiderDetail(uid:String)
+GET         /site1/detail/id/*uid          controllers.SearchController.getGuiderDetail(uid:String)
