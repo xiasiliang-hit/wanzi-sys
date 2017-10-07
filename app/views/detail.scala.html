@@ -39,7 +39,8 @@
                 <p class="text-center guide-detail"><span><i></i>向导详细资料</span></p>
                 <div class="text-center order-btn">
                     <p class="text-color5 main-bg font-size2"><a style="color: white" href="localhost:9001/room?conversationId=@session().get("userId")@guider.id&userId=@session().get("userId")&anotherId=@guider.id" >咨询预订</a></p>
-                    <!--
+                </div>
+                        <!--
            <div class="text-center order-btn">
                 <p class="text-color5 main-bg font-size2">咨询预订</p>
                 <div class="order-main">
@@ -937,7 +938,7 @@
                         <div class="right">
                             <p><span>最高学历</span><span class="data-span">@(guider.degree)</span></p>
                             <p><span>毕业院校</span><span class="data-span">@(guider.employer)</span></p>
-                            <p><span>所学专业</span><span class="data-span">>@(guider.major)</span></p>
+                            <p><span>所学专业</span><span class="data-span">@(guider.major)</span></p>
                         </div>
                     </div>
                 </div>
@@ -1313,13 +1314,10 @@
         <!-- 接送机服务费用说明模态框 -->
         <script src="/app/statics/js/ajax.js"></script>
         <script>
-                function openConversation(){
-                    location.href="localhost:9001/room?conversationId=@session().get("userId")@guider.id&userId=@session().get("userId")&anotherId=@guider.id";
-                }
             var timer1 = null,timer2 = null,timer3 = null,mySwiper1= null,mySwiper2= null,mySwiper3= null,total=0;
             var winHeight = $(window).height();
             $(document).ready(function(){
-                    $().ajaxConfig({
+                    /*$().ajaxConfig({
                     id:'55d7a85518827',
                     fn_id:'remark',
                     page_id:'page',
@@ -1327,7 +1325,7 @@
                     limit:6,
                     url:'/remark/getGuideRemark',
                     other:{guide_name:'俞冬磊'}
-                });
+                });*/
                 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                     var _height = $(window).height();
                 //顶部
@@ -1574,9 +1572,7 @@
                         $('.order-main').hide();
                     }, 200);
                 });
-                $('.order-btn').on('click',function(){
 
-                });
                 $('.order-main .arrow').on('click',function(){
                     $(this).parent('.order-main').hide();
                 })
