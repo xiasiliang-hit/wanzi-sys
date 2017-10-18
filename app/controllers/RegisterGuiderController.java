@@ -125,7 +125,7 @@ public class RegisterGuiderController extends Controller {
     }
 
     /**
-     * 保存导游简介信息
+     * 保存导游简介信 息
      * @return
      */
     public static Result onApplyService(){
