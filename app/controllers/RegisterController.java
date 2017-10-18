@@ -14,6 +14,8 @@ import play.api.*;
 import play.api.data.Forms.*;
 import play.data.*;
 
+import java.util.Map;
+
 public class RegisterController extends Controller {
 	
 	static String homepage = Global.homepage;
@@ -40,10 +42,14 @@ public class RegisterController extends Controller {
 		}
 		else{
 
-			AUser u = filledForm.get();
-			createUser(u);
+			AUser u = new AUser();
+			Map<String, String> formData = filledForm.data();
+			u.name = formData.get("name");
+			u.email = formData.get("email");
+			u.password = formData.get("password");
+			AUser.create(u);
 
-			return 	redirect(homepage);
+			return 	redirect("/index.html");
 		}
     }
 
@@ -56,8 +62,8 @@ public class RegisterController extends Controller {
 	public static Result onLogin()
 	{
 		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
-		String em = filledForm.get().email;
-		String pass = filledForm.get().password;
+		String em = filledForm.data().get("email");
+		String pass = filledForm.data().get("password");
 		//play.Logger.info(em);
 		//play.Logger.info(pass);
 		
@@ -89,20 +95,7 @@ public class RegisterController extends Controller {
 		redirect(homepage);
 	}
 	*/
-    public static void createUser(AUser u) {
-		/*	Form<AUser> filledForm = userForm.bindFromRequest();
 
-		if(filledForm.hasErrors()) {
-	    return badRequest(
-			      views.html.onregister.render()
-			      );
-				  } else
-		*/
-		{
-			AUser.create(u);
-			//		    redirect(homepage);
-		}
-    }
 
 }
 

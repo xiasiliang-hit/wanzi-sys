@@ -1,6 +1,5 @@
 package models;
 
-import javax.persistence.*;
 
 import java.util.*;
 
@@ -9,9 +8,6 @@ import net.vz.mongodb.jackson.JacksonDBCollection;
 import net.vz.mongodb.jackson.Id;
 import net.vz.mongodb.jackson.ObjectId;
 import net.vz.mongodb.jackson.DBQuery;
-import org.codehaus.jackson.annotate.JsonProperty;
-
-import java.awt.image.BufferedImage;
 
 //@Entity
 //@Table(name="alluser")
@@ -38,10 +34,14 @@ public class AUser {
         return AUser.coll.findOneById(id);
     }
 
+    public static void update(AUser u) {
+        coll.updateById(u.id, u);
+    }
+
     public static AUser verifyUser(String email, String password) {
         AUser u = null;
         try {
-            u = AUser.coll.findOne(DBQuery.is("email", email));
+            u = coll.findOne(DBQuery.is("email", email));
         } catch (Exception e) {
             return null;
         }
@@ -58,6 +58,7 @@ public class AUser {
         AUser u = AUser.coll.findOneById(id);
         if (u != null)
             AUser.coll.remove(u);
+
     }
 
     public static void removeAll() {
@@ -83,6 +84,7 @@ public class AUser {
     public String gender = "";
 
     public String city_and_country = ""; // city country in one field
+    public String locationIndex; // 导游城市索引
     public String employer = "";
     public String major = ""; //专业
     public String jobtitle = "";
@@ -91,10 +93,14 @@ public class AUser {
     public String degree = ""; //最高学历
     public String industry = ""; //所在行业
 
-    public String img_passport = "";
+    public String img_passport = ""; //证件照
     public String img_theme = ""; //top big image
     public String img_profile = "";  //image left //[id].profile.[GUID].jpg
-    public ArrayList<String> imgs_travel = new ArrayList<String>();
+    public String img_degree = ""; //学历证书照
+    public String img_validate = ""; //验证照
+    public ArrayList<String> imgs_travel = new ArrayList<String>(); //旅行照片
+    public List<String> imgs_about = new ArrayList<>(); //关于这座城市的我
+    public List<String> imgs_introduce = new ArrayList<>(); //我眼中的这座城市照片
 
     public String traveltitle = ""; //导游主题
     public String traveldisc = ""; //导游简介

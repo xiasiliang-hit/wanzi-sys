@@ -7,16 +7,16 @@
             .mian-top{
                 display: none!important;
             }
+            .main-search {
+                display: block!important;
+            }
         </style>
         <!-- 主题部分 -->
-
+<div class="container">
+    <div class="content">
         <div class="container guide-section">
-            <div class="col-sm-3 guide-l hidden-xs" style="position: fixed; top: 62px; z-index: 1029;">
-                <p class="text-center guide-yan">
-                        <!--<img src="https://img.wanzi.cc/images/56ef6d645c1e4.jpg@@170w_226h_1e_1c_1sh" alt="" class="img-responsive">-->
-                    <span class="text-color5"></span>
-                </p>
-                <p class="text-center"><img src="@guider.img_profile@@60w_60h" alt="" class="guide-img"></p>
+            <div class="col-sm-3 guide-l hidden-xs" style="position: fixed; z-index: 1029;">
+                <p class="text-center"><img src="@guider.img_profile" alt="" class="guide-img"></p>
                 <p class="text-center font-size2 guide-name">@(guider.name)</p>
                 <p class="text-center">
                     <i class="start3"></i>
@@ -32,7 +32,7 @@
                     <span><i></i>80后</span>
                     <span><i></i>户外</span>
                     <span><i></i>摄影</span>
-                    <span><i></i>购物</span>  
+                    <span><i></i>购物</span>
                     <span><i></i>美食</span>
                     <span><i></i>历史</span>
                 </div>
@@ -40,6 +40,13 @@
                 <div class="text-center order-btn">
                     <p class="text-color5 main-bg font-size2"><a style="color: white" href="localhost:9001/room?conversationId=@session().get("userId")@guider.id&userId=@session().get("userId")&anotherId=@guider.id" >咨询预订</a></p>
                 </div>
+                @if(!guider.img_validate.equals("")) {
+                <p class="text-center guide-yan">
+
+                            <img src="@guider.img_validate@@170w_226h_1e_1c_1sh" alt="" class="img-responsive">
+                        <span class="text-color5"></span>
+                </p>
+                }
                         <!--
            <div class="text-center order-btn">
                 <p class="text-color5 main-bg font-size2">咨询预订</p>
@@ -61,10 +68,7 @@
 
         </div>
 
-
-
-    </div>
-    <div class="col-sm-9 guide-r col-xs-12">
+        <div class="col-sm-9 guide-r col-xs-12">
         <div class="guide-photo">
             <!-- <img src="/app/statics/images/guidePhoto.jpg" alt="" style="width:100%">-->
             <!-- 向导视频 -->
@@ -139,8 +143,7 @@
                     <div class="slide-main clearfix">
                         <div class="left"><p class="font-size2"><i class="line"></i>个人简介</p></div>
                         <div class="introduce-section">
-                            <p>@guider.traveltitle</p>
-                            <p>@guider.traveldisc</p>
+                            <p>@Html(guider.traveldisc)</p>
                         </div>
                         <p class="text-center main-color more-btn"><span>查看全部内容</span></p>
                     </div>
@@ -896,11 +899,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="main-line"></div>
-    <!-- 主题部分 -->
-    <!-- 向导详细资料模态框 -->
-    <div class="modal common-modal guide-data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <div class="main-line"></div>
+        <!-- 主题部分 -->
+        <!-- 向导详细资料模态框 -->
+        <div class="modal common-modal guide-data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -945,9 +948,9 @@
             </div>
         </div>
     </div>
-    <!-- 向导详细资料模态框 -->
-    <!-- 个人简介模态框 -->
-    <div class="modal common-modal guide-brief" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- 向导详细资料模态框 -->
+        <!-- 个人简介模态框 -->
+        <div class="modal common-modal guide-brief" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -955,7 +958,8 @@
                     <h4 class="modal-title font-size4">个人简介</h4>
                 </div>
                 <div class="modal-body">
-                     <!--<h4 style="color:#333">我为什么来到了南京</h4><p style="font-size:14px;color:#666">因为投胎的原因，我来到了南京这个美丽的古老城市。其实二师兄这个昵称是我30岁西北之旅的小伙伴们给起的。因为温暖、因为细心、因为敦厚、因为我喜欢微笑。南京这个城市，兼顾了江南水乡的细腻和北方的爽快。南京人管自己叫大萝卜，为什么呢？实在、敦厚、诚恳又热情。<img src="https://img.wanzi.cc/images/58b93d036308e.jpg" style="font-size: 16px; max-width: 100%;"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f66d07aff80.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">我，二师兄可以跟你们详细聊聊这么些东西。</p><p style="font-size:14px;color:#666">摄影：</p><p style="font-size:14px;color:#666">作为单反穷三代的一员，我喜欢用镜头记录下这个城市的点点滴滴，记录下旅程的方方面面。</p><p style="font-size:14px;color:#666">美食：</p><p style="font-size:14px;color:#666">南京人都是吃货，我也不例外。</p><p style="font-size:14px;color:#666">户外：</p><p style="font-size:14px;color:#666">我可是资深骨灰级的驴友背包族，玩山地车也玩野营徒步，登山更是大爱，就是不太会游泳。</p><p style="font-size:14px;color:#666">历史：</p><p style="font-size:14px;color:#666">高中就学了历史，平时更是喜欢研究南京的历史文化。这个有着浓浓历史文化底蕴的城市，有着同样浓厚的人文情怀。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66ed316841.jpg" class="img-responsive img-thumbnail"></p><h4 style="color:#333">你好，欢迎来到我的南京</h4><p style="font-size:14px;color:#666">南京，不南不北。这座城市无比的包容，只要你来，就能找到最合适你的地方。南京未必有成都那么悠闲；未必有昆明那么四季如春；未必有北京那样帝王气象；未必有上海那样摩登繁华。但南京就是南京，一个舒服、自在、引人遐想、让人留恋的地方。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f4b759e3.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">作为一个土生土长的南京人，这个城市的每一条路，每一条小巷子都满满的饱含着我的回忆。而六朝古都、十朝都会的南京更是每一寸土地都充满了故事和传说。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f6a535f9.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">夫子庙、中山陵、玄武湖、明城墙、甘熙故居、鸡鸣寺、南京博物院，等等等等，太多的地方可以让来南京的每个小伙伴们都能够享受在南京的假期，或短或长。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f9796471.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f66fa3961f1.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">无论是春季的百花生态，夏季的梧桐树，还是金秋的桂花香，哪怕是冬季的白雪……这城市都有太多的美景值得流连忘返，一看再看。南京的四季总是最美的，因为你也在这里。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66fd808469.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">我，二师兄，将会在南京等你们，为你们设计最合适的南京深度旅行体验的线路。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66ffc2591f.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f6700f3e887.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f670217a089.jpg" class="img-responsive img-thumbnail"></p> -->
+                     @Html(guider.traveldisc)
+                        <!--<h4 style="color:#333">我为什么来到了南京</h4><p style="font-size:14px;color:#666">因为投胎的原因，我来到了南京这个美丽的古老城市。其实二师兄这个昵称是我30岁西北之旅的小伙伴们给起的。因为温暖、因为细心、因为敦厚、因为我喜欢微笑。南京这个城市，兼顾了江南水乡的细腻和北方的爽快。南京人管自己叫大萝卜，为什么呢？实在、敦厚、诚恳又热情。<img src="https://img.wanzi.cc/images/58b93d036308e.jpg" style="font-size: 16px; max-width: 100%;"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f66d07aff80.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">我，二师兄可以跟你们详细聊聊这么些东西。</p><p style="font-size:14px;color:#666">摄影：</p><p style="font-size:14px;color:#666">作为单反穷三代的一员，我喜欢用镜头记录下这个城市的点点滴滴，记录下旅程的方方面面。</p><p style="font-size:14px;color:#666">美食：</p><p style="font-size:14px;color:#666">南京人都是吃货，我也不例外。</p><p style="font-size:14px;color:#666">户外：</p><p style="font-size:14px;color:#666">我可是资深骨灰级的驴友背包族，玩山地车也玩野营徒步，登山更是大爱，就是不太会游泳。</p><p style="font-size:14px;color:#666">历史：</p><p style="font-size:14px;color:#666">高中就学了历史，平时更是喜欢研究南京的历史文化。这个有着浓浓历史文化底蕴的城市，有着同样浓厚的人文情怀。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66ed316841.jpg" class="img-responsive img-thumbnail"></p><h4 style="color:#333">你好，欢迎来到我的南京</h4><p style="font-size:14px;color:#666">南京，不南不北。这座城市无比的包容，只要你来，就能找到最合适你的地方。南京未必有成都那么悠闲；未必有昆明那么四季如春；未必有北京那样帝王气象；未必有上海那样摩登繁华。但南京就是南京，一个舒服、自在、引人遐想、让人留恋的地方。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f4b759e3.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">作为一个土生土长的南京人，这个城市的每一条路，每一条小巷子都满满的饱含着我的回忆。而六朝古都、十朝都会的南京更是每一寸土地都充满了故事和传说。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f6a535f9.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">夫子庙、中山陵、玄武湖、明城墙、甘熙故居、鸡鸣寺、南京博物院，等等等等，太多的地方可以让来南京的每个小伙伴们都能够享受在南京的假期，或短或长。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66f9796471.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f66fa3961f1.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">无论是春季的百花生态，夏季的梧桐树，还是金秋的桂花香，哪怕是冬季的白雪……这城市都有太多的美景值得流连忘返，一看再看。南京的四季总是最美的，因为你也在这里。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66fd808469.jpg" class="img-responsive img-thumbnail"></p><p style="font-size:14px;color:#666">我，二师兄，将会在南京等你们，为你们设计最合适的南京深度旅行体验的线路。</p><p><img src="https://wanzi.image.alimmdn.com/images/55f66ffc2591f.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f6700f3e887.jpg" class="img-responsive img-thumbnail"></p><p><img src="https://wanzi.image.alimmdn.com/images/55f670217a089.jpg" class="img-responsive img-thumbnail"></p> -->
                 </div>
             </div>
         </div>
@@ -1311,6 +1315,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
         <!-- 接送机服务费用说明模态框 -->
         <script src="/app/statics/js/ajax.js"></script>
         <script>
@@ -1373,7 +1379,7 @@
                     window.location.href='../../detailGuidePrice/pc/1/id/560a4f004719d.html';
                 });
                 $('.more-btn').click(function(){
-                    window.location.href='../../detailGuideBrief/id/560a4f004719d.html';
+                    window.location.href='/site1/detail/id/@guider.id/more';
                 });
                 //评论
                 $('.more-comment').click(function(){
@@ -1582,6 +1588,7 @@
                 var scrollTop=$(document).scrollTop();
                 if(scrollTop<30){
                     $(".guide-l").css("position","fixed");
+                    $(".guide-l").css("top","92px");
                     $('.guide-slide').css('padding-top',0);
                     //$('.guide-r').css({'padding-left':'272px','width':'970px'});
                 }
@@ -1926,4 +1933,5 @@
         });
     </script>
     <script src="/app/statics/js/swiper.min.js"></script>        <!-- 主题 -->
+
 }
