@@ -244,7 +244,7 @@
             if ($(this).val()) {
                 $('.search-history').hide();
                 if (getSearch($(this).val())) {
-                    $('.searching-area').html(getSearch($(this).val()));
+                    getSearch2($(this).val());
                     $('.searching-area').show();
                 } else {
                     $(this).attr('data-id','');

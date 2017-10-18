@@ -172,11 +172,6 @@ public class RegisterGuiderController extends Controller {
         return ok("{\"code\":1000}");
     }
 
-    public static Result testPic(){
-        LocationLoader loader = new LocationLoader();
-        loader.loadJson();
-        return ok();
-    }
 
 }
 
