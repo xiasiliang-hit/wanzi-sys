@@ -1,0 +1,358 @@
+@headerfooter {
+    <div class="container">'
+        <div class="content">
+                <!-- 主题 -->
+            <link rel="stylesheet" type="text/css" href="/app/statics/css/applys/style.css">
+            <div class="applys clearfix">
+                <div class="l">
+                    <ul class="fix_left">
+                        <!--<li><a href="/site/applysStep" class="font5 applys_back">返回</a></li>-->
+                        <li><a href="/registerguider" class="font5">个人信息<span></span></a></li>
+                        <li><a href="/site/applysPic" class="font5">个人照片<span></span></a></li>
+                        <li><a href="/site/applysService" class="font5 action">自我介绍<span></span></a></li>
+                    </ul>
+                </div>
+                <div class="r">
+                    <form action="" method="post" id="main-form">
+                        <div class="intr_box">
+                            <h3>个人介绍和城市介绍</h3>
+                            <p style="margin-bottom: 0px;" class="intr_detail">发布优质的内容不仅有助于建立用户对您的好感和信任，还可以提升您在平台的排名哦！</p>
+                            <p style="margin-bottom: 10px;
+                                color: #88ced8;
+                                font-weight: bold;" class="intr_detail">请使用中文填写；若内容较长，记得及时保存哦~ </p>
+                            <div class="applys_servic">
+                                <h4 style="margin-top: 30px;">标题（18字以内）：</h4>
+                            </div>
+
+                            <input type="text" class="form-control" required="required" name="as_title" value="">
+
+                            <p class="intr_detail">请给您的自我介绍起个有吸引力的标题吧，例如“漫步塞纳河边，听我讲法兰西的故事”</p>
+                            <div>
+                                <div class="applys_servic">
+                                    <h4>关于在这座城市的我</h4>
+                                </div>
+                                <p class="intr_detail">
+                                    您是一个怎么样的人，为什么会来到这座城市，旅行者们到达当地也可能不单单是旅行哦，觉得自己有某些专长的话，也可以为自己的专长介绍两句，让更多游客了解您。<span></span></p>
+
+                                <textarea id="" cols="30" rows="10" required="required" class="form-control intro_detail" style="margin-bottom: 20px;" name="as_about_text"></textarea>
+                                <div style="overflow: hidden;">
+                                    <div class="add_photo" style="float: right;">保存<input type="text" class="save" ></div>
+                                </div>
+
+                                <div class="add_photo">
+                                    添加照片<input type="file" class="upload-img" name="file_name" id="upload-about"></div>
+                                <p class="intr_detail">
+                                    请上传3-5张关于您个人的生活、旅游等照片，通过照片，可以更好的将您展示给旅行者。支持JPG,PNG,GIF格式。图片照片大小不超过2M。</p>
+                                <ul class="photo_up clearfix" id="about-ul"></ul>
+                            </div>
+                            <div>
+                                <div class="applys_servic">
+                                    <h4>我眼中的这座城市</h4>
+                                </div>
+                                <p class="intr_detail">
+                                    您眼中的这座城市是怎样的城市？成为向导后，会怎么和到来的“朋友”们吃喝玩乐；可以推荐您去过特别地道的当地小店，也可以与旅行者分享曾和当地人有过的难忘体验。<span></span></p>
+
+                                <textarea id="" cols="30" rows="10" required="required" class="form-control intro_detail" style="margin-bottom: 20px;" name="as_introduce_text"></textarea>
+                                <div style="overflow: hidden;">
+                                    <div class="add_photo" style="float: right;">保存<input type="text" class="save"></div>
+                                </div>
+
+                                <div class="add_photo">
+                                    添加照片<input type="file" class="upload-img" name="file_name" id="upload-introduce"></div>
+                                <p class="intr_detail">请上传3-5张关于当地的风景、美食照片，通过照片，介绍城市或行程给旅行者。支持JPG,PNG,GIF格式。照片大小不超过2M。</p>
+                                <ul class="photo_up clearfix" id="introduce-ul"></ul>
+                            </div>
+
+
+                            <p class="serv_p">
+                                <a href="/site/applysPic" class="pre"><i></i>上一步</a>
+                                <a id="preview" href="javascript:;">预览</a>
+                                <button type="submit">提交</button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <a href="javascript:;" class="decorate_btn"></a>
+                    <!-- 弹出层 -->
+                <div class="modal fade" id="applys-step">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>成为向导，分享您的城市！</h3>
+                                <p><img src="/app/statics/images/applys/applys_step.png" alt=""></p>
+                            </div>
+                        </div>
+                        <span class="close_de"></span>
+                    </div>
+                </div>
+            </div>
+            <script src="/app/statics/js/applys/ajaxfileupload.js"></script>
+            <script src="/app/statics/js/applys/fixed.js"></script>
+                <!-- <script src="/app/statics/js/applys/jquery.dragsort-0.5.2.min.js"></script> -->
+            <script>
+                    $(document).ready(function () {
+
+                        var _about_value = "";
+                        var _introduce_value = "";
+
+                        var _about_count = 0;
+                        var _introduce_count = 0;
+
+                        if (_about_value != '') {
+                            for (var _about_key in _about_value) {
+                                _about_count = _about_key;
+                                addPic(_about_value[_about_key].img, 'upload-about', _about_value[_about_key].content);
+                            }
+                        }
+                        if (_introduce_value != '') {
+                            for (var _about_key in _introduce_value) {
+                                _introduce_count = _about_key;
+                                addPic(_introduce_value[_about_key].img, 'upload-introduce', _introduce_value[_about_key].content);
+                            }
+                        }
+
+                        //弹出层
+                        $('.decorate_btn').on('click', function () {
+                            $('#applys-step').modal('show');
+                        });
+                        $('.close_de').on('click', function () {
+                            $('#applys-step').modal('hide');
+                        })
+
+                        //文本域字符限制
+                        $('.intro_detail').on('change', function () {
+                            var _length = $(this).val().length;
+                            if (_length < 300) {
+                                $(this).siblings('.intr_detail').find('span').html('最少输入300个字符');
+                                $(this).closest('div').addClass('has-error');
+                            }
+                            else {
+                                $(this).closest('div').removeClass('has-error');
+                            }
+                        })
+
+                        $('.intro_detail').on('focus', function () {
+                            $(this).siblings('.intr_detail').find('span').html('');
+                        })
+
+
+                        //添加照片
+                        $('.upload-img').live('change', function () {
+                            if ($(this).attr('id') == 'upload-about') {
+                                if ($('#about-ul').find('li').size() + 1 > 10) {
+                                    alert('添加的图片已经到达上限');
+                                    return false;
+                                }
+                                _about_count++;
+                            }
+                            if ($(this).attr('id') == 'upload-introduce') {
+                                if ($('#introduce-ul').find('li').size() + 1 > 10) {
+                                    alert('添加的图片已经到达上限');
+                                    return false;
+                                }
+                                _introduce_count++;
+                            }
+                            var _this_id = $(this).attr('id');
+                            $.ajaxFileUpload({
+                                url: '/file/uploadImage/',
+                                fileElementId: _this_id,
+                                dataType: 'json',
+                                success: function (data, status) {
+                                    var path = data.name;
+                                    if (path != '') {
+                                        addPic(path, _this_id, '');
+                                    }
+                                    else {
+                                        alert(data.error)
+                                    }
+                                }
+                            })
+                        });
+
+                        //添加图片
+                        function addPic(_src, _this_id, content) {
+                            if (_this_id == 'upload-about') {
+                                var _count = _about_count;
+                            }
+                            else if (_this_id == 'upload-introduce') {
+                                var _count = _introduce_count;
+                            }
+                            var _div = new $('<li class="pic-' + _this_id + _count + '">');
+                            _div.addClass('photo_action');
+                            var _textarea = new $('<textarea>');
+                            var _img = new $('<img/>');
+
+                            var _arr = _src.split('.');
+                            // var folder = _arr[0].substr(_arr[0].length - 2, 2);
+                            // _img.attr('src', '/files/images/' + folder + '/' + _src);
+
+                            _img.attr('src', '/upload/images/' + _src);
+                            _img.attr('rel', _count);
+                            _img.data('src', _src);
+                            var _span = new $('<span>');
+                            _div.prepend(_img);
+                            _div.prepend(_span);
+                            _div.append(_textarea);
+                            $(_textarea).attr("placeholder", "请描述该照片!");
+                            if (content != '') {
+                                $(_textarea).val(content);
+                            }
+                            $('#' + _this_id).parent().siblings('.photo_up').append(_div);
+
+                            saveOrder();
+                        }
+
+                        //审核不通过灰色层
+                        function errPic(_class) {
+                            var _oDiv = new $('<div>');
+                            var _oP = new $('<p>');
+                            _oP.html('审核未通过<br />请上传新照片');
+                            _oDiv.append(_oP)
+                            $('.' + _class).append(_oDiv);
+                        }
+
+                        //拖拽
+                        //    $('.photo_up').dragsort({
+                        // 	dragSelector: "li",
+                        // 	dragBetween: false,
+                        // 	dragEnd: saveOrder,
+                        // 	placeHolderTemplate: "<li class='photo_action'></li>"
+                        // });
+
+                        // 获取数据
+                        function getJson() {
+                            var _data = new Object();
+                            _data.as_title = $('[name="as_title"]').val();
+                            _data.as_about_text = $('[name="as_about_text"]').val();
+                            _data.as_about_mix = new Array();
+                            _data.as_introduce_text = $('[name="as_introduce_text"]').val();
+                            _data.as_introduce_mix = [];
+
+                            $('#about-ul').find('li').each(function () {
+                                var about_mix = new Object();
+                                about_mix.img = $(this).find('img').data('src');
+                                about_mix.content = $(this).find('textarea').val();
+                                _data.as_about_mix.push(about_mix);
+                                // _data.as_about_mix[parseInt($(this).find('img').attr('rel'))] = about_mix;
+                            })
+                            _data.as_about_mix_size = _data.as_about_mix.length;
+                            $('#introduce-ul').find('li').each(function () {
+                                var introduce_mix = new Object();
+                                introduce_mix.img = $(this).find('img').data('src');
+                                introduce_mix.content = $(this).find('textarea').val();
+                                _data.as_introduce_mix.push(introduce_mix);
+                                //_data.as_introduce_mix[parseInt($(this).find('img').attr('rel'))] = introduce_mix;
+                            })
+                            _data.as_introduce_mix_size = _data.as_introduce_mix.length;
+                            return _data;
+                        }
+
+                        //预览功能
+                        $('#preview').click(function () {
+                            var _data = JSON.stringify(getJson());
+                            $.ajax({
+                                url: '/applys/preview',
+                                type: 'post',
+                                data: {
+                                    preview: _data
+                                },
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data == 1) {
+                                        window.open("/site/applysPreview");
+                                    }
+                                }
+                            })
+                            return false;
+                        })
+
+                        //保存排序
+                        function saveOrder() {
+                            $('.photo_action').each(function () {
+                                if (($(this).index() + 1) % 3 == 0) {
+                                    $(this).css("margin-right", 0);
+                                }
+                                else {
+                                    $(this).css("margin-right", 48);
+                                }
+                            })
+                        }
+
+                        //删除照片
+                        $('.photo_action span').live('click', function () {
+                            $(this).closest('.photo_action').detach();
+                            $('.photo_action').css("margin-right", 0);
+                            saveOrder();
+                        })
+                        //保存数据
+                        $('.save').click(function () {
+                            var _json = getJson();
+                            $.ajax({
+                                url: '/applys/setApplysService',
+                                type: 'post',
+                                data: _json,
+                                dataType: 'JSON',
+                                success: function (data) {
+                                    if (data.code == 1000) {
+                                        alert('您的资料已保存成功');
+                                    }
+                                }
+                            })
+                        });
+                        //提交表单
+                        $('#main-form').submit(function () {
+                            if ($('[name="as_title"]').val().length > 18) {
+                                alert('您的标题文字过长，请删减点吧~');
+                                return false;
+                            }
+                            if ($('[name="as_about_text"]').val().length < 300 || $('[name="as_introduce_text"]').val().length < 300) {
+                                alert('您的介绍内容过短，请多添加一些文字吧~');
+                                return false;
+                            }
+                            if ($('#about-ul').find('li').size() < 3) {
+                                alert('您个人的生活/旅游照数量太少，请不要上传少于3张~');
+                                return false;
+                            }
+
+                            if ($('#introduce-ul').find('li').size() < 3) {
+                                alert('您城市相关的照片数量太少，请不要上传少于3张~');
+                                return false;
+                            }
+                            var _json = getJson();
+                            $.ajax({
+                                url: '/applys/setApplysService',
+                                type: 'post',
+                                data: _json,
+                                dataType: 'JSON',
+                                success: function (data) {
+                                    if (data.code == 1000) {
+                                        alert('您的资料已提交成功，工作人员会在3-4个工作日内与您联系。期待您的加入！');
+                                        //location.href = "/site/applysStep";
+                                    }
+                                }
+                            })
+
+                            return false;
+                        })
+
+                        var _unpass = '';
+                        if (_unpass != '') {
+                            _unpass = _unpass.split(',');
+                            for (var i in _unpass) {
+                                if (_unpass[i].substr(0, 3) == 'pic') {
+                                    errPic(_unpass[i]);
+                                }
+                                else {
+                                    $('[name="' + _unpass[i] + '"]').siblings('.applys_servic').find('h4').addClass('applys_error');
+                                }
+                            }
+                            //未通过文字飘红
+                            var _em = $('<em>');
+                            _em.html("(该条目审核未通过)");
+                            $('.applys_error').append(_em);
+                        }
+                    });
+            </script>
+        </div>
+    </div>
+}

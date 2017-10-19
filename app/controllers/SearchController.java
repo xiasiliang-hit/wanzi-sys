@@ -1,19 +1,15 @@
 package controllers;
 
 import play.mvc.*;
-import play.data.*;
 import play.*;
-import play.api.libs.*;
 //import play.Environment;
 import play.libs.*;
 
 import models.*;
-import views.html.*;
 
 import java.util.*;
 
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.core.*;
 //import org.codehaus.jackson.JsonFactory;
 //import com.typesafe.config.ConfigFactory;
 //import com.typesafe.config.Environment;
@@ -66,10 +62,18 @@ public class SearchController extends Controller {
     //	public static Result
 	
 	
-	/*
-	public static Result getCountry(String: cid)
+	public static Result getCountry(String cid)
 	{
 		return ok(views.html.getcountry.render(cid));
 	}
-	*/
+
+	public static Result setLocation(){
+        return ok("ok");
+    }
+
+    public static Result searchArea(){
+	    String keyword = request().body().asFormUrlEncoded().get("keyword")[0];
+        List<AreaInfo> areaList = AreaInfo.searchArea(keyword);
+	    return ok(Json.toJson(areaList));
+    }
 }

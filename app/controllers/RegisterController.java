@@ -14,6 +14,8 @@ import play.api.*;
 import play.api.data.Forms.*;
 import play.data.*;
 
+import java.util.Map;
+
 public class RegisterController extends Controller {
 	
 	static String homepage = Global.homepage;
@@ -40,36 +42,49 @@ public class RegisterController extends Controller {
 		}
 		else{
 
-			AUser u = filledForm.get();
-			createUser(u);
+			AUser u = new AUser();
+			Map<String, String> formData = filledForm.data();
+			u.name = formData.get("name");
+			u.email = formData.get("email");
+			u.password = formData.get("password");
+			AUser.create(u);
 
-			return 	redirect(homepage);
+			return 	redirect("/index.html");
 		}
     }
 
 	public static Result login()
 	{
 
-		return ok(views.html.loginPage.t.login.render() );
+		return ok(views.html.loginPage.t.login.render());
 	}
 
 	public static Result onLogin()
 	{
 		Form<AUser> filledForm = Form.form(AUser.class).bindFromRequest();
-		String em = filledForm.get().email;
-		String pass = filledForm.get().password;
-		play.Logger.info(em);
-		play.Logger.info(pass);
+		String em = filledForm.data().get("email");
+		String pass = filledForm.data().get("password");
+		//play.Logger.info(em);
+		//play.Logger.info(pass);
 		
 		AUser u = AUser.verifyUser(em, pass) ;
 				//		play.Logger.info(request().getQueryString("emmail"));
 		if (em!=null && pass !=null && u != null)
 			{
 				session("username", u.name);
-				return redirect( homepage );
+				session("userId",u.id);
+				session("userType",u.type);
+				return ok(views.html.index.render());
 			}
 		else
 			return ok (views.html.loginPage.t.login.render());
+	}
+
+	public static Result onLogout(){
+		session().remove("username");
+		session().remove("userId");
+		session().remove("userType");
+		return ok(views.html.loginPage.t.login.render());
 	}
 	/*
 	public static Result onStep1 (){
@@ -80,20 +95,7 @@ public class RegisterController extends Controller {
 		redirect(homepage);
 	}
 	*/
-    public static void createUser(AUser u) {
-		/*	Form<AUser> filledForm = userForm.bindFromRequest();
 
-		if(filledForm.hasErrors()) {
-	    return badRequest(
-			      views.html.onregister.render()
-			      );
-				  } else
-		*/
-		{
-			AUser.create(u);
-			//		    redirect(homepage);
-		}
-    }
 
 }
 

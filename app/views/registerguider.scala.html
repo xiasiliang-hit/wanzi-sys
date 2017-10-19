@@ -2,7 +2,6 @@
 @import helper._
 
 @headerfooter {
-
     <link rel="stylesheet" type="text/css" href="/app/statics/js/applys/datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="/app/statics/css/applys/style.css">
     <script src="/app/statics/js/applys/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
@@ -24,8 +23,8 @@
             <ul class="fix_left">
                     <!-- <li><a href="/site/applysUser" class="font5 action">个人信息<span class="correct"></span></a></li>
 		   <li><a href="/site/applysPic" class="font5">个人照片<span class="error"></span></a></li> -->
-                <li><a href="/site/applysStep" class="font5 applys_back">返回</a></li>
-                <li><a href="/site/applysUser" class="font5 action">个人信息<span></span></a></li>
+                <!--<li><a href="/site/applysStep" class="font5 applys_back">返回</a></li>-->
+                <li><a href="/registerguider" class="font5 action">个人信息<span></span></a></li>
                 <li><a href="/site/applysPic" class="font5">个人照片<span></span></a></li>
                 <li><a href="/site/applysService" class="font5">自我介绍<span></span></a></li>
             </ul>
@@ -680,7 +679,7 @@
                         success: function (data) {
                             if (data.code == 1000) {
                                 alert('您的个人信息已保存，请继续下一步');
-                                location.href = '/site/applysPic';
+                                areaInfo.href = '/site/applysPic';
                             }
                         }
                     })
