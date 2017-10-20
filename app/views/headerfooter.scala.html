@@ -61,7 +61,7 @@
             <!--var vds = document.createElement('script');-->
             <!--vds.type = 'text/javascript';-->
             <!--vds.async = true;-->
-            <!--vds.src = ('https:' == document.areaInfo.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';-->
+            <!--vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';-->
             <!--var s = document.getElementsByTagName('script')[0];-->
             <!--s.parentNode.insertBefore(vds, s);-->
             <!--})();-->
@@ -96,7 +96,7 @@
                             <input type="text" placeholder="请输入您想去的国家、城市">
                         </div></i>
                         <li class="hidden-sm hidden-md order-li mian-top"><a href="site/demand.html" target="_blank">定制旅行</a></li>
-                        <li class="slide-li mian-top"><a href="site/html/id/why_guide.html">成为向导</a></li>
+                        <li class="slide-li mian-top"><a href="/registerguider">成为向导</a></li>
                         <li class=" mian-top"><a href="site/group.html" target="_blank">团队企业服务</a></li>
                         <li class="load-img">
                                 <!--<li class="load-img">-->
@@ -233,11 +233,11 @@
         if(open_login){
             if(open_login=='1001'){
                 $().popup('登录失败');
-                window.areaInfo.herf='index.html';
+                window.location.herf='index.html';
             }else if(open_login=='1002'){
                 $('.telphoto-modal').modal('show');
             }else if(open_login=='1000'){
-                window.areaInfo.href='index.html';
+                window.location.href='index.html';
             }
         }
         $('#search').bind('input propertychange', function() {
@@ -332,7 +332,7 @@
                 }
             }
             localStorage.setItem('search', JSON.stringify(list));
-            window.areaInfo.href = '/site/list/id/' + id ;
+            window.location.href = '/site/list/id/' + id ;
         }
         function setSearch() {
             if (JSON.stringify(search) != "{}") {
@@ -465,7 +465,7 @@
             $.post('/user/register', $(this).serialize(), function(result) {
                 $().unload();
                 if (result.code == 1000) {
-                    areaInfo.reload();
+                    location.reload();
                 } else {
                     $().popup(result.error);
                 }
@@ -478,7 +478,7 @@
             $.post('/user/login', $(this).serialize(), function(result) {
                 $().unload();
                 if (result.code == 1000) {
-                    areaInfo.reload();
+                    location.reload();
                 } else {
                     $().popup(result.error);
                 }
@@ -496,7 +496,7 @@
             $.post('/user/openRegister', {'phone':prefix+phone,'code':code}, function(result) {
                 $().unload();
                 if (result.code == 1000) {
-                    window.areaInfo.href='/';
+                    window.location.href='/';
                 } else {
                     $().popup(result.error);
                 }
@@ -527,7 +527,7 @@
                 'ensure':function(){
                     $.post('/user/logout',{},function(result){
                         if(result.code==1000){
-                            areaInfo.reload();
+                            location.reload();
                         }else{
                             $().popup(result.error);
                         }
@@ -573,7 +573,7 @@
         //注册登录电脑端
         function resterLogin(str) {
             if (str == true) {
-                areaInfo.href = 'site/loginPage/t/2.html';
+                location.href = 'site/loginPage/t/2.html';
             }
             /*
             if (str == true) {
