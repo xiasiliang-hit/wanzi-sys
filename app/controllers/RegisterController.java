@@ -1,24 +1,19 @@
 package controllers;
 
 import play.mvc.*;
-import play.twirl.api.*;
 /*import static play.api.data.Form.*;
 import static play.data.Form.form;
 */
 import models.*;
-import views.*;
 
-import play.*;
-import play.api.*;
 //import play.api.data.*;
-import play.api.data.Forms.*;
 import play.data.*;
 
 import java.util.Map;
 
 public class RegisterController extends Controller {
 	
-	static String homepage = Global.homepage;
+	static String homepage = Application.homepage;
 	private AUser alluser  = new AUser();
 	/*
     public static Result index() {

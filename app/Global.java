@@ -7,7 +7,7 @@ import util.LocationLoader;
 
 public class Global extends GlobalSettings {
 
-	public static String homepage = "http://www.zouzouyouyou.info";
+	public static String homepage = "http://beta.zouzouyouyou.info";
 
 	@Override
 	public void onStart(Application app) {
