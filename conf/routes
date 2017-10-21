@@ -48,7 +48,7 @@ GET         /site/list/id/*cid              controllers.SearchController.getCoun
 GET         /site1/detail/id/*uid           controllers.SearchController.getGuiderDetail(uid:String)
 POST        /setLocation                    controllers.SearchController.setLocation()
 
-GET         /test                           controllers.RegisterGuiderController.testPic()
+#GET         /test                           controllers.RegisterGuiderController.testPic()
 #file upload route
 POST        /file/uploadImage/              controllers.FileController.onUploadImage()
 POST        /file/thumbImg                  controllers.FileController.onUploadThumbImage()
