@@ -27,7 +27,7 @@ public class RegisterGuiderController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    static String homepage = Global.homepage;
+	//    static String homepage = Global.homepage;
 
     /*
     @Inject
