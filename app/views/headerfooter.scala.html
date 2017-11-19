@@ -126,16 +126,16 @@
                             <li><a href="/register" class="login-section">注册</a></li>
                             <li><a href="/login" class="login-line">登录</a></li>
                         } else {
-                            <li class="mian top" style="padding: 15px;">
-                                欢迎您，@session().get("username")<a href="/logout" style="display: inline">退出登录</a>
-                                @if(session().get("userType")==AUser.TRAVELLER){
-                                <a href="javascript:;" onclick="getBalance()" style="display: inline">余额</a>
-                                }
+
+                            <li class="help-center" style="">
+                                <a href="#">您好，@session().get("username")<i></i></a>
+								<ul>
+								  <li><a href="#"> 我的账户</a></li>
+								  <li><a href="/setting">用户设置</a></li>
+								  <li><a href="/logout"  style="display: inline">退出登录</a> </li>
+								</ul>
                             </li>
                         }
-							<li class="main top">
-						  <a href="/setting">设置</a>
-						  </li>
                         </ul>
                 </div>
             </div>
@@ -563,6 +563,7 @@
                     $('.help-center').children('ul').hide();
                 }, 200)
             });
+				
             //电脑端顶部下载APP
             $('.load-img').hover(function(){
                 clearInterval(timer1);
