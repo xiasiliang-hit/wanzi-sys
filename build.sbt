@@ -10,7 +10,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 libraryDependencies ++= Seq(
   "com.google.inject" % "guice" % "3.0",
-  "net.vz.mongodb.jackson" % "play-mongo-jackson-mapper_2.10" % "1.1.0"
+  "net.vz.mongodb.jackson" % "play-mongo-jackson-mapper_2.10" % "1.1.0",
+  "com.thoughtworks.xstream" % "xstream" % "1.4.3"
 )
 
 libraryDependencies += "com.google.code.gson" % "gson" % "2.2"
