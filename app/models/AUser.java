@@ -94,6 +94,8 @@ public class AUser {
 	return guiders;
     }
 
+
+	
     @Id
     @ObjectId
     public String id;
@@ -141,7 +143,7 @@ public class AUser {
     public String guiderdrive_price = ""; //五座车收费
     public String guiderpickup_price = ""; //五座车接机收费
 
-    public List<String> comments = new ArrayList<String>();
+    public List<Comment> comments = new ArrayList<Comment>();
 
 
     public static String GUIDER = "GUIDER";
