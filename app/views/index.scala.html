@@ -2,10 +2,12 @@
 @import helper._
 @import java.lang.String; val chatserviceport="http://test.zouzouyouyou.info:9000"; val testid="999999999999999999999999"; val botid="ffffffffffffffffffffffff";
 
-
+//add shade layer for tutorial
+@views.html.shade.render();
+  
 @headerfooter{
-		        <!-- 主题 -->
-		     <link rel="stylesheet" href="app/statics/css/index.css">
+    <!-- 主题 -->
+	<link rel="stylesheet" href="app/statics/css/index.css">
     <!-- banner -->
     <div class="swiper-container" id="swiper1">
         <div class="swiper-wrapper">
@@ -736,7 +738,8 @@
 
 	<script src="app/statics/js/swiper.min.js"></script>
     <script>
-    $(document).ready(function(){
+      $(document).ready(function(){
+
 
         $('.banner-slide').click(function(){
             window.open($(this).attr('rel'));
