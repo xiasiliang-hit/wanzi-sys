@@ -29,6 +29,9 @@ public class SettingController extends Controller {
 		
 		return ok(views.html.myorder.render(traveller_orders, guider_orders));
 	}
-
+	public static Result refer()
+	{
+		return ok(views.html.refer.render());
+	}
 	
 }
