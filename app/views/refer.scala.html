@@ -5,7 +5,7 @@ ref_link='http://www.izouzou.cc/register?refer=@session.get("userId")'; *@
 @(guider:AUser)
 @headerfooter{
 	
-<link rel="stylesheet" type="text/css" href="/app/statics/css/setting.css">
+<link rel="stylesheet" type="text/css" href="/app/statics/css/refer.css">
 <script src="/app/statics/js/qrcode.js"></script>
 
 <div class="applys clearfix">
@@ -18,32 +18,45 @@ ref_link='http://www.izouzou.cc/register?refer=@session.get("userId")'; *@
 	</ul>
   </div>
 
-  <div class="r">
-	<div class="section">
+  <div class="r container">
 
-	  <strong>打印推广</strong>
-		<div id="index-refer-qrcode" class="qrcode">
-		<p>打印二维码 放到您所在的城市的酒店机场，游客扫码会在导游首页和搜索页看到您哦！</p>
+	 <div class="section222"> 
+		<div class="col-sm-12"><p class="font-size2">二维码推广</p></div>
+
+		<div id="index-refer-qrcode" class="qrcode col-sm-10">
 		</div>
 	
-		<div class="">
-		<button type="button" class="btn btn-info ">打印</button> 
+		<div class="col-sm-2" style="height:100px">
+		    <button type="button" class="btn btn-info btn-right" style="">打印</button> 
 		</div>
-	</div>
+		
+
+		<div class="col-sm-12">	<p>打印二维码 放到您所在的城市的酒店机场，游客扫码会在导游首页和搜索页看到您哦！</p>
+		</div>
+	</div>	  
+
+
+	<p></p><p></p>
 	
-	<div class="section">
-		@if(session().get("userType") == "GUIDER"){
-		<div id="user-refer-qrcode" class="qrcode">
-		  <img src="#" class="img-85">
+		<div class="section222">
+	@if(session().get("userType") == "GUIDER"){
+
+		<div class"col-sm-12"><p class="font-size2">分享链接</p></div> 
+
+		<div id="user-refer-qrcode" class="qrcode col-sm-10">
 		</div>
 
-		<strong>分享链接</strong>
-		<p>http://www.izouzou.cc/register?refer=@session().get("userId")</p>
-		<p>通过以上链接注册，您和您的好友都会得到¥ 100 旅游金<a href="#">旅游金使用规则</a> </p>
-		<button class="btn btn-info">立即分享</button>
-		}
-	</div>
-
+		<div class="col-sm-2" style="">
+			<button class="btn btn-info btn-right">分享</button>
+		</div>
+		
+		<div class="col-sm-12">
+			<p>http://www.izouzou.cc/register?refer=@session().get("userId")</p>
+			<p>邀请好友通过以上链接注册，您和您的好友都会得到¥ 100 旅游金 <a href="#">旅游金使用规则</a> </p>
+		</div>
+	}
+	</div> 
+	
   </div>
 </div>
 	<script>
@@ -61,8 +74,9 @@ ref_link='http://www.izouzou.cc/register?refer=@session.get("userId")'; *@
 				correctLevel : QRCode.CorrectLevel.H
 			});
 			$(function(){
-				$(".qrcode img").addClass("img-85");
-			})
+//				$(".qrcode img").addClass("img-85");
+				$(".qrcode img").css({"height":"85px","width": "85px"});
+			});
 	</script>
 
 }
