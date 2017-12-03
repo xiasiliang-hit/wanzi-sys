@@ -79,4 +79,4 @@ POST        /pay/submitPayWx                              controllers.PayControl
 POST        /pay/WxPaidNotify 							  controllers.PayController.payCallback()
 
 GET 		/setting/myorders							  controllers.SettingController.getMyOrders()
-
+GET			/setting/refer								  controllers.SettingController.refer()
