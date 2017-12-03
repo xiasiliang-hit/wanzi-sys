@@ -1,15 +1,24 @@
-header.menu.group_travel=Group Travel
-header.menu.personalized_travel=Personalize Travel
-header.menu.be_guider=Become Guider
+### header menu ###
+header.group_travel=Group Travel
+header.personalized_travel=Personalize Travel
+header.become_guider=Become Guider
 
-header.menu.login=Login
-header.menu.register=Register
-header.menu.message=Message
+header.register=Register
+header.login=Login
+header.message=Message
+
+header.account=Account
+header.orders=Orders
+header.setting=Setting
+header.referral=Referral
+header.logout=Logout
 
 header.menu.how_guider=How to become a guider
 header.menu.how_personalized_travel=How to personalize travel
+header.menu.how_starguider=How to be a star guider
 header.menu.FAQ=FAQ
 
+### index content ###
 index.search_box=Where do you travel to
 
 index.start_guiders=Star Guiders
@@ -24,6 +33,7 @@ index.personalized_travel_p=
 index.secure_care=Secure Care
 index.secure_care_p=
 
+### footer menu ###
 footer.company_name=® Guan Tech 2015-2017
 footer.domain=izouzou.cc
 footer.contact=Contact
