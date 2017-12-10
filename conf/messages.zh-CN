@@ -114,3 +114,9 @@ reg.password=密码
 reg.password_repeat=再次输入密码
 
 login.forget_pass=忘记密码
+
+
+#print.title=iZouzou－爱走走
+#print.subtitle=帮你找导游
+#print.company=© Guanhaitingtao Tech
+#print.website=http://www.izouzou.cc     

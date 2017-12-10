@@ -41,7 +41,7 @@ index.secure_care_p=
 index.partners=Partners
 
 ### footer menu ###
-footer.company_name=® Guanhaitingtao Tech 
+footer.company_name=© Guanhaitingtao Tech 
 footer.domain=izouzou.cc
 footer.contact=Contact
 footer.wechat=WeChat
@@ -112,3 +112,17 @@ reg.password=Password
 reg.password_repeat=Confirm Password
 
 login.forget_pass=Forget Password
+
+print.title=iZouzou
+print.subtitle=Help You Find Local Guiders!
+print.company=© iZouzou Tech
+print.website=http://www.izouzou.cc
+
+
+refer.barcode_promotion=Print Barcode to Promote
+refer.remark_promotion=Put the barcode to hotels or airport to promote yourself!
+
+refer.share=Share to Friends
+refer.rmark_share=Invite your friend to join, you both get traveling coupons!
+
+refer.print=Print
