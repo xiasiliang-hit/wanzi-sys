@@ -1,6 +1,7 @@
 @import helper._
 @(guider:AUser)
 @import java.lang.String;val imgUri="";
+
 @headerfooter{
             <!-- 主题 -->
             <link rel="stylesheet" media="screen"
@@ -13,7 +14,9 @@
                 display: block!important;
             }
         </style>
-        <!-- 主题部分 -->
+
+
+			<!-- 主题部分 -->
 <div class="container">
     <div class="content">
         <div class="container guide-section">
@@ -249,8 +252,19 @@
                                     <p><sapn class="text-color1">五座车：</sapn><span>CNY<strong>@(guider.guiderpickup_price)</strong>/次</span></p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+
+							<div class="right service-plane">
+							  <p><strong class="service-title">自定义服务</strong><strong class="main-color service-modal1" >费用说明</strong></p>
+		
+							  <div class="row">
+								<div class="col-sm-6 col-xs-12">
+								  <p><sapn class="text-color1">@guider.personal_service：</sapn><span>CNY<strong>@(guider.personal_price)</strong>/次</span></p>
+								</div>
+							  </div>
+		
+							</div>
+						</div>
+					</div>
                     <div class="slide-main clearfix">
                         <div class="left"><p class="font-size2"><i class="line"></i>可订日历</p></div>
                         <div class="right">
@@ -1449,8 +1463,6 @@
                     window.location.href='../../detailGuideRemark/id/560a4f004719d/name/%e5%bc%a0%e8%8b%8f.html';
                 });
 
-
-
 				$("#b-book").click(function(){
 					  @views.html.pop.loginPop.render();
 				});
@@ -1555,7 +1567,7 @@
 
                 //右侧个人介绍查看全部内容
                 $('.more-btn span').on('click',function(){
-                    $('.guide-brief').modal('show');
+                    $('.guide-brief').show();
                 });
                 //右侧查看相册
                 $('#swiper2').on('click','.swiper-slide',function(){
