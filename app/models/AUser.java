@@ -145,7 +145,9 @@ public class AUser {
     public String guider_price = ""; //徒步旅行收费
     public String guiderdrive_price = ""; //五座车收费
     public String guiderpickup_price = ""; //五座车接机收费
-
+	public String personal_service = "";
+	public String personal_price = "" ; //自定义价格
+	
     public String userQrcodeUrl = "";
     public String indexQrcodeUrl = "";
 
