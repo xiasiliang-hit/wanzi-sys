@@ -243,12 +243,21 @@ views.html.pop.msgPop.render("Register now and get ¥100 traveling coupons! ");
 								  </p>
 								  <p><span><i class="lit"></i>@guider.city_and_country</span></p>
 								  <p class="font-size1 text-color2 text-overflow">
+									@if(guider.guider_price != ""){
 									<span class="guide-tag">徒步向导</span>
+									}
+									@if(guider.guiderdrive_price != ""){
 									<span class="guide-tag">带车向导</span>
+									}
+									@if(guider.guiderpickup_price != ""){
 									<span class="guide-tag">带车接送机</span>
-								  </p>
+									}
+									@if(guider.personal_price != ""){
+											<span class="guide-tag">@{guider.personal_service}</span>
+									}
+                                   </p>
 								</a>
-								                </div>
+							  </div>
 							  }
 							  
                 <!--<div class="swiper-slide">-->

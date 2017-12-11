@@ -233,12 +233,12 @@
                         <div class="right">
                             <p><strong class="service-title">向导服务</strong><strong class="main-color service-modal">费用说明</strong></p>
                             <div class="row">
-							  @if(Integer.parseInt(guider.guider_price)>0 ){
+							  @if(guider.guider_price!="" ){
                                 <div class="col-sm-6 col-xs-12">
                                     <p><sapn class="text-color1">徒步：</sapn><span>CNY<strong>@(guider.guider_price)</strong>/天</span></p>
                                 </div>
 								}
-								@if(Integer.parseInt(guider.guiderdrive_price)>0){
+								@if(guider.guiderdrive_price!=""){
                                 <div class="col-sm-6 col-xs-12">
                                     <p><sapn class="text-color1">五座车：</sapn><span>CNY<strong>@(guider.guiderdrive_price)</strong>/天</span></p>
                                 </div>
@@ -248,7 +248,7 @@
                     </div>
                     <div class="slide-main clearfix">
                         <div class="left"><p></p></div>
-						@if(Integer.parseInt(guider.guiderpickup_price)>0){
+						@if(guider.guiderpickup_price != ""){
                         <div class="right service-plane">
                             <p><strong class="service-title">接送机服务</strong><strong class="main-color service-modal1">费用说明</strong></p>
                             <div class="row">
@@ -258,7 +258,7 @@
                             </div>
 						</div>
 						}
-						@if(guider.personal_service!=""){
+						@if(guider.personal_price != ""){
 						<div class="right service-plane">
 						  <p><strong class="service-title">自定义服务</strong><strong class="main-color service-modal1" >费用说明</strong></p>
 						  <div class="row">
