@@ -39,7 +39,7 @@ public class Application extends Controller {
 
 	    List<AUser> starGuiders = AUser.getStarGuiders(refer);
 	    //      play.Logger.info(starGuiders.get(0).name);
-	    return ok(  views.html.index.render(starGuiders));
+	    return ok(  views.html.index_en.render(starGuiders));
 	}
 
 	/*
