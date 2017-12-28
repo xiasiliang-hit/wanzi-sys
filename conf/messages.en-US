@@ -111,6 +111,8 @@ reg.full_name=Full Name
 reg.password=Password
 reg.password_repeat=Confirm Password
 
+reg.guider.service_name=Your Service Name
+
 login.forget_pass=Forget Password
 
 print.title=iZouzou
@@ -118,13 +120,31 @@ print.subtitle=Help You Find Local Guiders!
 print.company=© iZouzou Tech
 print.website=http://www.izouzou.cc
 
-
+#setting/refer
 refer.barcode_promotion=Print Barcode to Promote
 refer.remark_promotion=Put the barcode to hotels or airport to promote yourself!
-
 refer.share=Share to Friends
 refer.rmark_share=Invite your friend to join, you both get traveling coupons!
-
 refer.print=Print
 
-reg.guider.service_name="Your Service Name"
+
+
+
+alert.login=Login Please!
+
+#guider menul
+guider.menul.personal=Personal Info
+guider.menul.intro=Personal Introduction
+guider.menul.photo=Personal Photos
+guider.menul.price=Service Price
+guider.menul.calender=Calender
+
+#setting menul
+setting.menul.myaccount=My Account
+setting.menul.myorder=My Orders
+setting.menul.referal=Promotion
+setting.menul.preference=Preference
+
+#Time
+time.year=Year
+time.month=Month
