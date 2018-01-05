@@ -12,8 +12,7 @@
   @views.html.menul_setting()
 
   <div class="r r_box">
-    <div> <span> @guider.name</span> </div>
-    <div> <span> <img src="@guider.img_profile"></img></span></div>
+    <div class="col-sm-4"> <span> @guider.name</span> </div>    <div class="col-sm-6"> <span> <img src="@guider.img_profile" class="img-85"></img></span></div>
     <div class="col-sm-4"> <span> @Messages("user.age")</span></div> <div class="col-sm-6"><input class="form-control" placeholder="@guider.age" /> </div>
     <div class="col-sm-4"> <span> @Messages("user.gender")</span></div> <div class="col-sm-6"><input class="form-control" placeholder="@guider.gender" /></div>
     <div class="col-sm-4"> <span> @Messages("user.birth_day")</span></div><div class="col-sm-6"> <input class="form-control" placeholder="@guider.birth_day" /></div>
