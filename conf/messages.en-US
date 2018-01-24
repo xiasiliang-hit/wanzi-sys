@@ -105,6 +105,14 @@ promotion_msg=Register now and get ¥100 traveling coupons!
 button.close=Close	   
 refer.email=Your friends' email
 button.send=Send
+button.print=Print
+button.share=Share
+
+refer.promotion=Promotion
+refer.promotion_msg=Print your barcode, put it on the hotel or airport to help traveler can find you easily!
+refer.sharelink=Share Link
+refer.sharelink_msg=Invite your friends to register, both of you will get ¥100 traveling coupons
+refer.terms=Terms
 
 reg.user_registration=User Registration
 reg.full_name=Full Name
@@ -142,7 +150,7 @@ guider.menul.calender=Calender
 #setting menul
 setting.menul.myaccount=My Account
 setting.menul.myorders=My Orders
-setting.menul.referral=Promotion
+setting.menul.referral=Promotion Award
 setting.menul.preference=Preference
 
 
