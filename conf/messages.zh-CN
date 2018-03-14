@@ -2,6 +2,7 @@
 header.index=首页
 header.search_box=请输入您想去的国家、城市
 
+header.travel_agency=旅行社接入 
 header.group_travel=团队企业服务
 header.personalized_travel=定制旅行
 header.become_guider=成为向导

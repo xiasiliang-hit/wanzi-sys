@@ -67,8 +67,11 @@ POST        /file/thumbImg/                               controllers.FileContro
 
 GET         /site/demand                                  controllers.OrderController.demandPage()
 POST        /intent/addOlister                            controllers.OrderController.onDemand()
-GET         /site/group                                   controllers.OrderController.groupDemand()
-POST        /intent/addFirm                               controllers.OrderController.onGroupDemand()
+GET         /site/group									  controllers.OrderController.groupDemand()
+POST        /intent/addFirm                          controllers.OrderController.onGroupDemand()
+
+GET			/site/travelagency							  controllers.AgencyController.travelAgency()
+POST		/intent/addAgencyQuery						  controllers.AgencyController.onAgencyQuery()
 
 GET         /getBalance                                   controllers.OrderController.getBalance()
 

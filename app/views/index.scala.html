@@ -3,8 +3,6 @@
 @import helper._
 @import java.lang.String; val chatserviceport="http://test.zouzouyouyou.info:9000"; val testid="999999999999999999999999"; val botid="ffffffffffffffffffffffff";
 
-
-
 <script type="text/javascript" src="/app/statics/js/jquery-1.8.3.min.js" />
 <script type="text/javascript">
 	var userLang = navigator.language ||  navigator.userLanguage;
@@ -23,11 +21,23 @@
 </script>
 
 
-<!-- add shade layer for tutorial -->
+<!-- add tutorial layer for tutorial -->
 @**
 @if(session.get("userId") != ""){
-@views.html.shade.render();
+@views.html.tutorial.render();
 }
+**@
+
+
+<!-- register promotion layer -->
+@**
+@views.html.pop.msgPop.render("邀请好友注册，各得 ¥100 旅游金！")
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".shade").show();
+});
+</script>
 **@
 
 @headerfooter{
@@ -36,7 +46,7 @@
     <!-- banner -->
     <div class="swiper-container" id="swiper1">
         <div class="swiper-wrapper"> <!-- ching2.datu.jpg -->
-                            <div class="swiper-slide banner-slide" style="background-image:url(app/statics/images/chang2.datu.jpg)" rel="site/detail/id/56c1f1a0422cb.html">
+                            <div class="swiper-slide banner-slide" style="background-image:url(app/statics/images/ching2.datu.jpg)" rel="/site1/detail/id/5a2dec49e4b050b8bd5d3510">
                     <div class="banner-bottom">
                         <div class="container">
                             <div class="row">
@@ -52,12 +62,12 @@
                     </div>
                 </div>
 							<!-- jaq1.datu.jpg -->
-                            <div class="swiper-slide banner-slide" style="background-image:url(app/statics/images/jaq1.datu.jpg)" rel="site/detail/id/5830fed1e54ac.html">
+                            <div class="swiper-slide banner-slide" style="background-image:url(app/statics/images/jaq1.datu.jpg)" rel="/site/detail1/id/5a2dec49e4b050b8bd5d3511">
                     <div class="banner-bottom">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-8 col-xs-12">
-                                    <h2 class="text-left text-color5 font-size6">置身于风景秀美的澳洲 @Messages.get(Lang.forCode("zh-cn"), "header.login")</h2>
+                                    <h2 class="text-left text-color5 font-size6">置身于风景秀美的澳洲 </h2>
                                     <p class="text-left text-color5">天蓝蓝、水绿绿，满目青翠，绿树成荫，百花争艳，感受悉尼繁华市区的车水马龙，去墨尔本海边吹吹清风，尽情地欣赏天边夕阳勾勒出的那一抹靓丽的红晕，更会飘逸着罗曼蒂克的浪漫情怀。</p>      
                                 </div>
                                 <div class="col-sm-4 col-xs-4 text-right">
