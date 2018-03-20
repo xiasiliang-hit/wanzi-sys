@@ -93,3 +93,5 @@ GET         /setting/myorders                             controllers.SettingCon
 GET         /setting/refer                                controllers.SettingController.refer()
 GET         /setting/preference                              controllers.SettingController.getPreference()
 
+GET 	    /itinerary					     controllers.Application.test()
+GET 	    /gethotels					     controllers.ItineraryController.getHotels()

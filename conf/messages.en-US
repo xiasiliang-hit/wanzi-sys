@@ -19,6 +19,7 @@ header.referral=Referral
 header.logout=Logout
 
 header.menu.help_center=Help Center
+header.menu.tutorial=Tutorial for Beginner
 header.menu.how_order_guider=How to order a guider
 header.menu.how_personalized_travel=How to personalize travel
 header.menu.how_starguider=How to be a star guider
