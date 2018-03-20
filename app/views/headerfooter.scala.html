@@ -3,18 +3,17 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-        <!-- Mirrored from www.wanzi.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:40:55 GMT -->
-        <!-- Added by HTTrack -->
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <!-- /Added by HTTrack -->
-	<head>
+  <!-- Added by HTTrack -->
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <!-- /Added by HTTrack -->
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
         <title></title>
-        <meta name="keywords" content="包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
-        <meta name="description" content="走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
-	<link rel="icon" href="/app/statics/images/favicon.ico">
+        <meta name="keywords" content="izouzou, 爱走走, 走走旅游,包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
+        <meta name="description" content="izouzou, 走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
+		<link rel="icon" href="/app/statics/images/favicon.ico">
         <link href="/app/statics/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="icon.png">
         <link rel="stylesheet" href="/app/statics/css/common.css">
@@ -67,9 +66,8 @@
             <!--})();-->
             <!--})();*/-->
             <!--</script>-->
-	</head>
-	<body>
-	  @views.html.tutorial.render()
+    </head>
+    <body >
             <!-- 手机端顶部下载APP -->
             <!--<div class="load-header">-->
             <!--<img src="/app/statics/images/APP.png" alt="" class="header-logo">-->
@@ -104,8 +102,7 @@
 
 						  <ul>
 <!--							<li class=" mian-top"><a href="/site/group.html" target="_blank">@Messages("header.group_travel")</a></li>-->
-<li class=" mian-top"><a href="/site/travelagency" target="_blank">@Messages("header.travel_agency")</a></li>
-
+    						<li class=" mian-top"><a href="/site/travelagency" target="_blank">@Messages("header.travel_agency")</a></li>
 						  </ul>
 						</li>
 						
@@ -127,7 +124,6 @@
                         <li class="help-center">
                             <a href="/site/helpList.html">@Messages("header.menu.help_center")<i></i></a>
                             <ul>
-<li><a href="#" type="button" onclikc="showTuto()">@Messages("header.menu.tutorial")</a></li>
                                 <li><a href="/site/helpDetail/id/58.html">@Messages("header.menu.how_order_guider")</a></li>
                                 <li><a href="/site/helpDetail/id/61.html">@Messages("header.menu.how_personalized_travel")</a></li>
                                 <li><a href="/site/helpDetail/id/57.html">@Messages("header.menu.how_starguider")</a></li>
@@ -262,16 +258,7 @@
 		</script>
 *@
 		
-		<script>
-//		  $(document).ready(function(){
-//		  $("#_tutorial").hide();
-//		  });
-
-		  function showTuto(){
-		  $("#_tutorial").show();
-		  }
-
-		  
+        <script>
 	  //show conversation
 	  var uId = '@session.get("userId")';
 	  var newUserId = '@newUserId';
