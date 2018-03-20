@@ -67,7 +67,8 @@
             <!--})();*/-->
             <!--</script>-->
     </head>
-    <body >
+  <body>
+    @views.html.tutorial.render();
             <!-- 手机端顶部下载APP -->
             <!--<div class="load-header">-->
             <!--<img src="/app/statics/images/APP.png" alt="" class="header-logo">-->
@@ -124,6 +125,7 @@
                         <li class="help-center">
                             <a href="/site/helpList.html">@Messages("header.menu.help_center")<i></i></a>
                             <ul>
+			      <li><a href="#" onclick="showTuto()"  >@Messages("header.menu.tutorial")</a></li>
                                 <li><a href="/site/helpDetail/id/58.html">@Messages("header.menu.how_order_guider")</a></li>
                                 <li><a href="/site/helpDetail/id/61.html">@Messages("header.menu.how_personalized_travel")</a></li>
                                 <li><a href="/site/helpDetail/id/57.html">@Messages("header.menu.how_starguider")</a></li>
@@ -258,7 +260,13 @@
 		</script>
 *@
 		
-        <script>
+		<script>
+
+		  function showTuto()
+		  {
+		  $("#_tutorial").show();
+		  }
+		  
 	  //show conversation
 	  var uId = '@session.get("userId")';
 	  var newUserId = '@newUserId';
