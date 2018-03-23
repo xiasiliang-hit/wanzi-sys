@@ -156,3 +156,10 @@ agency.free=目前免费接入旅行社
 agnecy.ask=提交咨询
 contact.person=联系人
 contact.person.name=贝经理
+
+agency.name=旅行社名称
+agency.address=旅行社地址
+agency.contact=联系人
+agency.phone=旅行社电话
+agency.email=旅行社邮箱
+agency.intro=简单介绍贵社的业务信息，如：目的地，月订单数，年营业额，目前需要的软件功能

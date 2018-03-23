@@ -187,3 +187,10 @@ agency.free.adv=Now looking for travel agency as partner
 agency.ask=Submit a query
 contact.person=Contact
 contact.person.name=Mr. Bei
+
+agency.name=Agency Name
+agency.address=Agency Address
+agency.contact=Contact Name
+agency.phone=Agency Phone
+agency.email=Agency Email
+agency.intro=Briefly introduce agency business, orders, revenue, service you are looking for

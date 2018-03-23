@@ -112,13 +112,13 @@
                 <div class="row portal_us">
                     <div class="col-sm-6">
                         <form method="post" id="portalPost">
-        <input type="text" name="firm_name" class="form-control" placeholder="旅行社名称">
-		<input type="text" name="firm_name" class="form-control" placeholder="旅行社地址">
-                            <input type="text" name="user_name" class="form-control" placeholder="联系人">
-                            <input type="text"  name="phone" id="phone"  class="form-control" placeholder="联系电话">
-                            <input type="text" name="user_email"  class="form-control" placeholder="联系邮箱">
+        <input type="text" name="firm_name" class="form-control" placeholder="@Messages("agency.name")">
+		<input type="text" name="firm_name" class="form-control" placeholder="@Messages("agency.address")">
+                            <input type="text" name="user_name" class="form-control" placeholder="@Messages("agency.contact")">
+                            <input type="text"  name="phone" id="phone"  class="form-control" placeholder="@Messages("agency.phone")">
+                            <input type="text" name="user_email"  class="form-control" placeholder="@Messages("agency.email")">
 		
-                            <textarea name="content" id="content"  class="form-control"  cols="30" rows="10" placeholder="简单介绍贵社的业务信息，如：目的地，月订单数，年营业额，目前需要的软件功能"></textarea>
+                            <textarea name="content" id="content"  class="form-control"  cols="30" rows="10" placeholder="@Messages("agency.intro")"></textarea>
                             <p class="text-center"><button class="btn font-size2"  type="submit">@Messages("button.send")</button></p>
                         </form>
                     </div>
