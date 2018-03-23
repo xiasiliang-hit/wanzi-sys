@@ -114,6 +114,9 @@ button.send=发送
 button.print=打印
 button.share=分享
 
+button.known=知道了
+button.next=下一步
+
 refer.promotion=打印推广
 refer.promotion_msg=打印二维码 放到您所在的城市的酒店机场，游客扫码会在导游首页和搜索页看到您哦！
 refer.sharelink=分享链接
@@ -141,7 +144,10 @@ guider.fullname=姓名
 izouzou.claim=走走旅游是一个以真实身份为基础的旅游社区
 guider.birthdate=出生年月
 
+#tutorial
+tuto.step1=1. 输入你要去的目的地
 
+#trvel agency
 agency.service=走走旅游旅行社服务
 agency.wehave=走走旅游目前在全球30多个国家的200多个城市，拥有超过800名向导，为您的出游竭诚服务。
 agency.ourservice=我们为旅行社提供如下服务
