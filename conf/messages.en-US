@@ -110,6 +110,9 @@ button.send=Send
 button.print=Print
 button.share=Share
 
+button.known=Known
+button.next=Next
+
 refer.promotion=Promotion
 refer.promotion_msg=Print your barcode, put it on the hotel or airport to help traveler can find you easily!
 refer.sharelink=Share Link
@@ -173,6 +176,10 @@ user.city_and_country=Location
 user.jobtitle=Job Title
 user.birth_day=Birth Date
 
+#tutorial
+tuto.step1=1. Tell us your destination!
+
+#trave agency
 agency.service=Service for Travel Agency
 agency.wehave=We have hundreds of guiders all over the world
 agency.ourservice=We provide following service
