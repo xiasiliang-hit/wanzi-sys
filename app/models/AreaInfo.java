@@ -29,7 +29,8 @@ public class AreaInfo implements Serializable {
     private String areaTimeZone; //地区时区
     private String areaLevel; //地区层级
     private String areaParent; //父级区域id
-
+    private String areaURL;
+    
     private static JacksonDBCollection<AreaInfo,String> coll = MongoDB.getCollection("location", AreaInfo.class,String.class);
 
     public AreaInfo() {
@@ -151,6 +152,14 @@ public class AreaInfo implements Serializable {
         this.areaLevel = areaLevel;
     }
 
+    public String getAreaURL() {
+	return areaURL;
+    }
+
+    public void setAreaURL(String areaURL) {
+	this.areaURL = areaURL;
+    }
+    
     public static List<AreaInfo> searchArea(String keyword){
         return coll.find(DBQuery.regex("areaIndex", Pattern.compile(".*" + keyword  + ".*",
                 Pattern.CASE_INSENSITIVE))).toArray();
