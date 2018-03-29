@@ -17,10 +17,15 @@ import java.util.Map;
 
 public class AgencyController extends Controller {
 	public static Result travelAgency() {
-		return ok(views.html.travelagency.render());
+	    return ok(views.html.travelagency.render());
 	}
 
-	
+        public static Result hotel() {
+	    return ok(views.html.hotel.render());
+        }
+
+    
+
 	/* copy from orderController, have not implemented */
 	public static Result onAgencyQuery() {
 		
