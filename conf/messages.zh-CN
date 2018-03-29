@@ -25,6 +25,8 @@ header.menu.how_personalized_travel=如何定制旅行服务
 header.menu.how_starguider=如何成为一名优秀的向导
 header.menu.FAQ=更多问题与解答
 
+header.solution=解决方案
+header.solution.hotel=酒店预订系统
 
 ### index content ###
 index.search_box=请输入您想去的国家、城市

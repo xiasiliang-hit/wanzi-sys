@@ -25,6 +25,11 @@ header.menu.how_personalized_travel=How to personalize travel
 header.menu.how_starguider=How to be a star guider
 header.menu.FAQ=FAQ
 
+header.solution=Solution
+header.solution.hotel=Hotel Solution
+
+solution.hotel.title=Online Booking System for your Hotel
+
 ### index content ###
 index.search_box=Where do you travel to
 

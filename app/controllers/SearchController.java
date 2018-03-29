@@ -97,12 +97,15 @@ public class SearchController extends Controller {
         AreaVo areaVo = new AreaVo();
         String[] exception = {"1", "2", "3", "4", "5", "6"};
 
+	Logger.info("in getCountry");
         if (area.getAreaParent() == null || Arrays.asList(exception).contains(area.getAreaParent())) {
             List<AreaInfo> areaInfos = AreaInfo.findAreaByParentId(cid);
             areaVo.setChildArea(areaInfos);
             areaVo.setAreaId(cid);
             areaVo.setAreaName(area.getAreaName());
             areaVo.setAreaImage(area.getAreaImage());
+	    areaVo.setAreaURL(area.getAreaURL());
+
             areaVo.setGuiderCount(AUser.searchGuider(area.getAreaName(), 0, 0).size());
         } else {
             AreaInfo pArea = AreaInfo.getAreaById(area.getAreaParent());
@@ -111,6 +114,7 @@ public class SearchController extends Controller {
             areaVo.setAreaId(pArea.getAreaId());
             areaVo.setAreaName(pArea.getAreaName());
             areaVo.setAreaImage(pArea.getAreaImage());
+	    areaVo.setAreaURL(area.getAreaURL());
             areaVo.setGuiderCount(AUser.searchGuider(pArea.getAreaName(), 0, 0).size());
         }
         areaVo.setCurrentArea(cid);
