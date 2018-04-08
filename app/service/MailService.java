@@ -6,8 +6,10 @@ import play.libs.mailer.Email;
 import play.libs.mailer.MailerPlugin;
 
 public class MailService {
+    String sender = play.Play.application().configuration().getString("smtp.user");
+    boolean flag = true;
     public void sendGroupDemandMail(String title, String htmlBody) {
-       /* Example
+	/* Example
        Email email = new Email();
         email.setSubject("Simple email");
         email.setFrom("Mister FROM <from@email.com>");
@@ -19,12 +21,22 @@ public class MailService {
         // sends text, HTML or both...
         email.setBodyText("A text message");
         email.setBodyHtml("<html><body><p>An <b>html</b> message</p></body></html>");*/
-        Email email = new Email();
+	
+        try
+	{
+	Email email = new Email();
         email.setSubject(title);
-        email.setFrom("dannyzjwz@163.com");
-        email.addTo("dannyzjwz@163.com");
+        email.setFrom(sender);
+        email.addTo(sender);
 
         email.setBodyHtml(htmlBody);
         MailerPlugin.send(email);
+	}
+	catch (Exception e)
+	{
+	    play.Logger.info("send mail exception !!!");
+	    //	    flag = false;
+	}
+	//	return flag;
     }
 }
