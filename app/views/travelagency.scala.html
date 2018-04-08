@@ -1,4 +1,7 @@
+@views.html.pop.msgPop("邮件已发送,我们的客服人员会在24小时之内联系您")
+
 @headerfooter{
+<script src="/app/statics/js/promptbox/prompt_box.js"></script>
     <!-- 主题 -->
     <link rel="stylesheet" href="/app/statics/css/computer.css">
         <!-- 主题部分 -->
@@ -17,7 +20,7 @@
 @**            <p class="font-size2 service-text">走走旅游竭诚为您的企业提供高质量的翻译陪同，会展参观，团队建设，客户答谢等私人定制的国际旅行服务。走走旅游的向导们都是经过严格标准选拔的精英，普遍拥有学士以上的学历，并且长期在当地居住。走走旅游迄今已经服务超过50个10人以上的团体出行。</p>
         <h3 class="text-center font-size4">企业福利</h3>
 **@
-            <p class="text-center font-size2 text-color1">@Messages("agency.ourservice")</p>
+            <p class="text-center font-size2 text-color1">@Messages("")</p>
             <div class="row welfare-section">
                 <div class="col-sm-3">
                     <p class="text-center">
@@ -47,66 +50,12 @@
                     <p class="text-center font-size2"><strong>@Messages("agency.free")</strong></p>
                     <p class="text-center text-color1">@Messages("agency.free.adv")</p>
                 </div>
-            </div>
-@**            <h3 class="text-center font-size4">走走旅游成功服务案例</h3>
-            <p class="text-center font-size2 text-color1">走走旅游案例线路诚挚敬上</p>
-            <div class="row visit-img">
-                <div class="col-sm-4">
-                    <p class="text-center">
-                            <!--					<img src="/app/statics/images/visit.png" alt=""> -->
-                        <img src="http://blog.asianinny.com/wp-content/uploads/2011/08/group-in-italy.jpg">
+			</div>
 
-                    </p>
-                    <p class="font-size2"><strong>十人艺术生团队赴意大利米兰学习</strong></p>
-                    <p class="text-color1">了解客户都是艺术学生后，我们特意安排了向导阿朗（版画专业）接待，定制了佛罗伦萨百花大教堂、米兰大教堂等行程，罗马竞技场，让整个团队更深入的体验了当地的建筑风貌。</p>
-                </div>
-                <div class="col-sm-4">
-                    <p class="text-center">
-                            <!--					<img src="/app/statics/images/visit1.png" alt="">-->
-                        <img src="https://images.enca.com/encadrupal/styles/600_383/s3/WEB_PHOTO_Tourists.jpg" lat="">
-                    </p>
-                    <p class="font-size2"><strong>市级工会赴法国考察</strong></p>
-                    <p class="text-color1">工会的客人们要到法国做欧洲文化考察，安排了土生土长的法国向导大鹏负责接待，从巴黎到马赛，让客人顺利进入了欧洲当地人的生活，让客人体验了当地的文化。</p>
-                </div>
-                <div class="col-sm-4">
-                    <p class="text-center">
-                            <!--					<img src="/app/statics/images/visit2.png" alt=""> -->
-                        <img src="http://www.travelweek.ca/wp-content/uploads/2016/01/01-14-Chinese.jpg" alt="">
-
-                    </p>
-                    <p class="font-size2"><strong>大型外企员工家属日本休闲度假</strong></p>
-                    <p class="text-color1">客人们想体验日本民间特色生活，我们安排了在大阪学习艺术专业的向导张斯斯接待，一行人身穿和服在古色古香的京都街道慢步；品尝怀石料理，感受日式料理的独特之处，向导全程周到的安排让客人们感受到了超出预期的体验。</p>
-                </div>
-            </div>
-            <h3 class="text-center font-size4">走走旅游的服务保障</h3>
-            <p class="text-center font-size2 text-color1">与运通的全球支援系统合作，保障您的出行无忧</p>
-            <div class="row service-system">
-                <div class="col-sm-3">
-                    <p class="text-center">
-                        <img src="/app/statics/images/service-system.png" alt="">
-                    </p>
-                    <p class="text-center font-size2"><strong>完善的服务体系</strong></p>
-                </div>
-                <div class="col-sm-3">
-                    <p class="text-center">
-                        <img src="/app/statics/images/custom-service.png" alt="">
-                    </p>
-                    <p class="text-center font-size2"><strong>专属客服及时响应</strong></p>
-                </div>
-                <div class="col-sm-3">
-                    <p class="text-center">
-                        <img src="/app/statics/images/amex.png" alt="">
-                    </p>
-                    <p class="text-center font-size2"><strong>运通保险全球支援服务</strong></p>
-                </div>
-                <div class="col-sm-3">
-                    <p class="text-center">
-                        <img src="/app/statics/images/guide.png" alt="">
-                    </p>
-                    <p class="text-center font-size2"><strong>严格的向导筛选制度</strong></p>
-                </div>
-        </div>
-		**@
+			<div class="consult-section" style="padding-bottom:100px;">
+			  <div class="sm-col-12"><a href="/site/contact"  class="btn btn-info btn-lg"style="position:relative;left:45%">@Messages("button.contact")</a> </div>
+			  </div>
+@**			
             <div class="consult-section">
                 <h3 class="text-center font-size4">@Messages("agency.ask")</h3>
                 <div class="row portal_us">
@@ -135,6 +84,8 @@
                     </div>
                 </div>
             </div>
+
+**@			
         </div>
     </div>
     <div class="main-line"></div>
@@ -158,8 +109,10 @@
                     $(this).loading();
                     $.post('/intent/addAgencyQuery', $('#portalPost').serialize(), function(result) {
                         $(this).unload();
-                        if (result.code == 1000) {
-                            $(this).popup('感谢您的垂询，我们的工作人员会在24小时之内联系您，谢谢！');
+                        if (result.code == '1000') {
+			$("#_popup").show();
+			//			                alert("邮件已发送,我们的客服人员会在24小时之内联系您");
+//                            $(this).popup('感谢您的垂询，我们的工作人员会在24小时之内联系您，谢谢！');
                             isPost=true;
                         } else {
                             $(this).popup(result.error);

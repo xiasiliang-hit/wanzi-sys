@@ -117,6 +117,8 @@ button.share=Share
 
 button.known=Known
 button.next=Next
+button.save=Save
+button.contact=Contact Now
 
 refer.promotion=Promotion
 refer.promotion_msg=Print your barcode, put it on the hotel or airport to help traveler can find you easily!
@@ -171,7 +173,6 @@ setting.prefer.order_notification=Order Notification
 time.year=Year
 time.month=Month
 
-button.save=Save
 
 #user
 user.name=Full Name

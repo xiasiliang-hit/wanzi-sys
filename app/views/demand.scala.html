@@ -1,5 +1,7 @@
+@views.html.pop.msgPop("邮件已发送,我们的客服人员会在24小时之内联系您")
 @headerfooter{
-    <!-- 主题 -->
+<script src="/app/statics/js/promptbox/prompt_box.js"></script>
+<!-- 主题 -->
     <link rel="stylesheet" href="/app/statics/css/computer.css">
     <link rel="stylesheet" href="/app/statics/css/bootstrap-datetimepicker.min.css">
         <!-- 主题部分 -->
@@ -227,8 +229,9 @@
                     $.post('/intent/addOlister',$(this).serialize(),function(result){
                         $(this).unload();
                         if(result.code==1000){
+							$("#_popup").show();
                             //window.location.href='/site/demandSuccess/id/'+result.result;
-                            $(this).popup("定制成功！");
+//                            $(this).popup("定制成功！");
                         }else{
                             $(this).popup(result.error);
                         }

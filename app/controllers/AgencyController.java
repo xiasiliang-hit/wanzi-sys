@@ -24,6 +24,14 @@ public class AgencyController extends Controller {
 	    return ok(views.html.hotel.render());
         }
 
+	public static Result contactForm() {
+		return ok(views.html.contact.render());
+	}
+
+	public static Result submitContactForm()
+	{
+		return ok();
+	}
     
 
 	/* copy from orderController, have not implemented */

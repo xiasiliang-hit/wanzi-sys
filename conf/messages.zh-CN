@@ -118,6 +118,8 @@ button.share=分享
 
 button.known=知道了
 button.next=下一步
+button.save=保存
+button.contact=立即咨询
 
 refer.promotion=打印推广
 refer.promotion_msg=打印二维码 放到您所在的城市的酒店机场，游客扫码会在导游首页和搜索页看到您哦！
@@ -171,3 +173,7 @@ agency.contact=联系人
 agency.phone=旅行社电话
 agency.email=旅行社邮箱
 agency.intro=简单介绍贵社的业务信息，如：目的地，月订单数，年营业额，目前需要的软件功能
+
+
+button.save=保存
+button.contact=立即咨询
