@@ -1,0 +1,24 @@
+@import helper._
+
+@headerfooter{
+@form(action = routes.ItineraryController.onItinerarySave(), 'id -> "main-form") {
+<div class="top">
+  <div class="applys_com">
+    <div class="applys_name">* 行程名称 <span class="mark"></span><p class="prompt">走走旅游是一个以真实身份为基础<br>
+	的旅游社区<i></i></p><div class="font-size3">-</div></div>
+    <input type="text" name="name" class="form-control" style="width: 228px;" required="required" value="">
+  </div>
+  <div class="applys_com">
+    <div class="applys_name">* 出生年月 <span class="mark"></span><p class="prompt" style="top: -15px;">
+	必须年满18岁才能注册成为向导 <i style="top: 12px;"></i></p></div>
+    <input type="text" class="form-control" placeholder="如：1990-01-01" name="birth_day" id="birth_day" style="width: 228px;" value="" required="required" />
+  </div>
+
+  <div class="applys_com">
+    <div class="applys_name">* 性别</div>
+  </div>
+
+  <div>
+  </div>
+}
+}
