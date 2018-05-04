@@ -2,6 +2,7 @@
 header.index=首页
 header.search_box=请输入您想去的国家、城市
 
+header.travel_agency=旅行社接入 
 header.group_travel=团队企业服务
 header.personalized_travel=定制旅行
 header.become_guider=成为向导
@@ -18,11 +19,14 @@ header.referral=推广有奖
 header.logout=退出登录
 
 header.menu.help_center=帮助中心
+header.menu.tutorial=新手教程
 header.menu.how_order_guider=如何预订向导
 header.menu.how_personalized_travel=如何定制旅行服务
 header.menu.how_starguider=如何成为一名优秀的向导
 header.menu.FAQ=更多问题与解答
 
+header.solution=解决方案
+header.solution.hotel=酒店预订系统
 
 ### index content ###
 index.search_box=请输入您想去的国家、城市
@@ -112,6 +116,11 @@ button.send=发送
 button.print=打印
 button.share=分享
 
+button.known=知道了
+button.next=下一步
+button.save=保存
+button.contact=立即咨询
+
 refer.promotion=打印推广
 refer.promotion_msg=打印二维码 放到您所在的城市的酒店机场，游客扫码会在导游首页和搜索页看到您哦！
 refer.sharelink=分享链接
@@ -138,3 +147,33 @@ reg.guider.service_name=自定义服务
 guider.fullname=姓名
 izouzou.claim=走走旅游是一个以真实身份为基础的旅游社区
 guider.birthdate=出生年月
+
+#tutorial
+tuto.step1=1. 输入你要去的目的地
+
+#trvel agency
+agency.service=走走旅游旅行社服务
+agency.wehave=走走旅游目前在全球30多个国家的200多个城市，拥有超过800名向导，为您的出游竭诚服务。
+agency.ourservice=我们为旅行社提供如下服务
+agency.guiders=境外导游对接
+agency.guiders.adv=低于地接社团的导游接待价格
+agency.online=线上沟通支付
+agency.online.adv=低于地接社团的导游接待价格
+agency.processmanage=旅行过程管理
+agency.processmanage.adv=专业的管理工具，从旅客接洽，行程编排，交通查询，完成旅行社订单的全程管理
+agency.free=免费使用
+agency.free=目前免费接入旅行社
+agnecy.ask=提交咨询
+contact.person=联系人
+contact.person.name=贝经理
+
+agency.name=旅行社名称
+agency.address=旅行社地址
+agency.contact=联系人
+agency.phone=旅行社电话
+agency.email=旅行社邮箱
+agency.intro=简单介绍贵社的业务信息，如：目的地，月订单数，年营业额，目前需要的软件功能
+
+
+button.save=保存
+button.contact=立即咨询

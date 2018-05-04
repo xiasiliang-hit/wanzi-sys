@@ -1,4 +1,3 @@
-
 @(area: AreaVo)
 @headerfooter{
         <link rel="stylesheet" href="/app/statics/css/computer.css">
@@ -10,19 +9,21 @@
         </style>
     <script>
         $(function () {
-
             $(".city-section")
         });
     </script>
-            <!-- 主题部分 -->
+    <!-- 主题部分 -->
+        <a href="@area.getAreaURL"> 
+<!--    <a href="http://www.izouzou.cc">  -->
         <div class="banner-bg" style="background: url(https://img.wanzi.cc/images/@Html(area.getAreaImage)) no-repeat;
             background-position: 50% 50%;
-            background-size: cover;">
+            background-size: cover;"> 
             <div class="contry-title">
                 <h2 class="text-center text-color5 font-size5">@Html(area.getAreaName)</h2>
                 <p class="text-center text-color5 font-size2"><strong>@area.getGuiderCount</strong>位当地中文向导</p>
             </div>
         </div>
+	</a>
         <div class="main-white">
             <div class="container list-city">
                 <div class="filter-section">

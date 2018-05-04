@@ -10,7 +10,7 @@ public class AreaVo {
     private Integer guiderCount;
     private List<AreaVo> childArea;
     private String currentArea;
-
+    private String areaURL;
 
     public String getAreaId() {
         return areaId;
@@ -65,5 +65,13 @@ public class AreaVo {
 
     public void setCurrentArea(String currentArea) {
         this.currentArea = currentArea;
+    }
+
+    public String getAreaURL() {
+	return areaURL;
+    }
+
+    public void setAreaURL(String areaURL) {
+	this.areaURL = areaURL;
     }
 }

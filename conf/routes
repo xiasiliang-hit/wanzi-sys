@@ -67,10 +67,15 @@ POST        /file/thumbImg/                               controllers.FileContro
 
 GET         /site/demand                                  controllers.OrderController.demandPage()
 POST        /intent/addOlister                            controllers.OrderController.onDemand()
-GET         /site/group                                   controllers.OrderController.groupDemand()
-POST        /intent/addFirm                               controllers.OrderController.onGroupDemand()
+GET         /site/group									  controllers.OrderController.groupDemand()
+POST        /intent/addFirm                          controllers.OrderController.onGroupDemand()
 
-GET         /getBalance                                   controllers.OrderController.getBalance()
+GET			/site/travelagency							  controllers.AgencyController.travelAgency()
+POST		/intent/addAgencyQuery						  controllers.AgencyController.onAgencyQuery()
+GET         /site/hotel                                   controllers.AgencyController.hotel()
+GET 		/site/contact								  controllers.AgencyController.contactForm()
+
+GET     /getBalance                                   controllers.OrderController.getBalance()
 
 #Order
 GET         /m/order/booking/*uid                         controllers.OrderController.booking(uid:String, orderId:String?=null)
@@ -90,3 +95,5 @@ GET         /setting/myorders                             controllers.SettingCon
 GET         /setting/refer                                controllers.SettingController.refer()
 GET         /setting/preference                              controllers.SettingController.getPreference()
 
+#GET 	    /itinerary					     controllers.Application.test()
+#GET 	    /gethotels					     controllers.ItineraryController.getHotels()

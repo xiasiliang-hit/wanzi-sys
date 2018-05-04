@@ -1,5 +1,7 @@
+@views.html.pop.msgPop("邮件已发送,我们的客服人员会在24小时之内联系您")
 @headerfooter{
     <!-- 主题 -->
+<script src="/app/statics/js/promptbox/prompt_box.js"></script>
     <link rel="stylesheet" href="/app/statics/css/computer.css">
         <!-- 主题部分 -->
     <div class="service-bg">
@@ -155,7 +157,8 @@
                     $.post('/intent/addFirm', $('#portalPost').serialize(), function(result) {
                         $(this).unload();
                         if (result.code == 1000) {
-                            $(this).popup('感谢您的垂询，我们的工作人员会在1小时之内联系您，谢谢！');
+			                $("#_popup").show(); 
+//                            $(this).popup('感谢您的垂询，我们的工作人员会在1小时之内联系您，谢谢！');
                             isPost=true;
                         } else {
                             $(this).popup(result.error);

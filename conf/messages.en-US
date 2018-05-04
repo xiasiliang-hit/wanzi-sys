@@ -2,6 +2,7 @@
 header.index=Home Page
 header.search_box=Where do you travel to
 
+header.travel_agency=Travel Agency
 header.group_travel=Group Travel
 header.personalized_travel=Personalized Travel
 header.become_guider=Become Guider
@@ -18,10 +19,16 @@ header.referral=Referral
 header.logout=Logout
 
 header.menu.help_center=Help Center
+header.menu.tutorial=Tutorial for Beginner
 header.menu.how_order_guider=How to order a guider
 header.menu.how_personalized_travel=How to personalize travel
 header.menu.how_starguider=How to be a star guider
 header.menu.FAQ=FAQ
+
+header.solution=Solution
+header.solution.hotel=Hotel Solution
+
+solution.hotel.title=Online Booking System for your Hotel
 
 ### index content ###
 index.search_box=Where do you travel to
@@ -108,6 +115,11 @@ button.send=Send
 button.print=Print
 button.share=Share
 
+button.known=Known
+button.next=Next
+button.save=Save
+button.contact=Contact Now
+
 refer.promotion=Promotion
 refer.promotion_msg=Print your barcode, put it on the hotel or airport to help traveler can find you easily!
 refer.sharelink=Share Link
@@ -161,7 +173,6 @@ setting.prefer.order_notification=Order Notification
 time.year=Year
 time.month=Month
 
-button.save=Save
 
 #user
 user.name=Full Name
@@ -170,3 +181,29 @@ user.gender=Gender
 user.city_and_country=Location
 user.jobtitle=Job Title
 user.birth_day=Birth Date
+
+#tutorial
+tuto.step1=1. Tell us your destination!
+
+#trave agency
+agency.service=Service for Travel Agency
+agency.wehave=We have hundreds of guiders all over the world
+agency.ourservice=We provide following service
+agency.guiders=Guiders all over the world
+agency.guiders.adv=Lower price than local agency
+agency.online=Online chat and payment with guiders
+agency.online.adv=Ease the process online
+agency.processmanage=Travel process management
+agency.processmanage.adv=Professional management tools
+agency.free=Limited time free
+agency.free.adv=Now looking for travel agency as partner
+agency.ask=Submit a query
+contact.person=Contact
+contact.person.name=Mr. Bei
+
+agency.name=Agency Name
+agency.address=Agency Address
+agency.contact=Contact Name
+agency.phone=Agency Phone
+agency.email=Agency Email
+agency.intro=Briefly introduce agency business, orders, revenue, service you are looking for
