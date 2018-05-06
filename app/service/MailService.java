@@ -7,6 +7,8 @@ import play.libs.mailer.MailerPlugin;
 
 public class MailService {
     String sender = play.Play.application().configuration().getString("smtp.user");
+	String receiver = sender;
+	
     boolean flag = true;
     public void sendGroupDemandMail(String title, String htmlBody) {
 	/* Example
@@ -22,12 +24,12 @@ public class MailService {
         email.setBodyText("A text message");
         email.setBodyHtml("<html><body><p>An <b>html</b> message</p></body></html>");*/
 	
-        try
+    try
 	{
 	Email email = new Email();
         email.setSubject(title);
         email.setFrom(sender);
-        email.addTo(sender);
+        email.addTo(receiver);
 
         email.setBodyHtml(htmlBody);
         MailerPlugin.send(email);
