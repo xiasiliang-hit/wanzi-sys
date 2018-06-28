@@ -97,3 +97,6 @@ GET         /setting/preference                              controllers.Setting
 
 #GET 	    /itinerary					     controllers.Application.test()
 #GET 	    /gethotels					     controllers.ItineraryController.getHotels()
+
+GET 		/itinerary						 controllers.ItineraryController.itinerary()
+POST		/onItinerarySave			 controllers.ItineraryController.onItinerarySave()

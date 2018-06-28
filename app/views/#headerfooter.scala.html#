@@ -18,7 +18,7 @@
         <link href="/app/statics/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="icon.png">
         <link rel="stylesheet" href="/app/statics/css/common.css">
-	<link rel="stylesheet" href="/app/statics/css/mobile.css">
+	    <link rel="stylesheet" href="/app/statics/css/mobile.css">
         <link rel="stylesheet" href="/app/statics/css/swiper.min.css">
         <link rel="stylesheet" href="/app/statics/emoji/emoji.css">
         <link rel="stylesheet" href="/app/statics/js/promptbox/prompt_box.css">
@@ -29,7 +29,7 @@
         <script src="/app/statics/js/remscreen.js"></script>
         <script src="/app/statics/js/fastclick.js"></script>
         <script src="http://static.izouzou.cc/app/statics/js/promptbox/prompt_box.js"></script>
-		<script src="/app/statics/js/mixpanel.js"></script>
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117757926-1"></script>

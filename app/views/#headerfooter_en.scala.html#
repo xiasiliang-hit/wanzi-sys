@@ -1,65 +1,47 @@
 @(content: Html)
-@import java.lang.String; val newUserId="999999999999999999999999"; 
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-  <!-- Added by HTTrack -->
+        <!-- Mirrored from www.wanzi.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:40:55 GMT -->
+        <!-- Added by HTTrack -->
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <!-- /Added by HTTrack -->
+        <!-- /Added by HTTrack -->
     <head>
-	  
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
         <title></title>
-        <meta name="keywords" content="izouzou, 爱走走, 走走旅游,包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
-        <meta name="description" content="izouzou, 走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
+        <meta name="keywords" content="包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
+        <meta name="description" content="走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
 		<link rel="icon" href="/app/statics/images/favicon.ico">
         <link href="/app/statics/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="icon.png">
         <link rel="stylesheet" href="/app/statics/css/common.css">
-	<link rel="stylesheet" href="/app/statics/css/mobile.css">
         <link rel="stylesheet" href="/app/statics/css/swiper.min.css">
         <link rel="stylesheet" href="/app/statics/emoji/emoji.css">
         <link rel="stylesheet" href="/app/statics/js/promptbox/prompt_box.css">
-		<script src="/app/statics/js/jquery-1.9.1.min.js"></script> 
+        <script src="/app/statics/js/jquery-1.8.3.min.js"></script>
         <script src="/app/statics/js/bootstrap.min.js"></script>
             <!--<script src="js/global.js"></script>-->
         <script src="/app/statics/js/search.js"></script>
         <script src="/app/statics/js/remscreen.js"></script>
         <script src="/app/statics/js/fastclick.js"></script>
-        <script src="http://static.izouzou.cc/app/statics/js/promptbox/prompt_box.js"></script>
-		<script src="/app/statics/js/mixpanel.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117757926-1"></script>
-
-	<script>
-	window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-117757926-1');
-</script>
-
-
-
-        <script>
-            //google 统计
-            (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-117757926-1', 'auto');
-            ga('send', 'pageview');
-</script>			
+        <script src="/app/statics/js/promptbox/prompt_box.js"></script>
+            <!--<script>-->
+            <!--//google 统计-->
+            <!--(function(i, s, o, g, r, a, m) {-->
+            <!--i['GoogleAnalyticsObject'] = r;-->
+            <!--i[r] = i[r] || function() {-->
+            <!--(i[r].q = i[r].q || []).push(arguments)-->
+            <!--}, i[r].l = 1 * new Date();-->
+            <!--a = s.createElement(o),-->
+            <!--m = s.getElementsByTagName(o)[0];-->
+            <!--a.async = 1;-->
+            <!--a.src = g;-->
+            <!--m.parentNode.insertBefore(a, m)-->
+            <!--})(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');-->
+            <!--ga('create', 'UA-56466931-1', 'auto');-->
+            <!--ga('send', 'pageview');-->
             <!--//百度统计-->
             <!--var _hmt = _hmt || [];-->
             <!--(function() {-->
@@ -85,8 +67,7 @@ gtag('config', 'UA-117757926-1');
             <!--})();*/-->
             <!--</script>-->
     </head>
-  <body>
-    @views.html.tutorial.render()
+    <body >
             <!-- 手机端顶部下载APP -->
             <!--<div class="load-header">-->
             <!--<img src="/app/statics/images/APP.png" alt="" class="header-logo">-->
@@ -113,25 +94,12 @@ gtag('config', 'UA-117757926-1');
                         <i><div class="phone-search">
                             <input type="text" placeholder="@Messages("header.search_box")">
                         </div></i>
-<li class="help-center" style="">
-    <a href="/site/demand" target="_blank">@Messages("header.personalized_travel")<i></i></a>
-    <ul>
-    <!--<li class="hidden-sm hidden-md order-li mian-top"><a href="/site/demand" target="_blank">@Messages("header.personalized_travel")</a></li> -->
-    <li class=" mian-top"><a href="/site/group" target="_blank">@Messages("header.group_travel")</a></li>
-    </ul>
-</li>    
-
-<li class="slide-li mian-top"><a href="/registerguider">@Messages("header.become_guider")</a></li>
-
-
-<li class="help-center" style="">
-    <a href="#" target="_blank">@Messages("header.solution")<i></i></a>
-    <ul>
-    <li class=" mian-top"><a href="/site/travelagency" target="_blank">@Messages("header.travel_agency")</a></li>
-    <li class=" mian-top"><a href="/site/hotel" target="_blank">@Messages("header.solution.hotel")</a></li>
-    </ul>
-</li>
-						
+                        <li class="hidden-sm hidden-md
+                        order-li
+                        mian-top"><a href="site/demand.html"
+                        target="_blank">@Messages("header.personalized_travel")</a></li>
+                        <li class="slide-li mian-top"><a href="/registerguider">@Messages("header.become_guider")</a></li>
+                        <li class=" mian-top"><a href="site/group.html" target="_blank">@Messages("header.group_travel")</a></li>
                         <li class="load-img">
                                 <!--<li class="load-img">-->
                                 <!--<a href="javascript:;">下载APP</a>-->
@@ -148,33 +116,31 @@ gtag('config', 'UA-117757926-1');
                     <ul class="nav navbar-nav navbar-right hidden-sm nav-ul login-ul">
                             <!--<li class="phone-num"><a href="javascript:;"><i></i>400-872-8336</a></a></li>-->
                         <li class="help-center">
-                            <a href="/site/helpList.html">@Messages("header.menu.help_center")<i></i></a>
+                            <a href="site/helpList.html">@Messages("header.menu.helplist")<i></i></a>
                             <ul>
-			      <li><a href="#" onclick="showTuto()"  >@Messages("header.menu.tutorial")</a></li>
-                                <li><a href="/site/helpDetail/id/58.html">@Messages("header.menu.how_order_guider")</a></li>
-                                <li><a href="/site/helpDetail/id/61.html">@Messages("header.menu.how_personalized_travel")</a></li>
-                                <li><a href="/site/helpDetail/id/57.html">@Messages("header.menu.how_starguider")</a></li>
-                                <li><a href="/site/helpList.html">@Messages("header.menu.FAQ")</a></li>
+                                <li><a href="site/helpDetail/id/58.html">@Messages("header.menu.how_order_guider")</a></li>
+                                <li><a href="site/helpDetail/id/61.html">@Messages("header.menu.how_personalized_travel")</a></li>
+                                <li><a href="site/helpDetail/id/57.html">@Messages("header.menu.how_starguider")</a></li>
+                                <li><a href="site/helpList.html">@Messages("header.menu.FAQ")</a></li>
                             </ul>
                         </li>
                         @if(session().get("username")==null) {
-                            <li><a href="/register"
-                            class="login-section" onclick="track()">@Messages("header.register")</a></li>
+                            <li><a href="/register" class="login-section">@Messages("header.register")</a></li>
                             <li><a href="/login" class="login-line">@Messages("header.login")</a></li>
                         } else {
 
                             <li class="help-center" style="">
                                 <a href="#">@Messages("header.hello"), @session().get("username")<i></i></a>
 								<ul>
-								  <li><a href="/setting/myaccount">@Messages("header.account")</a></li>
-								  <li><a href="/setting/myorders">@Messages("header.orders")</a></li>
-								  <li><a href="/setting/refer">@Messages("header.referral") </a><span class="font-size1" style="color:red">new</span> </li>
-								  <li><a href="/setting/preference">@Messages("header.preference")</a></li>
+								  <li><a href="#">@Messages("header.account")</a></li>
+								  <li><a href="#">@Messages("header.orders")</a></li>
+								  <li><a href="#">@Messages("header.referral") </a><span class="font-size1" style="color:red">new</span> </li>
+								  <li><a href="/setting">@Messages("header.setting")</a></li>
 								  <li><a href="/logout"  style="display: inline">@Messages("header.logout")</a></li>
 								</ul>
                             </li>
                         }
-						<li>	<a href="#" id="_message"> @Messages("header.message") (0) </a> </li>
+						<li>	<a href="#"	> @Messages("header.message") (0) </a> </li>
 
                         </ul>
                 </div>
@@ -218,8 +184,7 @@ gtag('config', 'UA-117757926-1');
                                 <h5>@Messages("footer.company_info")<i class="arrow-btn"></i></h5>
                                 <div class="hidden-section">
                                     <p><a href="site/html/id/about_us.html">@Messages("footer.about_us")</a></p>
-<p>                                    <a href="site/html/id/join_us.html">@Messages("footer.join_us")</a></p>
-<p><a href="site/html/id/partner.html">@Messages("footer.partner")</a>
+                                    <a href="site/html/id/join_us.html">@Messages("footer.join_us")</a></p>
                                     <p><a href="site/html/id/contact_us.html">@Messages("footer.contact_us")</a></p>
                                         <!--                                    <p><a href="site/html/id/media.html">媒体报道</a></p> -->
                                     <p><a href="site/html/id/map.html">@Messages("footer.sitemap")</a></p>
@@ -253,23 +218,27 @@ gtag('config', 'UA-117757926-1');
                         <div class="col-sm-6 col-xs-12">
                             <p class="text-color2 font-size1"></p>
 
-                            <p class="text-color2 font-size1">@Messages("footer.company_name") 2016-2018 izouzou.cc </p>
+                            <p class="text-color2 font-size1">@Messages("footer.company_name") 2015-2017 izouzou.cc </p>
                         </div>
-
+                            <!--<div class="col-sm-6 hidden-xs">-->
+                            <!--&lt;!&ndash;                        -->
+                            <!--<a href="http://weibo.com/sea314" class="sina-btn"></a>-->
+                            <!--<a href="javascript:;" class="wei-btn">-->
+                            <!--<span class="video-section">-->
+                            <!--<img src="/app/statics/images/weixin.png" alt="">-->
+                            <!--<span class="text-center">微信扫码 关注我们</span>-->
+                            <!--<i></i>-->
+                            <!--</span>-->
+                            <!--</a>-->
+                            <!--<span class="text-color2 font-size1">关注我们</span>-->
+                            <!--&ndash;&gt;                   </div>-->
                     </div>
                 </div>
             </div>
         </div>
                 <!-- 底部 -->
-<script type="text/javascropt">
-  function track()
-  {
-  mixpanel.track("Clicked Link", { "Domain": "register"}, cb);
-  }
-</script>
-				<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
+		<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
 
-		
 @* try to change lange based on userLang setting
 		<script type="text/javascript">
 		  var userLang = navigator.language ||  navigator.userLanguage;
@@ -278,34 +247,12 @@ gtag('config', 'UA-117757926-1');
 		  if (userLang == "en-US" || userLang == "en"){
 		  alert("en-US");
 //		  @Messages.apply("zh-cn");
+		  
 		  };
 		</script>
 *@
 		
-		<script>
-//		  $(document).ready(function(){
-//		  $(".shade").hide();
-//		  });
-		  function showTuto()
-		  {
-              $("#_tutorial").show();
-		  }
-		  
-	  //show conversation
-	  var uId = '@session.get("userId")';
-	  var newUserId = '@newUserId';
-	  $("#_message").click(function(){
-	      if(uId != newUserId){
-         	  window.location.href = "@play.Play.application().configuration().getString("chatserviceport")/room?conversationId=" + uId + newUserId + "&userId=" + uId + "&anotherId=" + newUserId; 
-	      }
-	      else{
-	          alert('@Messages("alert.login")');
-	          window.location.href = "/login";
-	      }
-	  });
-	  
-
-	  //show balance
+        <script>
                 function getBalance() {
                     $.ajax({
                         url:"/getBalance",

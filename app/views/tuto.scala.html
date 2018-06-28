@@ -1,0 +1,29 @@
+@(tutos:List[String])
+@import java.lang.Integer; val index=0
+<head>
+@** <link rel="stylesheet"
+		  href="/app/statics/css/shade.css">
+**@
+  
+<script src="/app/statics/js/jquery-1.8.3.min.js" ></script>
+</head>
+
+<div class="shade" style="display:inline">
+  <img id="_tuto" src="/app/statics/images/tuto1.jpg">
+  <button class="btn btn-info">不再提醒</button>
+  <button class＝"btn btn-info">知道了</button>
+  <button id="_next" calss="btn btn-info">下一步</button>
+</div>
+
+<script>
+  var x = 0;
+  var im = ["tuto1.jpg", "tuto2.jpg"];
+
+  
+  $("#_next").on("click", function(){
+
+  x = (x + 1 ) % len(im);
+  $("#_tuto").src = "/app/statics/images/" + im[x];
+  });
+
+</script>

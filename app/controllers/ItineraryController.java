@@ -17,14 +17,14 @@ import play.Configuration;
  * to the application's home page.                                                                                                                                             
  */
 public class ItineraryController extends Controller {
-    public static Result Itinerary()
+    public static Result itinerary()
     {
-	return ok(views.html.itinerary.render());
+		return ok(views.html.itinerary.render());
     }
     
     public static Result onItinerarySave()
     {
-	return null;
+		return null;
     }
     
 }

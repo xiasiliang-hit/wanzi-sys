@@ -1,65 +1,48 @@
 @(content: Html)
-@import java.lang.String; val newUserId="999999999999999999999999"; 
-<!DOCTYPE html>
-<html lang="zh-CN">
 
-  <!-- Added by HTTrack -->
+<!DOCTYPE html>
+<html >
+
+        <!-- Mirrored from www.wanzi.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:40:55 GMT -->
+        <!-- Added by HTTrack -->
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <!-- /Added by HTTrack -->
+        <!-- /Added by HTTrack -->
     <head>
-	  
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
-        <title></title>
-        <meta name="keywords" content="izouzou, 爱走走, 走走旅游,包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
-        <meta name="description" content="izouzou, 走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
+        <title>走走旅游</title>
+        <meta name="keywords" content="包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
+        <meta name="description" content="走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
 		<link rel="icon" href="/app/statics/images/favicon.ico">
         <link href="/app/statics/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="icon.png">
         <link rel="stylesheet" href="/app/statics/css/common.css">
-	<link rel="stylesheet" href="/app/statics/css/mobile.css">
         <link rel="stylesheet" href="/app/statics/css/swiper.min.css">
         <link rel="stylesheet" href="/app/statics/emoji/emoji.css">
         <link rel="stylesheet" href="/app/statics/js/promptbox/prompt_box.css">
-		<script src="/app/statics/js/jquery-1.9.1.min.js"></script> 
+        <script src="/app/statics/js/jquery-1.8.3.min.js"></script>
         <script src="/app/statics/js/bootstrap.min.js"></script>
             <!--<script src="js/global.js"></script>-->
         <script src="/app/statics/js/search.js"></script>
         <script src="/app/statics/js/remscreen.js"></script>
         <script src="/app/statics/js/fastclick.js"></script>
-        <script src="http://static.izouzou.cc/app/statics/js/promptbox/prompt_box.js"></script>
-		<script src="/app/statics/js/mixpanel.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117757926-1"></script>
-
-	<script>
-	window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-117757926-1');
-</script>
-
-
-
-        <script>
-            //google 统计
-            (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-117757926-1', 'auto');
-            ga('send', 'pageview');
-</script>			
+        <script src="/app/statics/js/promptbox/prompt_box.js"></script>
+            <!--<script>-->
+            <!--//google 统计-->
+            <!--(function(i, s, o, g, r, a, m) {-->
+            <!--i['GoogleAnalyticsObject'] = r;-->
+            <!--i[r] = i[r] || function() {-->
+            <!--(i[r].q = i[r].q || []).push(arguments)-->
+            <!--}, i[r].l = 1 * new Date();-->
+            <!--a = s.createElement(o),-->
+            <!--m = s.getElementsByTagName(o)[0];-->
+            <!--a.async = 1;-->
+            <!--a.src = g;-->
+            <!--m.parentNode.insertBefore(a, m)-->
+            <!--})(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');-->
+            <!--ga('create', 'UA-56466931-1', 'auto');-->
+            <!--ga('send', 'pageview');-->
             <!--//百度统计-->
             <!--var _hmt = _hmt || [];-->
             <!--(function() {-->
@@ -85,8 +68,7 @@ gtag('config', 'UA-117757926-1');
             <!--})();*/-->
             <!--</script>-->
     </head>
-  <body>
-    @views.html.tutorial.render()
+    <body >
             <!-- 手机端顶部下载APP -->
             <!--<div class="load-header">-->
             <!--<img src="/app/statics/images/APP.png" alt="" class="header-logo">-->
@@ -109,29 +91,14 @@ gtag('config', 'UA-117757926-1');
                 </div>
                 <div class="navbar-collapse collapse" role="navigation">
                     <ul class="nav navbar-nav nav-ul">
-                        <li class="home-page slide-li"><a href="index.html">@Messages("header.index")</a></li>
+                        <li class="home-page slide-li"><a href="index.html">首页</a></li>
                         <i><div class="phone-search">
-                            <input type="text" placeholder="@Messages("header.search_box")">
+                            <input type="text" placeholder="请输入您想去的国家、城市">
                         </div></i>
-<li class="help-center" style="">
-    <a href="/site/demand" target="_blank">@Messages("header.personalized_travel")<i></i></a>
-    <ul>
-    <!--<li class="hidden-sm hidden-md order-li mian-top"><a href="/site/demand" target="_blank">@Messages("header.personalized_travel")</a></li> -->
-    <li class=" mian-top"><a href="/site/group" target="_blank">@Messages("header.group_travel")</a></li>
-    </ul>
-</li>    
-
-<li class="slide-li mian-top"><a href="/registerguider">@Messages("header.become_guider")</a></li>
-
-
-<li class="help-center" style="">
-    <a href="#" target="_blank">@Messages("header.solution")<i></i></a>
-    <ul>
-    <li class=" mian-top"><a href="/site/travelagency" target="_blank">@Messages("header.travel_agency")</a></li>
-    <li class=" mian-top"><a href="/site/hotel" target="_blank">@Messages("header.solution.hotel")</a></li>
-    </ul>
-</li>
-						
+                        <li class="hidden-sm hidden-md order-li mian-top"><a href="/site/demand.html" target="_blank">定制旅行</a></li>
+						<li class=" mian-top"><a href="/site/group.html" target="_blank">团队企业服务</a></li>
+						<li class="slide-li mian-top"><a href="/registerguider">成为向导</a></li>
+												
                         <li class="load-img">
                                 <!--<li class="load-img">-->
                                 <!--<a href="javascript:;">下载APP</a>-->
@@ -148,41 +115,40 @@ gtag('config', 'UA-117757926-1');
                     <ul class="nav navbar-nav navbar-right hidden-sm nav-ul login-ul">
                             <!--<li class="phone-num"><a href="javascript:;"><i></i>400-872-8336</a></a></li>-->
                         <li class="help-center">
-                            <a href="/site/helpList.html">@Messages("header.menu.help_center")<i></i></a>
+                            <a href="site/helpList.html">帮助中心<i></i></a>
                             <ul>
-			      <li><a href="#" onclick="showTuto()"  >@Messages("header.menu.tutorial")</a></li>
-                                <li><a href="/site/helpDetail/id/58.html">@Messages("header.menu.how_order_guider")</a></li>
-                                <li><a href="/site/helpDetail/id/61.html">@Messages("header.menu.how_personalized_travel")</a></li>
-                                <li><a href="/site/helpDetail/id/57.html">@Messages("header.menu.how_starguider")</a></li>
-                                <li><a href="/site/helpList.html">@Messages("header.menu.FAQ")</a></li>
+                                <li><a href="site/helpDetail/id/58.html">如何预订向导？</a></li>
+                                <li><a href="site/helpDetail/id/61.html">什么是定制旅行服务？</a></li>
+                                <li><a href="site/helpDetail/id/57.html">如何成为一名优秀的向导？</a></li>
+                                <li><a href="site/helpList.html">查看更多常见问题与解答</a></li>
                             </ul>
                         </li>
                         @if(session().get("username")==null) {
-                            <li><a href="/register"
-                            class="login-section" onclick="track()">@Messages("header.register")</a></li>
-                            <li><a href="/login" class="login-line">@Messages("header.login")</a></li>
+                            <li><a href="/register" class="login-section">注册</a></li>
+                            <li><a href="/login" class="login-line">登录</a></li>
                         } else {
 
                             <li class="help-center" style="">
-                                <a href="#">@Messages("header.hello"), @session().get("username")<i></i></a>
+                                <a href="#">您好，@session().get("username")<i></i></a>
 								<ul>
-								  <li><a href="/setting/myaccount">@Messages("header.account")</a></li>
-								  <li><a href="/setting/myorders">@Messages("header.orders")</a></li>
-								  <li><a href="/setting/refer">@Messages("header.referral") </a><span class="font-size1" style="color:red">new</span> </li>
-								  <li><a href="/setting/preference">@Messages("header.preference")</a></li>
-								  <li><a href="/logout"  style="display: inline">@Messages("header.logout")</a></li>
+								  <li><a href="#">我的账户</a></li>
+								  <li><a href="/setting/myorders">我的订单</a></li>
+								  <li><a href="/setting/refer">推荐有奖 </a><span class="font-size1" style="color:red">new</span> </li>
+								  <li><a href="/setting/setting">用户设置</a></li>
+								  <li><a href="/logout"  style="display: inline">退出登录</a></li>
 								</ul>
                             </li>
                         }
-						<li>	<a href="#" id="_message"> @Messages("header.message") (0) </a> </li>
+						<li>	<a href="#"	> 消息(0) </a> </li>
 
                         </ul>
                 </div>
             </div>
         </div>
-            <!-
-			   - 头部导航栏 -->
+            <!-- 头部导航栏 -->
             <!-- 主题 -->
+
+
 
             @content
 
@@ -191,11 +157,11 @@ gtag('config', 'UA-117757926-1');
         <div class="suspend-section">
                 <!-- <div class='text-center'>
                 <span class="custom-btn right-suspend"></span>
-                <p class="text-color5 text-center">@Messages("side.customer_service")</p>
+                <p class="text-color5 text-center">联系客服</p>
             </div>-->
                 <!-- <div class='text-center go-back'>
                 <span class="back-btn right-suspend"></span>
-                <p class="text-color5 text-center">@Messages("side.backtotop")</p>
+                <p class="text-color5 text-center">返回顶部</p>
             </div> -->
             <img src="/app/statics/images/back.png" alt="">
         </div>
@@ -205,43 +171,41 @@ gtag('config', 'UA-117757926-1');
             <div class="container footer-section">
                 <div class="row">
                     <div class="col-sm-6 hidden-xs">
-                        <h5>@Messages("footer.contact")</h5>
+                        <h5>客服热线</h5>
 						<!--                        <p><span class="tel-num text-center">电话</span><strong>13524331710</strong></p> -->
-						<p><span class="tel-num text-center">@Messages("footer.wechat")</span><strong>@Messages("footer.wechatid")</strong></p>
-                        <p><span class="tel-num
-										text-center">@Messages("footer.email")</span><strong>contact@@guanhaitingtao.com.cn</strong></p>
-<!--                        <p class="work-hours">接听时间：9:00-22:00（北京时间）</p>  -->
+						<p><span class="tel-num text-center">微信</span><strong>18896608671</strong></p>
+                        <p><span class="tel-num text-center">邮箱</span><strong>contact@@guanhaitingtao.com.cn</strong></p>
+                        <p class="work-hours">接听时间：9:00-22:00（北京时间）</p>
                     </div>
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col-sm-4">
-                                <h5>@Messages("footer.company_info")<i class="arrow-btn"></i></h5>
+                                <h5>公司信息<i class="arrow-btn"></i></h5>
                                 <div class="hidden-section">
-                                    <p><a href="site/html/id/about_us.html">@Messages("footer.about_us")</a></p>
-<p>                                    <a href="site/html/id/join_us.html">@Messages("footer.join_us")</a></p>
-<p><a href="site/html/id/partner.html">@Messages("footer.partner")</a>
-                                    <p><a href="site/html/id/contact_us.html">@Messages("footer.contact_us")</a></p>
+                                    <p><a href="site/html/id/about_us.html">关于我们</a></p>
+                                    <a href="site/html/id/join_us.html">加入我们</a></p>
+                                    <p><a href="site/html/id/contact_us.html">联系我们</a></p>
                                         <!--                                    <p><a href="site/html/id/media.html">媒体报道</a></p> -->
-                                    <p><a href="site/html/id/map.html">@Messages("footer.sitemap")</a></p>
+                                    <p><a href="site/html/id/map.html">网站地图</a></p>
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <h5>@Messages("footer.newbie")<i class="arrow-btn"></i></h5>
+                                <h5>新手上路<i class="arrow-btn"></i></h5>
                                 <div class="hidden-section">
-                                    <p><a href="site/helpList.html">@Messages("footer.help_center")</a></p>
-                                    <p><a href="site/html/id/terms_service.html">@Messages("footer.service_agreement")</a></p>
-                                    <p><a href="site/html/id/privacy_policy.html">@Messages("footer.privacy")</a></p>
-                                    <p><a href="site/html/id/disclaimer.html">@Messages("footer.disclaim")</a></p>
-                                    <p><a href="site/html/id/policy_notes.html">@Messages("footer.user_policy")</a></p>
-                                    <p><a href="site/html/id/terms.html">@Messages("footer.guarentee_plan")</a></p>
+                                    <p><a href="site/helpList.html">帮助中心</a></p>
+                                    <p><a href="site/html/id/terms_service.html">服务条款</a></p>
+                                    <p><a href="site/html/id/privacy_policy.html">隐私政策</a></p>
+                                    <p><a href="site/html/id/disclaimer.html">免责声明</a></p>
+                                    <p><a href="site/html/id/policy_notes.html">使用政策须知</a></p>
+                                    <p><a href="site/html/id/terms.html">保障计划条款</a></p>
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <h5>@Messages("footer.for_guider")<i class="arrow-btn"></i></h5>
+                                <h5>向导<i class="arrow-btn"></i></h5>
                                 <div class="hidden-section">
-                                    <p><a href="site/html/id/why_guide.html">@Messages("footer.why_guider")</a></p>
-                                    <p><a href="site/html/id/culture.html">@Messages("footer.guider_standard")</a></p>
-                                    <p><a href="site/html/id/why_guide.html">@Messages("footer.become_guider")</a></p>
+                                    <p><a href="site/html/id/why_guide.html">为什么成为向导</a></p>
+                                    <p><a href="site/html/id/culture.html">向导服务标准</a></p>
+                                    <p><a href="site/html/id/why_guide.html">申请成为向导</a></p>
 									<p><img src="/app/statics/images/izouzou_barcode.png"
 									style="height:80px;width:80px;"</p>
                                 </div>
@@ -253,59 +217,27 @@ gtag('config', 'UA-117757926-1');
                         <div class="col-sm-6 col-xs-12">
                             <p class="text-color2 font-size1"></p>
 
-                            <p class="text-color2 font-size1">@Messages("footer.company_name") 2016-2018 izouzou.cc </p>
+                            <p class="text-color2 font-size1">® 杭州观海听涛信息科技有限公司 2015-2017 izouzou.cc </p>
                         </div>
-
+                            <!--<div class="col-sm-6 hidden-xs">-->
+                            <!--&lt;!&ndash;                        -->
+                            <!--<a href="http://weibo.com/sea314" class="sina-btn"></a>-->
+                            <!--<a href="javascript:;" class="wei-btn">-->
+                            <!--<span class="video-section">-->
+                            <!--<img src="/app/statics/images/weixin.png" alt="">-->
+                            <!--<span class="text-center">微信扫码 关注我们</span>-->
+                            <!--<i></i>-->
+                            <!--</span>-->
+                            <!--</a>-->
+                            <!--<span class="text-color2 font-size1">关注我们</span>-->
+                            <!--&ndash;&gt;                   </div>-->
                     </div>
                 </div>
             </div>
         </div>
                 <!-- 底部 -->
-<script type="text/javascropt">
-  function track()
-  {
-  mixpanel.track("Clicked Link", { "Domain": "register"}, cb);
-  }
-</script>
-				<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
-
-		
-@* try to change lange based on userLang setting
-		<script type="text/javascript">
-		  var userLang = navigator.language ||  navigator.userLanguage;
-		  var prefix = "https://www.triposo.com/static/website/img/2016/";
-		  
-		  if (userLang == "en-US" || userLang == "en"){
-		  alert("en-US");
-//		  @Messages.apply("zh-cn");
-		  };
-		</script>
-*@
-		
-		<script>
-//		  $(document).ready(function(){
-//		  $(".shade").hide();
-//		  });
-		  function showTuto()
-		  {
-              $("#_tutorial").show();
-		  }
-		  
-	  //show conversation
-	  var uId = '@session.get("userId")';
-	  var newUserId = '@newUserId';
-	  $("#_message").click(function(){
-	      if(uId != newUserId){
-         	  window.location.href = "@play.Play.application().configuration().getString("chatserviceport")/room?conversationId=" + uId + newUserId + "&userId=" + uId + "&anotherId=" + newUserId; 
-	      }
-	      else{
-	          alert('@Messages("alert.login")');
-	          window.location.href = "/login";
-	      }
-	  });
-	  
-
-	  //show balance
+            <script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
+            <script>
                 function getBalance() {
                     $.ajax({
                         url:"/getBalance",
