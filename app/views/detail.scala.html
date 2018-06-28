@@ -151,9 +151,9 @@
             <div class="main-line mian-phone"></div>
             <div class="guide-slide">
                 <ul class="title clearfix">
-                    <li class="text-center active"><a href="javascript:;">向导资料</a></li>
-                    <li class="text-center text-color2"><a href="javascript:;">服务及费用</a></li>
-                    <li class="text-center text-color2 commont-num"><a href="javascript:;">评论</a></li>
+                    <li class="text-center active"><a href="#" >向导资料</a></li>
+                    <li class="text-center text-color2"><a href="#id-service" >服务及费用</a></li>
+                    <li class="text-center text-color2 commont-num"><a href="#id-comment">评论</a></li>
                 </ul>
                 <div class="slide-section slide-data">
                     <h3>向导资料</h3>
@@ -235,10 +235,10 @@
                 </div>
                 <div class="main-line main-b"></div>
                 <div class="slide-section server-section">
-                    <h3>服务及费用</h3>
+                    <h3 id="id-service">服务及费用</h3>
                     <div class="slide-main clearfix service-section">
                         <div class="left"><p class="font-size2"><i class="line"></i>服务费用</p></div>
-                        <div class="right">
+                        <div class="right" >
                             <p><strong class="service-title">向导服务</strong><strong class="main-color service-modal">费用说明</strong></p>
                             <div class="row">
                                 @if(guider.guider_price != "") {
@@ -935,7 +935,7 @@
                 </div>
                 <div class="main-line main-b"></div>
                 <div class="slide-main clearfix slide-section slide-comment">
-                    <h3>评论</h3>
+                    <h3 id="id-comment">评论</h3>
                     <div class="left left-line"><p class="font-size2"><i class="line"></i>评论</p></div>
                     <div id="remark_list">
 
@@ -1060,7 +1060,7 @@
         </div>
         <!-- 相册模态框 -->
         <!-- 向导服务费用说明模态框 -->
-        <div class="modal common-modal guide-service" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal common-modal guide-service nav nav-tabs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1466,7 +1466,8 @@
                 });
                 //向导费用说明
                 $('.service-modal').on('click',function(){
-                    window.location.href='../../detailGuidePrice/nv/1/id/560a4f004719d.html';
+
+//window.location.href='../../detailGuidePrice/nv/1/id/560a4f004719d.html';
                 });
                 //接送机费用说明
                 $('.service-modal1').on('click',function(){
@@ -1474,8 +1475,8 @@
                 });
 
                 $('.more-btn').click(function(){
-		    $("#_detial").show();
-                    window.location.href='/site1/detail/id/@guider.id/more';
+		    $("#_detail").show();
+
                 });
 /*
                 //评论

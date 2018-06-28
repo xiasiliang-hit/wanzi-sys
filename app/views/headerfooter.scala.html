@@ -22,9 +22,10 @@
         <link rel="stylesheet" href="/app/statics/css/swiper.min.css">
         <link rel="stylesheet" href="/app/statics/emoji/emoji.css">
         <link rel="stylesheet" href="/app/statics/js/promptbox/prompt_box.css">
-		<script src="/app/statics/js/jquery-1.9.1.min.js"></script> 
+	
+	<script src="/app/statics/js/jquery-1.9.1.min.js"></script> 
         <script src="/app/statics/js/bootstrap.min.js"></script>
-            <!--<script src="js/global.js"></script>-->
+        <!--<script src="js/global.js"></script>-->
         <script src="/app/statics/js/search.js"></script>
         <script src="/app/statics/js/remscreen.js"></script>
         <script src="/app/statics/js/fastclick.js"></script>
@@ -188,7 +189,7 @@ gtag('config', 'UA-117757926-1');
 
             <!-- 主题 -->
             <!-- 右侧客服以及回到顶部 -->
-        <div class="suspend-section">
+        <div class="suspend-section" id="id-pp">
                 <!-- <div class='text-center'>
                 <span class="custom-btn right-suspend"></span>
                 <p class="text-color5 text-center">@Messages("side.customer_service")</p>
@@ -267,7 +268,42 @@ gtag('config', 'UA-117757926-1');
   mixpanel.track("Clicked Link", { "Domain": "register"}, cb);
   }
 </script>
-				<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
+<!-- pp message -->
+<script>
+ $("#service").click(function(){
+
+    });
+
+    window.ppSettings = {
+        app_uuid: '6014d48e-7ac8-11e8-a419-00163e0c79f6',
+        view: {
+            launcher_bottom_margin: '50px',
+            launcher_right_margin: '30px',
+            launcher_is_show: false,
+            launch_style: {
+                mode: 'custom',
+                position: 'right',
+                bottom: 50,
+            }
+        }
+    };
+    (function(){
+        var w=window,d=document;
+
+        function l() {
+            var a=d.createElement('script');
+            a.type='text/javascript';
+            a.async=!0;
+            a.charset='utf-8';
+            a.src='https://ppmessage.cn/ppcom/assets/pp-library.min.js';
+            var b=d.getElementsByTagName('script')[0];
+            b.parentNode.insertBefore(a,b)
+        }
+        l();
+    })();
+</script>
+
+<!--				<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script> -->
 
 		
 @* try to change lange based on userLang setting
